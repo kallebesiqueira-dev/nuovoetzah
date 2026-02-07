@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1115"/>
+      <stop offset="1" stop-color="#1a1d24"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3e2bf"/>
+      <stop offset="1" stop-color="#e8b04a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="220" fill="#f5b942" opacity="0.12"/>
+  <circle cx="1040" cy="520" r="260" fill="#f5b942" opacity="0.08"/>
+  <text x="120" y="270" fill="url(#gold)" font-size="72" font-family="Playfair Display, Georgia, serif">EtzahWeb</text>
+  <text x="120" y="350" fill="#f3f4f6" font-size="36" font-family="Space Grotesk, Arial, sans-serif">Soluzioni digitali premium per brand ambiziosi</text>
+</svg>

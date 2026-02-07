@@ -1,0 +1,8 @@
+{
+  "name": "EtzahWeb",
+  "short_name": "EtzahWeb",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121318",
+  "theme_color": "#121318"
+}
