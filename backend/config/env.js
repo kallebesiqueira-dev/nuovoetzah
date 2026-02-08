@@ -19,6 +19,24 @@ const env = {
   cookieName: process.env.REFRESH_COOKIE_NAME || "refreshToken",
   cookieDomain: process.env.COOKIE_DOMAIN || "",
   cookieSameSite: process.env.COOKIE_SAMESITE || "lax",
+  emailHost: process.env.EMAIL_HOST || "smtp.gmail.com",
+  emailPort: Number(process.env.EMAIL_PORT || 465),
+  emailSecure: process.env.EMAIL_SECURE
+    ? process.env.EMAIL_SECURE === "true"
+    : true,
+  emailUser: process.env.EMAIL_USER || "",
+  emailPass: process.env.EMAIL_PASS || "",
+  emailFrom: process.env.EMAIL_FROM || "",
+  emailTo: process.env.EMAIL_TO || "",
+  emailSubject: process.env.EMAIL_SUBJECT || "",
+  emailAutoReplySubject: process.env.EMAIL_AUTOREPLY_SUBJECT || "",
+  emailAutoReplyText: process.env.EMAIL_AUTOREPLY_TEXT || "",
+  whatsappToken: process.env.WHATSAPP_TOKEN || "",
+  whatsappPhoneId: process.env.WHATSAPP_PHONE_ID || "",
+  whatsappAdminNumber: process.env.WHATSAPP_ADMIN_NUMBER || "",
+  whatsappApiBase:
+    process.env.WHATSAPP_API_BASE || "https://graph.facebook.com/v19.0",
+  whatsappAutoReplyText: process.env.WHATSAPP_AUTOREPLY_TEXT || "",
 };
 
 function validateEnv() {

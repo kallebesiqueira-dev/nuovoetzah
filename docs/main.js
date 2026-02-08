@@ -49,6 +49,7 @@ form.addEventListener('submit', async (event) => {
   const payload = {
     name: formData.get('nome'),
     email: formData.get('email'),
+    phone: formData.get('telefone') || '',
     company: formData.get('empresa') || '',
     message: formData.get('mensagem') || ''
   };

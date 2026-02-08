@@ -1,5 +1,6 @@
 const Message = require("../models/Message");
 const asyncHandler = require("../utils/asyncHandler");
+const { notifyNewLead } = require("../utils/notifications");
 
 const listMessages = asyncHandler(async (req, res) => {
   const { limit, before } = req.query;
@@ -21,12 +22,13 @@ const listMessages = asyncHandler(async (req, res) => {
 });
 
 const addMessage = asyncHandler(async (req, res) => {
-  const { text, name, email, company, message } = req.body;
+  const { text, name, email, phone, company, message } = req.body;
 
   const payload = {
     text: text || undefined,
     name: name || undefined,
     email: email || undefined,
+    phone: phone || undefined,
     company: company || undefined,
     message: message || undefined,
   };
@@ -37,6 +39,12 @@ const addMessage = asyncHandler(async (req, res) => {
   }
 
   const saved = await Message.create(payload);
+
+  setImmediate(() => {
+    notifyNewLead(saved.toObject()).catch((error) => {
+      console.error("Falha ao enviar notificacoes:", error);
+    });
+  });
 
   res.status(201).json(saved);
 });

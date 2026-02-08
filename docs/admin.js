@@ -42,6 +42,7 @@ function renderMessages(messages) {
     card.innerHTML = `
       <h4>${m.name || m.username || I18N.t('admin.leadName')}</h4>
       <p><strong>${I18N.t('admin.emailLabel')}:</strong> ${m.email || I18N.t('admin.emailFallback')}</p>
+      <p><strong>${I18N.t('admin.phoneLabel')}:</strong> ${m.phone || I18N.t('admin.phoneFallback')}</p>
       <p><strong>${I18N.t('admin.companyLabel')}:</strong> ${m.company || I18N.t('admin.companyFallback')}</p>
       <p><strong>${I18N.t('admin.messageLabel')}:</strong> ${messageText || I18N.t('admin.messageFallback')}</p>
     `;

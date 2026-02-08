@@ -20,6 +20,11 @@ const messageSchema = new mongoose.Schema({
     trim: true,
     maxlength: 120,
   },
+  phone: {
+    type: String,
+    trim: true,
+    maxlength: 30,
+  },
   company: {
     type: String,
     trim: true,

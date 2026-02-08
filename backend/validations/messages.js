@@ -3,6 +3,7 @@ const Joi = require("joi");
 const leadBody = Joi.object({
   name: Joi.string().min(2).max(80).required(),
   email: Joi.string().email().max(120).required(),
+  phone: Joi.string().max(30).allow("").default(""),
   company: Joi.string().max(120).allow("").default(""),
   message: Joi.string().min(1).max(2000).required(),
 });
