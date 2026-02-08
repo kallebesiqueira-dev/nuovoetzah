@@ -3,7 +3,7 @@
 Repositorio publico do EtzahWeb.
 
 ## Estrutura
-- frontend/ - site estatico
+- docs/ - site estatico (GitHub Pages)
 - backend/ - API Node.js
 
 ## Como rodar localmente (backend)
@@ -12,4 +12,4 @@ Repositorio publico do EtzahWeb.
 3) Inicie: npm start
 
 ## Deploy
-- GitHub Pages a partir de /frontend
+- GitHub Pages a partir de /docs
