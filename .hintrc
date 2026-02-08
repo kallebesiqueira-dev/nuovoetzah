@@ -14,6 +14,13 @@
         ]
       }
     ],
-    "apple-touch-icons": "off"
+    "apple-touch-icons": "off",
+    "axe/aria": [
+      "default",
+      {
+        "aria-allowed-attr": "off",
+        "aria-input-field-name": "off"
+      }
+    ]
   }
 }

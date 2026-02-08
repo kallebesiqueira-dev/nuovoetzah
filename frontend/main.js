@@ -47,16 +47,18 @@ form.addEventListener('submit', async (event) => {
 
   const formData = new FormData(form);
   const payload = {
-    nome: formData.get('nome'),
+    name: formData.get('nome'),
     email: formData.get('email'),
-    empresa: formData.get('empresa') || '',
-    messaggio: formData.get('mensagem') || ''
+    company: formData.get('empresa') || '',
+    message: formData.get('mensagem') || ''
   };
 
   try {
-    const response = await fetch(`${apiBase}/messaggi`, {
+    const response = await fetch(`${apiBase}/api/messages`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(payload)
     });
 

@@ -14,14 +14,15 @@ loginForm.addEventListener('submit', async (event) => {
   loginStatus.textContent = I18N.t('login.verifying');
 
   const payload = {
-    email: loginForm.email.value,
+    username: loginForm.username.value.trim(),
     password: loginForm.password.value
   };
 
   try {
-    const res = await fetch(`${apiBase}/login`, {
+    const res = await fetch(`${apiBase}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(payload)
     });
 
@@ -30,7 +31,9 @@ loginForm.addEventListener('submit', async (event) => {
     }
 
     const data = await res.json();
-    localStorage.setItem('token', data.token);
+    if (data.accessToken) {
+      localStorage.setItem('accessToken', data.accessToken);
+    }
     window.location.href = 'admin.html';
   } catch (error) {
     loginStatus.textContent = I18N.t('login.error');

@@ -38,10 +38,12 @@ function renderMessages(messages) {
   messages.forEach((m) => {
     const card = document.createElement('article');
     card.className = 'message-card';
+    const messageText = m.message || m.text || '';
     card.innerHTML = `
-      <h4>${m.nome || I18N.t('admin.leadName')}</h4>
+      <h4>${m.name || m.username || I18N.t('admin.leadName')}</h4>
       <p><strong>${I18N.t('admin.emailLabel')}:</strong> ${m.email || I18N.t('admin.emailFallback')}</p>
-      <p><strong>${I18N.t('admin.messageLabel')}:</strong> ${m.messaggio || I18N.t('admin.messageFallback')}</p>
+      <p><strong>${I18N.t('admin.companyLabel')}:</strong> ${m.company || I18N.t('admin.companyFallback')}</p>
+      <p><strong>${I18N.t('admin.messageLabel')}:</strong> ${messageText || I18N.t('admin.messageFallback')}</p>
     `;
     messagesContainer.appendChild(card);
   });
@@ -68,8 +70,48 @@ function updateStatus() {
   }
 }
 
+function getAccessToken() {
+  return localStorage.getItem('accessToken') || localStorage.getItem('token');
+}
+
+function setAccessToken(token) {
+  localStorage.setItem('accessToken', token);
+  localStorage.removeItem('token');
+}
+
+async function refreshAccessToken() {
+  const res = await fetch(`${apiBase}/api/auth/refresh`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include'
+  });
+
+  if (!res.ok) {
+    return false;
+  }
+
+  const data = await res.json();
+  if (data.accessToken) {
+    setAccessToken(data.accessToken);
+    return true;
+  }
+
+  return false;
+}
+
+async function fetchMessages() {
+  const token = getAccessToken();
+  if (!token) return null;
+
+  return fetch(`${apiBase}/api/messages`, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
+}
+
 async function loadMessages() {
-  const token = localStorage.getItem('token');
+  const token = getAccessToken();
 
   if (!token) {
     window.location.href = 'login.html';
@@ -81,18 +123,21 @@ async function loadMessages() {
   messagesContainer.innerHTML = '';
 
   try {
-    const res = await fetch(`${apiBase}/messaggi`, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    });
+    let res = await fetchMessages();
 
-    if (!res.ok) {
+    if (res && (res.status === 401 || res.status === 403)) {
+      const refreshed = await refreshAccessToken();
+      if (refreshed) {
+        res = await fetchMessages();
+      }
+    }
+
+    if (!res || !res.ok) {
       throw new Error('Falha ao carregar.');
     }
 
     const data = await res.json();
-    cachedMessages = Array.isArray(data) ? data : [];
+    cachedMessages = Array.isArray(data.items) ? data.items : [];
 
     if (cachedMessages.length === 0) {
       statusState = 'none';
@@ -112,8 +157,19 @@ async function loadMessages() {
 }
 
 refreshBtn.addEventListener('click', loadMessages);
-logoutBtn.addEventListener('click', () => {
+logoutBtn.addEventListener('click', async () => {
+  try {
+    await fetch(`${apiBase}/api/auth/logout`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include'
+    });
+  } catch (error) {
+    // Ignorar falha de rede ao sair.
+  }
+
   localStorage.removeItem('token');
+  localStorage.removeItem('accessToken');
   window.location.href = 'login.html';
 });
 

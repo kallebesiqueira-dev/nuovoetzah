@@ -1,0 +1,9 @@
+{
+  "greeting": "Hello, welcome!",
+  "login_success": "Login successful.",
+  "login_error": "Invalid username or password.",
+  "register_success": "User registered successfully.",
+  "register_error": "Error registering user.",
+  "message_sent": "Message sent.",
+  "message_error": "Error sending message."
+}

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="api-base" content="">
+		<meta name="api-base" content="https://api.etzahweb.com">
 		<title data-i18n-title="title">Pannello Admin | EtzahWeb</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -14,10 +14,26 @@
 				<div class="admin-actions">
 					<button id="refreshBtn" class="btn btn-outline" type="button" data-i18n="admin.refresh">Aggiorna</button>
 					<button id="logoutBtn" class="btn btn-ghost" type="button" data-i18n="admin.logout">Esci</button>
-					<div class="lang-switch" aria-label="Language">
-						<button class="lang-btn" type="button" data-lang="it" aria-pressed="true">IT</button>
-						<button class="lang-btn" type="button" data-lang="pt" aria-pressed="false">PT</button>
-						<button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+					<div class="lang-switch" aria-label="Language" data-lang-switch>
+						<button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
+							<span class="flag flag-it" aria-hidden="true"></span>
+							<span class="lang-label">IT</span>
+							<span class="lang-caret" aria-hidden="true"></span>
+						</button>
+						<div class="lang-menu" role="listbox">
+							<button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+								<span class="flag flag-it" aria-hidden="true"></span>
+								<span>IT</span>
+							</button>
+							<button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
+								<span class="flag flag-pt" aria-hidden="true"></span>
+								<span>PT</span>
+							</button>
+							<button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
+								<span class="flag flag-en" aria-hidden="true"></span>
+								<span>EN</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

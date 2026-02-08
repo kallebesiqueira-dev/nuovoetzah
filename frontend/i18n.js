@@ -89,7 +89,8 @@
         submit: 'Invia proposta',
         sending: 'Invio in corso...',
         success: 'Messaggio inviato con successo! Ti risponderemo entro 24h.',
-        error: 'Non e stato possibile inviare. Riprova tra poco.'
+        error: 'Non e stato possibile inviare. Riprova tra poco.',
+        authRequired: 'Fai login per inviare il messaggio.'
       },
       footer: {
         tagline: 'Costruiamo esperienze digitali che generano ricavi e reputazione.',
@@ -102,8 +103,8 @@
       login: {
         title: 'Area amministrativa',
         subtitle: 'Accedi per visualizzare i messaggi ricevuti.',
-        emailLabel: 'Email',
-        emailPlaceholder: 'admin@azienda.com',
+        emailLabel: 'Utente',
+        emailPlaceholder: 'admin',
         passwordLabel: 'Password',
         passwordPlaceholder: '********',
         submit: 'Entra',
@@ -124,6 +125,8 @@
         leadName: 'Lead senza nome',
         emailLabel: 'Email',
         emailFallback: 'non fornita',
+        companyLabel: 'Azienda',
+        companyFallback: 'non fornita',
         messageLabel: 'Messaggio',
         messageFallback: 'Nessun messaggio'
       }
@@ -217,7 +220,8 @@
         submit: 'Enviar proposta',
         sending: 'Enviando...',
         success: 'Mensagem enviada com sucesso! Retornaremos em até 24h.',
-        error: 'Não foi possível enviar. Tente novamente em instantes.'
+        error: 'Não foi possível enviar. Tente novamente em instantes.',
+        authRequired: 'Faca login para enviar a mensagem.'
       },
       footer: {
         tagline: 'Construindo experiências digitais que geram receita e reputação.',
@@ -230,8 +234,8 @@
       login: {
         title: 'Área administrativa',
         subtitle: 'Acesse para visualizar as mensagens recebidas.',
-        emailLabel: 'Email',
-        emailPlaceholder: 'admin@empresa.com',
+        emailLabel: 'Usuario',
+        emailPlaceholder: 'admin',
         passwordLabel: 'Senha',
         passwordPlaceholder: '********',
         submit: 'Entrar',
@@ -252,6 +256,8 @@
         leadName: 'Lead sem nome',
         emailLabel: 'Email',
         emailFallback: 'não informado',
+        companyLabel: 'Empresa',
+        companyFallback: 'nao informada',
         messageLabel: 'Mensagem',
         messageFallback: 'Sem mensagem'
       }
@@ -345,7 +351,8 @@
         submit: 'Send proposal',
         sending: 'Sending...',
         success: 'Message sent successfully! We will reply within 24h.',
-        error: 'Unable to send. Please try again shortly.'
+        error: 'Unable to send. Please try again shortly.',
+        authRequired: 'Please log in to send the message.'
       },
       footer: {
         tagline: 'Building digital experiences that generate revenue and reputation.',
@@ -358,8 +365,8 @@
       login: {
         title: 'Admin area',
         subtitle: 'Access to view received messages.',
-        emailLabel: 'Email',
-        emailPlaceholder: 'admin@company.com',
+        emailLabel: 'Username',
+        emailPlaceholder: 'admin',
         passwordLabel: 'Password',
         passwordPlaceholder: '********',
         submit: 'Sign in',
@@ -380,6 +387,8 @@
         leadName: 'Unnamed lead',
         emailLabel: 'Email',
         emailFallback: 'not provided',
+        companyLabel: 'Company',
+        companyFallback: 'not provided',
         messageLabel: 'Message',
         messageFallback: 'No message'
       }
@@ -408,6 +417,21 @@
     document.querySelectorAll('.lang-btn').forEach((button) => {
       const isActive = button.dataset.lang === lang;
       button.setAttribute('aria-pressed', String(isActive));
+      button.setAttribute('aria-selected', String(isActive));
+    });
+  };
+
+  const updateCurrent = (lang) => {
+    document.querySelectorAll('[data-lang-switch]').forEach((switchEl) => {
+      const current = switchEl.querySelector('.lang-current');
+      const label = current?.querySelector('.lang-label');
+      const flag = current?.querySelector('.flag');
+
+      if (!current || !label || !flag) return;
+
+      label.textContent = lang.toUpperCase();
+      flag.classList.remove('flag-it', 'flag-pt', 'flag-en');
+      flag.classList.add(`flag-${lang}`);
     });
   };
 
@@ -433,6 +457,7 @@
     });
 
     updateButtons(lang);
+    updateCurrent(lang);
   };
 
   const setLanguage = (lang) => {
@@ -442,12 +467,45 @@
     currentLang = lang;
     localStorage.setItem('lang', lang);
     applyTranslations(lang);
+    document.querySelectorAll('[data-lang-switch]').forEach((switchEl) => {
+      const current = switchEl.querySelector('.lang-current');
+      switchEl.classList.remove('open');
+      if (current) current.setAttribute('aria-expanded', 'false');
+    });
     listeners.forEach((handler) => handler(lang));
   };
 
   const init = (options = {}) => {
     const fallback = options.fallback || 'it';
     const safeLang = translations[fallback] ? fallback : 'it';
+
+    document.querySelectorAll('[data-lang-switch]').forEach((switchEl) => {
+      const current = switchEl.querySelector('.lang-current');
+      const menu = switchEl.querySelector('.lang-menu');
+
+      if (!current || !menu) return;
+
+      current.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const isOpen = switchEl.classList.toggle('open');
+        current.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      menu.addEventListener('click', (event) => {
+        if (event.target.closest('.lang-btn')) {
+          switchEl.classList.remove('open');
+          current.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('[data-lang-switch]').forEach((switchEl) => {
+        const current = switchEl.querySelector('.lang-current');
+        switchEl.classList.remove('open');
+        if (current) current.setAttribute('aria-expanded', 'false');
+      });
+    });
 
     document.querySelectorAll('.lang-btn').forEach((button) => {
       button.addEventListener('click', () => {

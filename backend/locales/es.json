@@ -1,0 +1,9 @@
+{
+  "greeting": "¡Hola, bienvenido!",
+  "login_success": "Inicio de sesión exitoso.",
+  "login_error": "Usuario o contraseña inválidos.",
+  "register_success": "Usuario registrado con éxito.",
+  "register_error": "Error al registrar usuario.",
+  "message_sent": "Mensaje enviado.",
+  "message_error": "Error al enviar mensaje."
+}
