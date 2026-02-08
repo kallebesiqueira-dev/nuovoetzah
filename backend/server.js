@@ -5,11 +5,22 @@ const { env, validateEnv } = require("./config/env");
 
 async function startServer() {
 	validateEnv();
-	await connectDb();
 
 	const server = app.listen(env.port, () => {
 		console.log(`Servidor rodando na porta ${env.port}`);
 	});
+
+	const connectWithRetry = async () => {
+		try {
+			await connectDb();
+			console.log("MongoDB conectado");
+		} catch (error) {
+			console.error("Falha ao conectar no MongoDB. Tentando novamente...", error);
+			setTimeout(connectWithRetry, 5000);
+		}
+	};
+
+	connectWithRetry();
 
 	const shutdown = () => {
 		server.close(() => {
