@@ -96,43 +96,6 @@
     width: 90vw;
   }
 }
-.nav {
-  transition: right 0.3s, opacity 0.3s;
-}
-@media (max-width: 840px) {
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -100vw;
-    width: 70vw;
-    max-width: 320px;
-    height: 100vh;
-    background: var(--bg-alt);
-    flex-direction: column;
-    gap: 32px;
-    align-items: flex-start;
-    padding: 80px 32px 32px 32px;
-    box-shadow: 0 0 32px rgba(0,0,0,0.25);
-    opacity: 0;
-    z-index: 15;
-  }
-  .nav.active {
-    right: 0;
-    opacity: 1;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .nav-wrap {
-    position: relative;
-  }
-}
-@media (max-width: 600px) {
-  .nav {
-    width: 90vw;
-    padding: 80px 16px 16px 16px;
-  }
-}
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap');
 
 :root {

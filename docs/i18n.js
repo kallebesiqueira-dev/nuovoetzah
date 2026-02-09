@@ -102,6 +102,41 @@
         linksTerms: 'Termini',
         copyright: '© 2026 EtzahWeb. Tutti i diritti riservati.'
       },
+      privacy: {
+        headTitle: 'Informativa sulla Privacy | EtzahWeb',
+        headDescription: 'Informativa sulla privacy di EtzahWeb.',
+        title: 'Informativa sulla Privacy',
+        updated: 'Aggiornata al 07/02/2026.',
+        intro: 'EtzahWeb tratta i dati personali forniti tramite il modulo di contatto per rispondere alle richieste, inviare preventivi e gestire le comunicazioni commerciali.',
+        dataTitle: 'Dati raccolti',
+        dataBody: 'Nome, email, azienda e messaggio inviato volontariamente.',
+        purposeTitle: 'Finalita del trattamento',
+        purposeBody: 'Contattare il lead, preparare proposte, migliorare il servizio e adempiere a eventuali obblighi legali.',
+        retentionTitle: 'Conservazione',
+        retentionBody: 'I dati vengono conservati per il tempo necessario a gestire la richiesta e per eventuali obblighi amministrativi.',
+        rightsTitle: "Diritti dell'interessato",
+        rightsBody: 'Puoi richiedere accesso, rettifica o cancellazione dei dati scrivendo a contato@etzahweb.com.',
+        contactTitle: 'Contatto',
+        contactBody: 'Per qualsiasi domanda, scrivi a contato@etzahweb.com.'
+      },
+      terms: {
+        headTitle: 'Termini di Servizio | EtzahWeb',
+        headDescription: 'Termini di servizio di EtzahWeb.',
+        title: 'Termini di Servizio',
+        updated: 'Aggiornati al 07/02/2026.',
+        scopeTitle: 'Ambito',
+        scopeBody: "Questi termini regolano l'uso del sito EtzahWeb e la richiesta di preventivi o servizi digitali.",
+        proposalsTitle: 'Proposte e pagamenti',
+        proposalsBody: 'Le proposte sono inviate su richiesta. I pagamenti, le scadenze e le condizioni specifiche sono definite nel contratto o nella proposta approvata.',
+        liabilityTitle: 'Responsabilita',
+        liabilityBody: 'EtzahWeb non e responsabile per interruzioni del servizio dovute a cause di forza maggiore o a terze parti.',
+        ipTitle: 'Proprieta intellettuale',
+        ipBody: 'Testi, layout e materiali creati restano di proprieta di EtzahWeb finche non vengono saldati i compensi concordati.',
+        changesTitle: 'Modifiche',
+        changesBody: 'I termini possono essere aggiornati. Le versioni pubblicate su questa pagina sono quelle valide.',
+        contactTitle: 'Contatto',
+        contactBody: 'Per domande sui termini, scrivi a contato@etzahweb.com.'
+      },
       login: {
         title: 'Area amministrativa',
         subtitle: 'Accedi per visualizzare i messaggi ricevuti.',
@@ -236,6 +271,41 @@
         linksPrivacy: 'Privacidade',
         linksTerms: 'Termos',
         copyright: '© 2026 EtzahWeb. Todos os direitos reservados.'
+      },
+      privacy: {
+        headTitle: 'Politica de Privacidade | EtzahWeb',
+        headDescription: 'Politica de privacidade da EtzahWeb.',
+        title: 'Politica de Privacidade',
+        updated: 'Atualizada em 07/02/2026.',
+        intro: 'A EtzahWeb trata os dados pessoais fornecidos pelo formulario de contato para responder solicitacoes, enviar propostas e gerenciar comunicacoes comerciais.',
+        dataTitle: 'Dados coletados',
+        dataBody: 'Nome, email, empresa e mensagem enviada voluntariamente.',
+        purposeTitle: 'Finalidade do tratamento',
+        purposeBody: 'Contatar o lead, preparar propostas, melhorar o servico e cumprir eventuais obrigacoes legais.',
+        retentionTitle: 'Retencao',
+        retentionBody: 'Os dados sao armazenados pelo tempo necessario para tratar a solicitacao e por obrigacoes administrativas.',
+        rightsTitle: 'Direitos do titular',
+        rightsBody: 'Voce pode solicitar acesso, retificacao ou exclusao dos dados escrevendo para contato@etzahweb.com.',
+        contactTitle: 'Contato',
+        contactBody: 'Para qualquer duvida, escreva para contato@etzahweb.com.'
+      },
+      terms: {
+        headTitle: 'Termos de Servico | EtzahWeb',
+        headDescription: 'Termos de servico da EtzahWeb.',
+        title: 'Termos de Servico',
+        updated: 'Atualizados em 07/02/2026.',
+        scopeTitle: 'Escopo',
+        scopeBody: 'Estes termos regulam o uso do site EtzahWeb e a solicitacao de orcamentos ou servicos digitais.',
+        proposalsTitle: 'Propostas e pagamentos',
+        proposalsBody: 'As propostas sao enviadas sob solicitacao. Pagamentos, prazos e condicoes especificas sao definidos no contrato ou na proposta aprovada.',
+        liabilityTitle: 'Responsabilidade',
+        liabilityBody: 'A EtzahWeb nao se responsabiliza por interrupcoes do servico por motivos de forca maior ou terceiros.',
+        ipTitle: 'Propriedade intelectual',
+        ipBody: 'Textos, layout e materiais criados permanecem propriedade da EtzahWeb ate o pagamento integral.',
+        changesTitle: 'Alteracoes',
+        changesBody: 'Os termos podem ser atualizados. As versoes publicadas nesta pagina sao as vigentes.',
+        contactTitle: 'Contato',
+        contactBody: 'Para duvidas sobre os termos, escreva para contato@etzahweb.com.'
       },
       login: {
         title: 'Área administrativa',
@@ -372,6 +442,41 @@
         linksTerms: 'Terms',
         copyright: '© 2026 EtzahWeb. All rights reserved.'
       },
+      privacy: {
+        headTitle: 'Privacy Policy | EtzahWeb',
+        headDescription: 'Privacy policy for EtzahWeb.',
+        title: 'Privacy Policy',
+        updated: 'Updated on 07/02/2026.',
+        intro: 'EtzahWeb processes the personal data provided via the contact form to respond to requests, send proposals, and manage commercial communications.',
+        dataTitle: 'Data collected',
+        dataBody: 'Name, email, company, and the message submitted voluntarily.',
+        purposeTitle: 'Purpose of processing',
+        purposeBody: 'Contact the lead, prepare proposals, improve the service, and comply with legal obligations when applicable.',
+        retentionTitle: 'Retention',
+        retentionBody: 'Data is stored for the time needed to handle the request and for administrative obligations when applicable.',
+        rightsTitle: 'Data subject rights',
+        rightsBody: 'You can request access, correction, or deletion of data by writing to contato@etzahweb.com.',
+        contactTitle: 'Contact',
+        contactBody: 'For any questions, write to contato@etzahweb.com.'
+      },
+      terms: {
+        headTitle: 'Terms of Service | EtzahWeb',
+        headDescription: 'Terms of service for EtzahWeb.',
+        title: 'Terms of Service',
+        updated: 'Updated on 07/02/2026.',
+        scopeTitle: 'Scope',
+        scopeBody: 'These terms govern the use of the EtzahWeb site and the request for quotes or digital services.',
+        proposalsTitle: 'Proposals and payments',
+        proposalsBody: 'Proposals are sent upon request. Payments, deadlines, and specific conditions are defined in the contract or approved proposal.',
+        liabilityTitle: 'Liability',
+        liabilityBody: 'EtzahWeb is not responsible for service interruptions due to force majeure or third parties.',
+        ipTitle: 'Intellectual property',
+        ipBody: 'Texts, layouts, and materials created remain the property of EtzahWeb until agreed fees are fully paid.',
+        changesTitle: 'Changes',
+        changesBody: 'The terms may be updated. The versions published on this page are the valid ones.',
+        contactTitle: 'Contact',
+        contactBody: 'For questions about the terms, write to contato@etzahweb.com.'
+      },
       login: {
         title: 'Admin area',
         subtitle: 'Access to view received messages.',
@@ -416,12 +521,22 @@
     const titleEl = document.querySelector('title[data-i18n-title]');
     const metaDescription = document.querySelector('meta[data-i18n-description]');
 
-    if (titleEl && langData.head?.title) {
-      titleEl.textContent = langData.head.title;
+    if (titleEl) {
+      const titleKey = titleEl.getAttribute('data-i18n-title');
+      const titleValue = titleKey ? getNestedValue(langData, titleKey) : langData.head?.title;
+      if (typeof titleValue === 'string') {
+        titleEl.textContent = titleValue;
+      }
     }
 
-    if (metaDescription && langData.head?.description) {
-      metaDescription.setAttribute('content', langData.head.description);
+    if (metaDescription) {
+      const descriptionKey = metaDescription.getAttribute('data-i18n-description');
+      const descriptionValue = descriptionKey
+        ? getNestedValue(langData, descriptionKey)
+        : langData.head?.description;
+      if (typeof descriptionValue === 'string') {
+        metaDescription.setAttribute('content', descriptionValue);
+      }
     }
   };
 
