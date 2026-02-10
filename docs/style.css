@@ -883,7 +883,7 @@ a {
 
 .admin-actions .btn {
   background: rgba(15, 17, 21, 0.7);
-  border: 1px solid var(--stroke);
+  border: 1px solid transparent;
   color: var(--text);
 }
 
@@ -896,9 +896,9 @@ a {
 .admin-actions .btn:focus-visible,
 .message-actions .btn:hover,
 .message-actions .btn:focus-visible {
-  background: var(--accent);
-  color: #1b1302;
-  box-shadow: 0 10px 26px rgba(245, 185, 66, 0.35);
+  background: rgba(15, 17, 21, 0.7);
+  color: var(--accent);
+  box-shadow: 0 10px 26px rgba(245, 185, 66, 0.2);
   transform: translateY(-2px);
 }
 
