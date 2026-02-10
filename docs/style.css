@@ -877,7 +877,7 @@ a {
 
 .admin-actions {
   display: flex;
-  gap: 12px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
