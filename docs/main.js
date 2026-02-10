@@ -36,16 +36,6 @@ const apiBase = apiMeta && apiMeta.content.trim()
   ? apiMeta.content.trim()
   : (window.location.port === '5500' ? 'http://127.0.0.1:3000' : '');
 
-document.querySelectorAll('[data-alert-message]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const message = link.getAttribute('data-alert-message');
-    if (message) {
-      alert(message);
-    }
-  });
-});
-
 I18N.init({ fallback: 'it' });
 I18N.onChange(() => {
   statusEl.textContent = '';
