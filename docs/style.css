@@ -704,11 +704,11 @@ a {
 }
 
 .social-link {
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 16px;
+  border-radius: 50%;
   border: 1px solid transparent;
   color: #ffffff;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
@@ -716,10 +716,10 @@ a {
 }
 
 .social-link svg {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   stroke: currentColor;
-  stroke-width: 1.7;
+  stroke-width: 1.9;
   fill: none;
 }
 

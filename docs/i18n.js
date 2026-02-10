@@ -79,7 +79,7 @@
       },
       form: {
         nameLabel: 'Nome completo',
-        namePlaceholder: 'Es: Larissa Rocha',
+        namePlaceholder: 'Es: Pietro Bernasconi',
         emailLabel: 'Email professionale',
         emailPlaceholder: 'tuo@azienda.com',
         phoneLabel: 'WhatsApp',
