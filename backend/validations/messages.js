@@ -23,11 +23,30 @@ const listMessages = Joi.object({
   query: Joi.object({
     limit: Joi.number().integer().min(1).max(200).default(50),
     before: Joi.date().iso().optional(),
+    trash: Joi.boolean().truthy("true").falsy("false").optional(),
   }).default({}),
   params: Joi.object().default({}),
+});
+
+const deleteMessage = Joi.object({
+  body: Joi.object().default({}),
+  query: Joi.object().default({}),
+  params: Joi.object({
+    id: Joi.string().hex().length(24).required(),
+  }).required(),
+});
+
+const purgeMessage = Joi.object({
+  body: Joi.object().default({}),
+  query: Joi.object().default({}),
+  params: Joi.object({
+    id: Joi.string().hex().length(24).required(),
+  }).required(),
 });
 
 module.exports = {
   createMessage,
   listMessages,
+  deleteMessage,
+  purgeMessage,
 };

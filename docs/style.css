@@ -892,10 +892,24 @@ a {
   border-radius: 18px;
   background: var(--card);
   border: 1px solid var(--stroke);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.message-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 185, 66, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .message-card h4 {
   margin: 0 0 6px;
+}
+
+.message-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  justify-content: flex-end;
 }
 
 @keyframes floatUp {

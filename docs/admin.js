@@ -1,28 +1,38 @@
 const messagesContainer = document.getElementById('messages');
 const adminStatus = document.getElementById('adminStatus');
+const adminTitle = document.getElementById('adminTitle');
+const adminSubtitle = document.getElementById('adminSubtitle');
+const inboxBtn = document.getElementById('inboxBtn');
+const trashBtn = document.getElementById('trashBtn');
 const refreshBtn = document.getElementById('refreshBtn');
 const logoutBtn = document.getElementById('logoutBtn');
 let cachedMessages = [];
 let statusState = 'idle';
+let currentView = 'inbox';
 const apiMeta = document.querySelector('meta[name="api-base"]');
 const apiBase = apiMeta && apiMeta.content.trim()
   ? apiMeta.content.trim()
   : (window.location.port === '5500' ? 'http://127.0.0.1:3000' : '');
 
 I18N.init({ fallback: 'it' });
+updateHeader();
 updateStatus();
 renderMessages(cachedMessages);
 loadMessages();
 I18N.onChange(() => {
+  updateHeader();
   updateStatus();
   renderMessages(cachedMessages);
 });
 
 function renderEmpty() {
+  const isTrash = currentView === 'trash';
+  const titleKey = isTrash ? 'admin.trashEmptyTitle' : 'admin.emptyTitle';
+  const bodyKey = isTrash ? 'admin.trashEmptyBody' : 'admin.emptyBody';
   messagesContainer.innerHTML = `
     <div class="message-card">
-      <h4>${I18N.t('admin.emptyTitle')}</h4>
-      <p>${I18N.t('admin.emptyBody')}</p>
+      <h4>${I18N.t(titleKey)}</h4>
+      <p>${I18N.t(bodyKey)}</p>
     </div>
   `;
 }
@@ -39,15 +49,33 @@ function renderMessages(messages) {
     const card = document.createElement('article');
     card.className = 'message-card';
     const messageText = m.message || m.text || '';
+    const actionLabel = currentView === 'trash'
+      ? I18N.t('admin.purgeBtn')
+      : I18N.t('admin.deleteBtn');
+    const actionName = currentView === 'trash' ? 'purge' : 'delete';
     card.innerHTML = `
       <h4>${m.name || m.username || I18N.t('admin.leadName')}</h4>
       <p><strong>${I18N.t('admin.emailLabel')}:</strong> ${m.email || I18N.t('admin.emailFallback')}</p>
       <p><strong>${I18N.t('admin.phoneLabel')}:</strong> ${m.phone || I18N.t('admin.phoneFallback')}</p>
       <p><strong>${I18N.t('admin.companyLabel')}:</strong> ${m.company || I18N.t('admin.companyFallback')}</p>
       <p><strong>${I18N.t('admin.messageLabel')}:</strong> ${messageText || I18N.t('admin.messageFallback')}</p>
+      <div class="message-actions">
+        <button class="btn btn-outline" type="button" data-action="${actionName}" data-id="${m._id}">${actionLabel}</button>
+      </div>
     `;
     messagesContainer.appendChild(card);
   });
+}
+
+function updateHeader() {
+  if (!adminTitle || !adminSubtitle) return;
+  if (currentView === 'trash') {
+    adminTitle.textContent = I18N.t('admin.titleTrash');
+    adminSubtitle.textContent = I18N.t('admin.subtitleTrash');
+  } else {
+    adminTitle.textContent = I18N.t('admin.titleInbox');
+    adminSubtitle.textContent = I18N.t('admin.subtitleInbox');
+  }
 }
 
 function updateStatus() {
@@ -57,7 +85,9 @@ function updateStatus() {
   }
 
   if (statusState === 'none') {
-    adminStatus.textContent = I18N.t('admin.noneFound');
+    adminStatus.textContent = I18N.t(
+      currentView === 'trash' ? 'admin.trashNoneFound' : 'admin.noneFound'
+    );
     return;
   }
 
@@ -78,6 +108,37 @@ function getAccessToken() {
 function setAccessToken(token) {
   localStorage.setItem('accessToken', token);
   localStorage.removeItem('token');
+}
+
+async function authorizedFetch(url, options = {}) {
+  const token = getAccessToken();
+  if (!token) return null;
+
+  const res = await fetch(url, {
+    ...options,
+    headers: {
+      ...(options.headers || {}),
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (res.status !== 401 && res.status !== 403) {
+    return res;
+  }
+
+  const refreshed = await refreshAccessToken();
+  if (!refreshed) return res;
+
+  const retryToken = getAccessToken();
+  if (!retryToken) return res;
+
+  return fetch(url, {
+    ...options,
+    headers: {
+      ...(options.headers || {}),
+      Authorization: `Bearer ${retryToken}`,
+    },
+  });
 }
 
 async function refreshAccessToken() {
@@ -101,14 +162,8 @@ async function refreshAccessToken() {
 }
 
 async function fetchMessages() {
-  const token = getAccessToken();
-  if (!token) return null;
-
-  return fetch(`${apiBase}/api/messages`, {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  });
+  const query = currentView === 'trash' ? '?trash=true' : '';
+  return authorizedFetch(`${apiBase}/api/messages${query}`);
 }
 
 async function loadMessages() {
@@ -124,14 +179,7 @@ async function loadMessages() {
   messagesContainer.innerHTML = '';
 
   try {
-    let res = await fetchMessages();
-
-    if (res && (res.status === 401 || res.status === 403)) {
-      const refreshed = await refreshAccessToken();
-      if (refreshed) {
-        res = await fetchMessages();
-      }
-    }
+    const res = await fetchMessages();
 
     if (!res || !res.ok) {
       throw new Error('Falha ao carregar.');
@@ -157,7 +205,56 @@ async function loadMessages() {
   }
 }
 
+async function deleteMessage(id, action) {
+  const confirmKey = action === 'purge' ? 'admin.purgeConfirm' : 'admin.deleteConfirm';
+  if (!window.confirm(I18N.t(confirmKey))) {
+    return;
+  }
+
+  const path = action === 'purge'
+    ? `${apiBase}/api/messages/${id}/purge`
+    : `${apiBase}/api/messages/${id}`;
+
+  try {
+    const res = await authorizedFetch(path, { method: 'DELETE' });
+    if (!res || !res.ok) {
+      throw new Error('Falha ao apagar.');
+    }
+
+    adminStatus.textContent = I18N.t(
+      action === 'purge' ? 'admin.purgedStatus' : 'admin.deletedStatus'
+    );
+    loadMessages();
+  } catch (error) {
+    adminStatus.textContent = I18N.t('admin.actionError');
+  }
+}
+
+function setView(view) {
+  currentView = view;
+  updateHeader();
+  updateStatus();
+  if (inboxBtn && trashBtn) {
+    inboxBtn.classList.toggle('btn-outline', view === 'inbox');
+    inboxBtn.classList.toggle('btn-ghost', view !== 'inbox');
+    trashBtn.classList.toggle('btn-outline', view === 'trash');
+    trashBtn.classList.toggle('btn-ghost', view !== 'trash');
+  }
+  loadMessages();
+}
+
+messagesContainer.addEventListener('click', (event) => {
+  const target = event.target.closest('[data-action]');
+  if (!target) return;
+  const action = target.getAttribute('data-action');
+  const id = target.getAttribute('data-id');
+  if (!action || !id) return;
+  deleteMessage(id, action);
+});
+
 refreshBtn.addEventListener('click', loadMessages);
+if (inboxBtn) inboxBtn.addEventListener('click', () => setView('inbox'));
+if (trashBtn) trashBtn.addEventListener('click', () => setView('trash'));
 logoutBtn.addEventListener('click', async () => {
   try {
     await fetch(`${apiBase}/api/auth/logout`, {

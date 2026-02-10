@@ -40,6 +40,11 @@ const messageSchema = new mongoose.Schema({
     trim: true,
     maxlength: 2000,
   },
+  deletedAt: {
+    type: Date,
+    default: null,
+    index: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

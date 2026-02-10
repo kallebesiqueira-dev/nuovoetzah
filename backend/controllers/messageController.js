@@ -3,8 +3,15 @@ const asyncHandler = require("../utils/asyncHandler");
 const { notifyNewLead } = require("../utils/notifications");
 
 const listMessages = asyncHandler(async (req, res) => {
-  const { limit, before } = req.query;
+  const { limit, before, trash } = req.query;
   const query = {};
+  const showTrash = Boolean(trash);
+
+  if (showTrash) {
+    query.deletedAt = { $ne: null };
+  } else {
+    query.$or = [{ deletedAt: null }, { deletedAt: { $exists: false } }];
+  }
 
   if (before) {
     query.createdAt = { $lt: new Date(before) };
@@ -49,7 +56,36 @@ const addMessage = asyncHandler(async (req, res) => {
   res.status(201).json(saved);
 });
 
+const deleteMessage = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const message = await Message.findOneAndUpdate(
+    { _id: id, $or: [{ deletedAt: null }, { deletedAt: { $exists: false } }] },
+    { $set: { deletedAt: new Date() } },
+    { new: true }
+  );
+
+  if (!message) {
+    return res.status(404).json({ message: "Mensagem nao encontrada." });
+  }
+
+  res.json({ message: "Mensagem movida para lixeira." });
+});
+
+const purgeMessage = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+
+  const deleted = await Message.findByIdAndDelete(id);
+  if (!deleted) {
+    return res.status(404).json({ message: "Mensagem nao encontrada." });
+  }
+
+  res.json({ message: "Mensagem apagada." });
+});
+
 module.exports = {
   listMessages,
   addMessage,
+  deleteMessage,
+  purgeMessage,
 };

@@ -12,6 +12,8 @@
 			<div class="container nav-wrap">
 				<a class="logo" href="index.html">Etzah<span>Web</span></a>
 				<div class="admin-actions">
+					<button id="inboxBtn" class="btn btn-outline" type="button" data-i18n="admin.inboxBtn">Inbox</button>
+					<button id="trashBtn" class="btn btn-ghost" type="button" data-i18n="admin.trashBtn">Lixeira</button>
 					<button id="refreshBtn" class="btn btn-outline" type="button" data-i18n="admin.refresh">Aggiorna</button>
 					<button id="logoutBtn" class="btn btn-ghost" type="button" data-i18n="admin.logout">Esci</button>
 					<div class="lang-switch" aria-label="Language" data-lang-switch>
@@ -41,8 +43,8 @@
 
 		<main class="container">
 			<section class="admin-header">
-				<h2 data-i18n="admin.title">Messaggi ricevuti</h2>
-				<p class="lead" data-i18n="admin.subtitle">Segui i lead e rispondi rapidamente.</p>
+				<h2 id="adminTitle" data-i18n="admin.titleInbox">Messaggi ricevuti</h2>
+				<p id="adminSubtitle" class="lead" data-i18n="admin.subtitleInbox">Segui i lead e rispondi rapidamente.</p>
 				<p id="adminStatus" class="form-status" role="status"></p>
 			</section>
 			<section id="messages" class="messages-list"></section>

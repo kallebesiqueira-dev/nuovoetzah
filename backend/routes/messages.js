@@ -21,4 +21,18 @@ router.post(
 	messageController.addMessage
 );
 
+router.delete(
+	"/:id",
+	requireAuth,
+	validate(messageValidation.deleteMessage),
+	messageController.deleteMessage
+);
+
+router.delete(
+	"/:id/purge",
+	requireAuth,
+	validate(messageValidation.purgeMessage),
+	messageController.purgeMessage
+);
+
 module.exports = router;
