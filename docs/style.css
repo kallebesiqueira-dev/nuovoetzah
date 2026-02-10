@@ -881,6 +881,35 @@ a {
   flex-wrap: wrap;
 }
 
+.admin-actions .btn,
+.message-actions .btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.admin-actions .btn:hover,
+.admin-actions .btn:focus-visible,
+.message-actions .btn:hover,
+.message-actions .btn:focus-visible {
+  background: var(--accent);
+  color: #1b1302;
+  box-shadow: 0 10px 26px rgba(245, 185, 66, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  padding: 10px 12px;
+  border-radius: 12px;
+  line-height: 0;
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+}
+
 .messages-list {
   display: grid;
   gap: 16px;

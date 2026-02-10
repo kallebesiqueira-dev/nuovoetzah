@@ -60,7 +60,15 @@ function renderMessages(messages) {
       <p><strong>${I18N.t('admin.companyLabel')}:</strong> ${m.company || I18N.t('admin.companyFallback')}</p>
       <p><strong>${I18N.t('admin.messageLabel')}:</strong> ${messageText || I18N.t('admin.messageFallback')}</p>
       <div class="message-actions">
-        <button class="btn btn-outline" type="button" data-action="${actionName}" data-id="${m._id}">${actionLabel}</button>
+        <button class="btn btn-outline btn-icon" type="button" data-action="${actionName}" data-id="${m._id}" title="${actionLabel}" aria-label="${actionLabel}">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 7h14" />
+            <path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+            <path d="M7 7l1 12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2l1-12" />
+            <path d="M10 11v6" />
+            <path d="M14 11v6" />
+          </svg>
+        </button>
       </div>
     `;
     messagesContainer.appendChild(card);
