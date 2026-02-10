@@ -83,7 +83,7 @@
         emailLabel: 'Email professionale',
         emailPlaceholder: 'tuo@azienda.com',
         phoneLabel: 'WhatsApp',
-        phonePlaceholder: 'Es: +39 333 123 4567',
+        phonePlaceholder: 'Es: +41 79 839 9268',
         companyLabel: 'Azienda',
         companyPlaceholder: 'Nome della tua azienda',
         messageLabel: 'Racconta il progetto',
