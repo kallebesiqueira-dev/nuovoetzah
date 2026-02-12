@@ -167,7 +167,7 @@ a {
 }
 
 .site-header .logo {
-  text-shadow: 0 0 26px rgba(245, 185, 66, 0.55), 0 0 40px rgba(245, 185, 66, 0.25);
+  text-shadow: 0 0 10px rgba(245, 185, 66, 0.25);
   animation: glowPulse 3.2s ease-in-out infinite;
 }
 
@@ -182,14 +182,36 @@ a {
   font-weight: 500;
 }
 
-.nav a {
+.nav a:not(.btn) {
+  position: relative;
+  padding: 6px 2px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
   transition: color 0.2s ease;
+}
+
+.nav a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s ease;
 }
 
 .nav a:hover,
 .nav a:focus-visible {
   color: var(--accent);
-  text-shadow: 0 0 12px rgba(245, 185, 66, 0.45);
+  outline: none;
+  text-shadow: none;
+}
+
+.nav a:not(.btn):hover::after,
+.nav a:not(.btn):focus-visible::after {
+  width: 100%;
 }
 
 .lang-switch {
@@ -1097,9 +1119,10 @@ a {
 
 .home-page {
   background:
-    radial-gradient(1200px 600px at 10% -10%, rgba(72, 191, 255, 0.2), transparent 60%),
-    radial-gradient(900px 500px at 90% 10%, rgba(206, 119, 255, 0.18), transparent 60%),
-    linear-gradient(180deg, #090b12 0%, #0d1018 42%, #0a0d15 100%);
+    radial-gradient(1200px 600px at 10% -10%, rgba(112, 158, 255, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 10%, rgba(228, 165, 255, 0.1), transparent 60%),
+    radial-gradient(760px 340px at 52% -6%, rgba(245, 185, 66, 0.08), transparent 68%),
+    linear-gradient(180deg, #090b12 0%, #0d1018 42%, #0b0e16 100%);
   overflow-x: hidden;
 }
 
@@ -1123,10 +1146,10 @@ a {
 .home-page .bg-aurora {
   z-index: -3;
   background:
-    radial-gradient(70rem 35rem at -10% 35%, rgba(64, 165, 255, 0.15), transparent 58%),
-    radial-gradient(60rem 30rem at 110% 70%, rgba(210, 110, 255, 0.12), transparent 60%),
-    radial-gradient(48rem 24rem at 50% 12%, rgba(255, 194, 88, 0.1), transparent 62%);
-  filter: blur(14px);
+    radial-gradient(70rem 35rem at -10% 35%, rgba(108, 172, 255, 0.13), transparent 58%),
+    radial-gradient(60rem 30rem at 110% 70%, rgba(205, 128, 255, 0.1), transparent 60%),
+    radial-gradient(48rem 24rem at 50% 12%, rgba(255, 198, 98, 0.12), transparent 62%);
+  filter: blur(16px);
   animation: auroraSweep 16s ease-in-out infinite alternate;
 }
 
@@ -1158,8 +1181,8 @@ a {
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle, rgba(132, 177, 255, 0.2) 0%, rgba(132, 177, 255, 0.08) 35%, transparent 70%);
-  filter: blur(10px);
+  background: radial-gradient(circle, rgba(147, 183, 255, 0.16) 0%, rgba(147, 183, 255, 0.06) 36%, transparent 70%);
+  filter: blur(14px);
   opacity: 0;
   transform: translate3d(-999px, -999px, 0);
   transition: opacity 0.25s ease;
@@ -1170,21 +1193,34 @@ a {
 }
 
 .home-page .site-header {
-  background: rgba(10, 12, 18, 0.72);
-  border-bottom: 1px solid rgba(146, 180, 255, 0.2);
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.24);
+  background: rgba(10, 12, 18, 0.78);
+  border-bottom: 1px solid rgba(166, 188, 233, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .home-page .nav a:not(.btn-outline) {
-  padding: 8px 12px;
-  border-radius: 999px;
-  border: 1px solid transparent;
+  padding: 6px 2px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
 }
 
 .home-page .nav a:not(.btn-outline):hover,
 .home-page .nav a:not(.btn-outline):focus-visible {
-  border-color: rgba(164, 194, 255, 0.28);
-  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  background: transparent;
+}
+
+.policy-page {
+  background:
+    radial-gradient(820px 360px at 50% -10%, rgba(245, 185, 66, 0.08), transparent 65%),
+    linear-gradient(180deg, #0d1018 0%, #111522 46%, #0f1320 100%);
+}
+
+.policy-page .site-header {
+  background: rgba(10, 12, 18, 0.76);
+  border-bottom: 1px solid rgba(166, 188, 233, 0.18);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
 }
 
 .home-page .hero {
@@ -1205,11 +1241,11 @@ a {
 .home-page .hero-copy h1 {
   font-size: clamp(2.8rem, 4.2vw, 4.4rem);
   letter-spacing: 0.2px;
-  background: linear-gradient(115deg, #ffffff 0%, #d8e5ff 35%, #f4d8ff 58%, #ffffff 100%);
+  background: linear-gradient(115deg, #ffffff 0%, #e2ebff 34%, #f7e6d0 60%, #ffffff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 0 30px rgba(148, 182, 255, 0.22);
+  text-shadow: 0 8px 28px rgba(118, 147, 210, 0.2), 0 0 16px rgba(245, 185, 66, 0.12);
 }
 
 .home-page .lead {
@@ -1244,28 +1280,28 @@ a {
 }
 
 .home-page .btn-primary {
-  background: linear-gradient(135deg, #f9c86c 0%, #f2b24d 45%, #de9440 100%);
-  box-shadow: 0 12px 36px rgba(245, 185, 66, 0.34), 0 0 24px rgba(245, 185, 66, 0.2);
+  background: linear-gradient(135deg, #f7cd7c 0%, #efb458 44%, #dc9346 100%);
+  box-shadow: 0 12px 30px rgba(245, 185, 66, 0.26), 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .home-page .btn-ghost {
-  border-color: rgba(176, 195, 255, 0.34);
-  background: rgba(19, 24, 38, 0.68);
+  border-color: rgba(181, 199, 236, 0.32);
+  background: rgba(20, 24, 36, 0.74);
   color: #dce5ff;
 }
 
 .home-page .hero-metrics {
-  border-color: rgba(168, 192, 255, 0.28);
-  background: linear-gradient(155deg, rgba(24, 31, 49, 0.76), rgba(12, 16, 28, 0.88));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 34px rgba(0, 0, 0, 0.28);
+  border-color: rgba(175, 194, 232, 0.26);
+  background: linear-gradient(155deg, rgba(24, 31, 49, 0.8), rgba(12, 16, 28, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 16px 34px rgba(0, 0, 0, 0.3), 0 0 18px rgba(245, 185, 66, 0.08);
 }
 
 .home-page .hero-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(171, 195, 255, 0.25);
-  background: linear-gradient(160deg, rgba(25, 33, 51, 0.78), rgba(14, 19, 32, 0.88));
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.38), 0 0 34px rgba(125, 168, 255, 0.18);
+  border: 1px solid rgba(176, 196, 232, 0.24);
+  background: linear-gradient(160deg, rgba(25, 33, 51, 0.8), rgba(14, 19, 32, 0.9));
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4), 0 0 24px rgba(245, 185, 66, 0.1);
 }
 
 .home-page .hero-card::after {
@@ -1274,7 +1310,7 @@ a {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(157, 197, 255, 0.42), transparent 45%, rgba(246, 194, 255, 0.3));
+  background: linear-gradient(135deg, rgba(165, 196, 246, 0.32), transparent 45%, rgba(245, 185, 66, 0.2));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -1315,8 +1351,8 @@ a {
 .home-page .pricing-card,
 .home-page .form-card {
   background: linear-gradient(155deg, rgba(21, 28, 43, 0.75), rgba(12, 17, 29, 0.9));
-  border-color: rgba(155, 186, 255, 0.22);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+  border-color: rgba(171, 188, 222, 0.22);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.34);
 }
 
 .home-page .card,
@@ -1357,13 +1393,13 @@ a {
 .home-page .pricing-card:hover,
 .home-page .mini-card:hover {
   transform: translateY(-7px) scale(1.01);
-  border-color: rgba(176, 204, 255, 0.38);
-  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.42), 0 0 26px rgba(117, 168, 255, 0.16);
+  border-color: rgba(196, 209, 236, 0.38);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.4), 0 0 18px rgba(245, 185, 66, 0.1);
 }
 
 .home-page .pricing-card.featured {
-  border-color: rgba(245, 185, 66, 0.58);
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.45), 0 0 36px rgba(245, 185, 66, 0.22);
+  border-color: rgba(245, 185, 66, 0.5);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.42), 0 0 24px rgba(245, 185, 66, 0.16);
 }
 
 .home-page .section-title h2 {
@@ -1375,14 +1411,14 @@ a {
   content: '';
   display: block;
   width: 74%;
-  height: 3px;
+  height: 2px;
   margin-top: 10px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(122, 175, 255, 0.8), rgba(245, 185, 66, 0.88));
+  background: linear-gradient(90deg, rgba(151, 186, 246, 0.82), rgba(245, 185, 66, 0.86));
 }
 
 .home-page .form-card {
-  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.42), 0 0 24px rgba(118, 171, 255, 0.12);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4), 0 0 16px rgba(245, 185, 66, 0.08);
 }
 
 .home-page .field input,
@@ -1394,7 +1430,7 @@ a {
 .home-page .field input:focus,
 .home-page .field textarea:focus {
   border-color: rgba(153, 189, 255, 0.72);
-  box-shadow: 0 0 0 4px rgba(112, 162, 255, 0.16);
+  box-shadow: 0 0 0 4px rgba(126, 169, 246, 0.14), 0 0 0 1px rgba(245, 185, 66, 0.18);
 }
 
 .home-page .magnetic {
