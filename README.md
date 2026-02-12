@@ -11,7 +11,7 @@ Repositorio publico do EtzahWeb.
 2) Instale dependencias: npm install
 3) Inicie: npm start
 
-## Notificacoes (email + WhatsApp)
+## Notificacoes (WhatsApp + Email)
 Defina estas variaveis no Render para receber leads:
 - EMAIL_HOST (ex.: smtp.gmail.com)
 - EMAIL_PORT (ex.: 465)

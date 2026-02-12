@@ -41,7 +41,7 @@
         },
         card3: {
           title: 'Automazioni & Funnel',
-          body: 'Integrazione con CRM, WhatsApp e email per non perdere nessun lead.',
+          body: 'Integrazione con CRM, WhatsApp + Email per non perdere nessun lead.',
           tag: 'Processi intelligenti'
         }
       },
@@ -227,7 +227,7 @@
         },
         card3: {
           title: 'Automações & Funis',
-          body: 'Integração com CRM, WhatsApp e email para não perder nenhum lead.',
+          body: 'Integração com CRM, WhatsApp + Email para não perder nenhum lead.',
           tag: 'Processos inteligentes'
         }
       },
@@ -413,7 +413,7 @@
         },
         card3: {
           title: 'Automation & Funnels',
-          body: 'Integrations with CRM, WhatsApp, and email so no lead is lost.',
+          body: 'Integrations with CRM, WhatsApp + Email so no lead is lost.',
           tag: 'Smart processes'
         }
       },
