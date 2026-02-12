@@ -73,8 +73,8 @@
           value: '7-14 giorni'
         },
         card2: {
-          label: 'Canale diretto',
-          value: 'WhatsApp'
+          label: 'Canale ',
+          value: 'WhatsApp + Email'
         }
       },
       form: {
@@ -259,8 +259,8 @@
           value: '7 a 14 dias'
         },
         card2: {
-          label: 'Canal direto',
-          value: 'WhatsApp'
+          label: 'Canal ',
+          value: 'WhatsApp + Email'
         }
       },
       form: {
@@ -445,8 +445,8 @@
           value: '7 to 14 days'
         },
         card2: {
-          label: 'Direct channel',
-          value: 'WhatsApp'
+          label: 'Channel ',
+          value: 'WhatsApp + Email'
         }
       },
       form: {
