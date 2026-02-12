@@ -877,17 +877,39 @@ a {
 
 .admin-page {
   min-height: 100vh;
-  background: var(--bg);
+}
+
+.admin-nav-wrap {
+  gap: 18px;
+}
+
+.admin-top-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .admin-header {
-  padding: 32px 0;
+  margin-bottom: 22px;
+}
+
+.admin-header h1 {
+  margin: 0 0 10px;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+}
+
+.admin-panel {
+  padding: 22px;
 }
 
 .admin-actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--stroke);
 }
 
 .admin-actions .btn {
@@ -929,7 +951,7 @@ a {
 .messages-list {
   display: grid;
   gap: 16px;
-  padding-bottom: 60px;
+  padding-bottom: 12px;
 }
 
 .message-card {
@@ -950,11 +972,50 @@ a {
   margin: 0 0 6px;
 }
 
+.message-card p {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.message-card strong {
+  color: var(--text);
+}
+
 .message-actions {
   display: flex;
   gap: 12px;
   margin-top: 14px;
   justify-content: flex-end;
+}
+
+@media (max-width: 840px) {
+  .admin-nav-wrap {
+    align-items: center;
+  }
+
+  .admin-top-controls {
+    width: auto;
+    justify-content: flex-end;
+  }
+
+  .admin-panel {
+    padding: 18px;
+  }
+
+  .admin-actions {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .admin-actions .btn {
+    width: 100%;
+  }
 }
 
 @keyframes floatUp {
