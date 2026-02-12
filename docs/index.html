@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#121318">
+    <meta name="robots" content="index,follow">
     <meta name="api-base" content="https://api.etzahweb.com">
     <title data-i18n-title="title">EtzahWeb | Soluzioni Digitali Premium</title>
     <meta name="description" data-i18n-description="description" content="Studio freelance specializzato in siti, landing page e automazioni per aziende che vogliono vendere di più.">
@@ -27,13 +28,13 @@
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="logo" href="index.html">Etzah<span>Web</span></a>
-        <nav class="nav">
+        <nav id="primary-nav" class="nav">
           <a href="#servicos" data-i18n="nav.services">Servizi</a>
           <a href="#processo" data-i18n="nav.process">Processo</a>
           <a href="#prezzi" data-i18n="nav.pricing">Prezzi</a>
           <a href="#contato" class="btn btn-outline" data-i18n="nav.contact">Contatto</a>
         </nav>
-        <button class="hamburger" aria-label="Menu" aria-expanded="false">
+        <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
@@ -231,7 +232,7 @@
                   <span data-i18n="contact.card1.label">Tempo medio</span>
                 </div>
                 <div class="contact-links">
-                  <a class="social-link instagram" href="https://instagram.com/etzahweb" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">
+                  <a class="social-link instagram" href="https://instagram.com/etzahweb" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <rect x="4" y="4" width="16" height="16" rx="4" ry="4" />
                       <circle cx="12" cy="12" r="4" />
@@ -246,7 +247,7 @@
                   <strong data-i18n="contact.card2.value">WhatsApp + Email</strong>
                 </div>
                 <div class="contact-links">
-                  <a class="social-link whatsapp" href="https://wa.me/41798399268" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener">
+                  <a class="social-link whatsapp" href="https://wa.me/41798399268" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                       <circle cx="12" cy="12" r="8" />
                       <path d="M9.5 9.5c.6 1.7 2.1 3.2 3.8 3.8l1.2-1.2c.2-.2.5-.2.7-.1l1.3.5c.3.1.5.4.4.8-.2.9-1.1 2-2.2 2-2.9 0-6-3.1-6-6 0-1.1 1.1-2 2-2 .4 0 .7.2.8.5l.5 1.3c.1.2 0 .5-.1.7l-1.2 1.2z" />
@@ -259,19 +260,19 @@
           <form id="contactForm" class="form-card">
             <div class="field">
               <label for="nome" data-i18n="form.nameLabel">Nome completo</label>
-              <input id="nome" name="nome" type="text" placeholder="Es: Larissa Rocha" data-i18n-placeholder="form.namePlaceholder" required>
+              <input id="nome" name="nome" type="text" placeholder="Es: Larissa Rocha" data-i18n-placeholder="form.namePlaceholder" autocomplete="name" required>
             </div>
             <div class="field">
               <label for="email" data-i18n="form.emailLabel">Email professionale</label>
-              <input id="email" name="email" type="email" placeholder="tuo@azienda.com" data-i18n-placeholder="form.emailPlaceholder" required>
+              <input id="email" name="email" type="email" placeholder="tuo@azienda.com" data-i18n-placeholder="form.emailPlaceholder" autocomplete="email" required>
             </div>
             <div class="field">
               <label for="telefone" data-i18n="form.phoneLabel">WhatsApp</label>
-              <input id="telefone" name="telefone" type="tel" placeholder="+55 11 99999-9999" data-i18n-placeholder="form.phonePlaceholder">
+              <input id="telefone" name="telefone" type="tel" placeholder="+55 11 99999-9999" data-i18n-placeholder="form.phonePlaceholder" autocomplete="tel">
             </div>
             <div class="field">
               <label for="empresa" data-i18n="form.companyLabel">Azienda</label>
-              <input id="empresa" name="empresa" type="text" placeholder="Nome della tua azienda" data-i18n-placeholder="form.companyPlaceholder">
+              <input id="empresa" name="empresa" type="text" placeholder="Nome della tua azienda" data-i18n-placeholder="form.companyPlaceholder" autocomplete="organization">
             </div>
             <div class="field">
               <label for="mensagem" data-i18n="form.messageLabel">Racconta il progetto</label>

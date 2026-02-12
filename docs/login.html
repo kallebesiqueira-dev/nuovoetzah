@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex,nofollow">
+		<meta name="description" content="Accesso amministrativo EtzahWeb.">
 		<meta name="api-base" content="https://api.etzahweb.com">
 		<title data-i18n-title="title">Login | EtzahWeb</title>
 		<link rel="stylesheet" href="style.css">
@@ -37,12 +39,12 @@
 			<p class="lead" data-i18n="login.subtitle">Accedi per visualizzare i messaggi ricevuti.</p>
 			<form id="loginForm">
 				<div class="field">
-					<label for="username" data-i18n="login.emailLabel">Usuario</label>
-					<input id="username" name="username" type="text" placeholder="admin" data-i18n-placeholder="login.emailPlaceholder" required>
+					<label for="username" data-i18n="login.emailLabel">Utente</label>
+					<input id="username" name="username" type="text" placeholder="admin" data-i18n-placeholder="login.emailPlaceholder" autocomplete="username" required>
 				</div>
 				<div class="field">
 					<label for="password" data-i18n="login.passwordLabel">Password</label>
-					<input id="password" name="password" type="password" placeholder="********" data-i18n-placeholder="login.passwordPlaceholder" required>
+					<input id="password" name="password" type="password" placeholder="********" data-i18n-placeholder="login.passwordPlaceholder" autocomplete="current-password" required>
 				</div>
 				<button class="btn btn-primary" type="submit" data-i18n="login.submit">Entra</button>
 				<p id="loginStatus" class="form-status" role="status"></p>
