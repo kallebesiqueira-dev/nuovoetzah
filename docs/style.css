@@ -482,6 +482,17 @@ a {
   margin-bottom: 12px;
 }
 
+.section-title h1 {
+  margin: 0 0 12px;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  line-height: 1.2;
+}
+
+.section-title p {
+  margin: 0;
+}
+
 .grid-2 {
   display: grid;
   gap: 24px;
@@ -648,6 +659,24 @@ a {
   display: flex;
   flex-direction: column;
   animation: cardFloat 5.2s ease-in-out infinite;
+}
+
+.policy-page .card,
+.admin-page .card {
+  animation: none;
+  min-height: 0;
+}
+
+.policy-page .section-title,
+.admin-page .section-title {
+  margin-bottom: 28px;
+}
+
+.policy-page .card p,
+.policy-page .card li,
+.admin-page .card p,
+.admin-page .card li {
+  color: var(--muted);
 }
 
 .card:nth-child(2) {
@@ -1027,6 +1056,14 @@ a {
 }
 
 @media (max-width: 600px) {
+  .section {
+    padding: 56px 0;
+  }
+
+  .section-title {
+    margin-bottom: 28px;
+  }
+
   .admin-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
