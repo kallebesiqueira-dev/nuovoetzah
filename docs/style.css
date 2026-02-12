@@ -1149,6 +1149,26 @@ a {
   background-size: 4px 4px;
 }
 
+.home-page .cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(132, 177, 255, 0.2) 0%, rgba(132, 177, 255, 0.08) 35%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0;
+  transform: translate3d(-999px, -999px, 0);
+  transition: opacity 0.25s ease;
+}
+
+.home-page.cursor-active .cursor-glow {
+  opacity: 1;
+}
+
 .home-page .site-header {
   background: rgba(10, 12, 18, 0.72);
   border-bottom: 1px solid rgba(146, 180, 255, 0.2);
@@ -1170,6 +1190,12 @@ a {
 .home-page .hero {
   padding: 96px 0 72px;
   position: relative;
+}
+
+.home-page .hero,
+.home-page .section {
+  transform: translate3d(0, calc(var(--section-shift, 0px) * 1px), 0);
+  transition: transform 0.35s ease-out;
 }
 
 .home-page .hero-grid {
@@ -1194,6 +1220,7 @@ a {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0);
 }
 
 .home-page .hero-actions .btn::before {
@@ -1209,6 +1236,11 @@ a {
 .home-page .hero-actions .btn:hover::before,
 .home-page .hero-actions .btn:focus-visible::before {
   transform: translateX(130%);
+}
+
+.home-page .hero-actions .btn:hover,
+.home-page .hero-actions .btn:focus-visible {
+  transform: translate3d(var(--mx, 0px), calc(var(--my, 0px) - 2px), 0);
 }
 
 .home-page .btn-primary {
@@ -1365,6 +1397,10 @@ a {
   box-shadow: 0 0 0 4px rgba(112, 162, 255, 0.16);
 }
 
+.home-page .magnetic {
+  will-change: transform;
+}
+
 @keyframes auroraSweep {
   0% {
     transform: translate3d(-2%, -1%, 0) scale(1);
@@ -1396,6 +1432,7 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .home-page .cursor-glow,
   .home-page .bg-aurora,
   .home-page .bg-grid,
   .home-page .bg-orbit,
@@ -1410,6 +1447,15 @@ a {
 
   .home-page .hero-actions .btn::before {
     display: none;
+  }
+
+  .home-page .hero,
+  .home-page .section,
+  .home-page .magnetic,
+  .home-page .hero-actions .btn,
+  .home-page .hero-actions .btn:hover,
+  .home-page .hero-actions .btn:focus-visible {
+    transform: none !important;
   }
 
   .home-page .reveal-item,

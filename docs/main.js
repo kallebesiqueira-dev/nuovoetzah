@@ -84,6 +84,7 @@ if (isHomePage) {
   const revealTargets = document.querySelectorAll(
     '.section .card, .section .step, .section .pricing-card, .section .mini-card, .section .form-card, .hero-card'
   );
+  const cinematicSections = document.querySelectorAll('.home-page .hero, .home-page .section');
 
   revealTargets.forEach((element) => {
     element.classList.add('reveal-item');
@@ -118,11 +119,32 @@ if (isHomePage) {
     const auroraEl = document.querySelector('.bg-aurora');
     const gridEl = document.querySelector('.bg-grid');
     const orbitEl = document.querySelector('.bg-orbit');
+    const cursorGlowEl = document.querySelector('.cursor-glow');
+    const magneticTargets = document.querySelectorAll('.hero-actions .btn, .social-link, .pricing-card.featured');
 
     let pointerX = 0;
     let pointerY = 0;
+    let pointerClientX = window.innerWidth / 2;
+    let pointerClientY = window.innerHeight / 2;
     let scrollY = window.scrollY;
     let ticking = false;
+
+    magneticTargets.forEach((element) => {
+      element.classList.add('magnetic');
+
+      element.addEventListener('mousemove', (event) => {
+        const rect = element.getBoundingClientRect();
+        const offsetX = event.clientX - (rect.left + rect.width / 2);
+        const offsetY = event.clientY - (rect.top + rect.height / 2);
+        element.style.setProperty('--mx', `${offsetX * 0.12}px`);
+        element.style.setProperty('--my', `${offsetY * 0.12}px`);
+      });
+
+      element.addEventListener('mouseleave', () => {
+        element.style.setProperty('--mx', '0px');
+        element.style.setProperty('--my', '0px');
+      });
+    });
 
     const applyParallax = () => {
       ticking = false;
@@ -131,6 +153,10 @@ if (isHomePage) {
       const y1 = pointerY * 10 + scrollY * 0.015;
       const x2 = pointerX * -8;
       const y2 = pointerY * -6 + scrollY * 0.008;
+
+      if (cursorGlowEl) {
+        cursorGlowEl.style.transform = `translate3d(${pointerClientX - 140}px, ${pointerClientY - 140}px, 0)`;
+      }
 
       if (auroraEl) {
         auroraEl.style.transform = `translate3d(${x1}px, ${y1}px, 0)`;
@@ -143,6 +169,15 @@ if (isHomePage) {
       if (orbitEl) {
         orbitEl.style.transform = `translate3d(${pointerX * -14}px, ${pointerY * 14 + scrollY * 0.02}px, 0)`;
       }
+
+      cinematicSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const viewportCenter = window.innerHeight * 0.5;
+        const sectionCenter = rect.top + rect.height * 0.5;
+        const distance = (sectionCenter - viewportCenter) / window.innerHeight;
+        const clamped = Math.max(-1, Math.min(1, distance));
+        section.style.setProperty('--section-shift', String(clamped * -18));
+      });
     };
 
     const requestParallaxFrame = () => {
@@ -157,12 +192,21 @@ if (isHomePage) {
       const y = event.clientY / window.innerHeight;
       pointerX = x - 0.5;
       pointerY = y - 0.5;
+      pointerClientX = event.clientX;
+      pointerClientY = event.clientY;
+      document.body.classList.add('cursor-active');
       requestParallaxFrame();
     }, { passive: true });
+
+    document.addEventListener('mouseleave', () => {
+      document.body.classList.remove('cursor-active');
+    });
 
     window.addEventListener('scroll', () => {
       scrollY = window.scrollY;
       requestParallaxFrame();
     }, { passive: true });
+
+    requestParallaxFrame();
   }
 }
