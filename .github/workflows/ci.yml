@@ -28,8 +28,8 @@ jobs:
         run: |
           find backend -path "backend/node_modules" -prune -o -name "*.js" -print0 | xargs -0 -n1 node --check
 
-      - name: Security audit (high+)
-        run: npm audit --prefix backend --omit=dev --audit-level=high
+      - name: Security audit (moderate+)
+        run: npm audit --prefix backend --omit=dev --audit-level=moderate
 
   docs-lint:
     name: Docs HTML lint
@@ -45,3 +45,51 @@ jobs:
 
       - name: Run HTMLHint
         run: npx --yes htmlhint "docs/*.html"
+
+      - name: Check internal docs links
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+
+          const docsDir = path.resolve('docs');
+          const htmlFiles = fs.readdirSync(docsDir).filter((file) => file.endsWith('.html'));
+          const issues = [];
+
+          const attrRegex = /(href|src)="([^"]+)"/g;
+
+          for (const file of htmlFiles) {
+            const filePath = path.join(docsDir, file);
+            const content = fs.readFileSync(filePath, 'utf8');
+
+            let match;
+            while ((match = attrRegex.exec(content)) !== null) {
+              const value = match[2].trim();
+
+              if (!value || value.startsWith('#')) continue;
+              if (/^(https?:|mailto:|tel:|javascript:|data:)/i.test(value)) continue;
+
+              const cleanValue = value.split('#')[0].split('?')[0];
+              if (!cleanValue) continue;
+
+              let resolved;
+              if (cleanValue.startsWith('/')) {
+                resolved = path.join(docsDir, cleanValue.replace(/^\/+/, ''));
+              } else {
+                resolved = path.resolve(path.dirname(filePath), cleanValue);
+              }
+
+              const exists = fs.existsSync(resolved) || fs.existsSync(path.join(resolved, 'index.html'));
+              if (!exists) {
+                issues.push(`${file}: missing target -> ${value}`);
+              }
+            }
+          }
+
+          if (issues.length) {
+            console.error('Broken internal docs links found:\n' + issues.join('\n'));
+            process.exit(1);
+          }
+
+          console.log('Internal docs links OK');
+          NODE
