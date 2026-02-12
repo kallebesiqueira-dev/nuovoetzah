@@ -1465,3 +1465,96 @@ a {
     transition: none;
   }
 }
+
+.home-page.luxury-minimal {
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(245, 185, 66, 0.1), transparent 64%),
+    linear-gradient(180deg, #0c0e14 0%, #10141d 45%, #0d1118 100%);
+}
+
+.home-page.luxury-minimal .bg-aurora,
+.home-page.luxury-minimal .bg-grid,
+.home-page.luxury-minimal .bg-noise,
+.home-page.luxury-minimal .cursor-glow {
+  display: none;
+}
+
+.home-page.luxury-minimal .bg-orbit {
+  inset: -28% auto auto 68%;
+  width: 460px;
+  height: 460px;
+  opacity: 0.45;
+  background: radial-gradient(circle, rgba(245, 185, 66, 0.2), transparent 66%);
+  animation: none;
+}
+
+.home-page.luxury-minimal .site-header {
+  background: rgba(12, 14, 20, 0.78);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-page.luxury-minimal .hero-copy h1 {
+  background: none;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  color: #f5f1e8;
+  text-shadow: 0 0 16px rgba(245, 185, 66, 0.16);
+  font-size: clamp(2.5rem, 3.8vw, 4rem);
+}
+
+.home-page.luxury-minimal .lead {
+  color: #c5c8d1;
+}
+
+.home-page.luxury-minimal .hero,
+.home-page.luxury-minimal .section {
+  transform: none !important;
+}
+
+.home-page.luxury-minimal .hero-actions .btn {
+  transform: none !important;
+}
+
+.home-page.luxury-minimal .hero-actions .btn::before {
+  display: none;
+}
+
+.home-page.luxury-minimal .btn-primary {
+  background: linear-gradient(135deg, #efc679 0%, #e8b04a 100%);
+  box-shadow: 0 8px 24px rgba(232, 176, 74, 0.24);
+}
+
+.home-page.luxury-minimal .btn-ghost {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.02);
+  color: #e8e1d4;
+}
+
+.home-page.luxury-minimal .hero-metrics,
+.home-page.luxury-minimal .hero-card,
+.home-page.luxury-minimal .card,
+.home-page.luxury-minimal .step,
+.home-page.luxury-minimal .pricing-card,
+.home-page.luxury-minimal .form-card {
+  background: linear-gradient(160deg, rgba(26, 30, 40, 0.82), rgba(14, 17, 24, 0.9));
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.28);
+}
+
+.home-page.luxury-minimal .card,
+.home-page.luxury-minimal .step,
+.home-page.luxury-minimal .pricing-card,
+.home-page.luxury-minimal .mini-card,
+.home-page.luxury-minimal .hero-card,
+.home-page.luxury-minimal .hero-metrics {
+  animation: none !important;
+}
+
+.home-page.luxury-minimal .reveal-item {
+  transition-duration: 0.5s;
+}
+
+.home-page.luxury-minimal .section-title h2::after {
+  background: linear-gradient(90deg, rgba(232, 176, 74, 0.7), rgba(245, 221, 174, 0.65));
+}

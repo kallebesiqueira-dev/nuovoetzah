@@ -36,6 +36,7 @@ const apiBase = apiMeta && apiMeta.content.trim()
   ? apiMeta.content.trim()
   : (window.location.port === '5500' ? 'http://127.0.0.1:3000' : '');
 const isHomePage = document.body.classList.contains('home-page');
+const isLuxuryMinimal = document.body.classList.contains('luxury-minimal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 I18N.init({ fallback: 'it' });
@@ -115,7 +116,7 @@ if (isHomePage) {
     });
   }
 
-  if (!prefersReducedMotion) {
+  if (!prefersReducedMotion && !isLuxuryMinimal) {
     const auroraEl = document.querySelector('.bg-aurora');
     const gridEl = document.querySelector('.bg-grid');
     const orbitEl = document.querySelector('.bg-orbit');
