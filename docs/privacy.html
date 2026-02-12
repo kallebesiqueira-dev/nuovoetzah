@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#121318">
+    <meta name="robots" content="index,follow">
     <title data-i18n-title="privacy.headTitle">Informativa sulla Privacy | EtzahWeb</title>
     <meta name="description" data-i18n-description="privacy.headDescription" content="Informativa sulla privacy di EtzahWeb.">
     <link rel="canonical" href="https://www.etzahweb.com/privacy.html">
@@ -26,12 +27,17 @@
     <header class="site-header">
       <div class="container nav-wrap">
         <a class="logo" href="index.html">Etzah<span>Web</span></a>
-        <nav class="nav">
+        <nav id="primary-nav" class="nav">
           <a href="index.html#servicos" data-i18n="nav.services">Servizi</a>
           <a href="index.html#processo" data-i18n="nav.process">Processo</a>
           <a href="index.html#prezzi" data-i18n="nav.pricing">Prezzi</a>
           <a href="index.html#contato" class="btn btn-outline" data-i18n="nav.contact">Contatto</a>
         </nav>
+        <button class="hamburger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <div class="lang-switch" aria-label="Language" data-lang-switch>
           <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
             <span class="flag flag-it" aria-hidden="true"></span>
@@ -100,7 +106,7 @@
       <p class="copyright" data-i18n="footer.copyright">© 2026 EtzahWeb. Tutti i diritti riservati.</p>
     </footer>
 
-    <script src="i18n.js"></script>
-    <script src="main.js"></script>
+    <script src="i18n.js" defer></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
