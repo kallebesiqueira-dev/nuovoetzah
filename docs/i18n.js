@@ -3,7 +3,7 @@
     it: {
       head: {
         title: 'EtzahWeb | Soluzioni Digitali Premium',
-        description: 'Studio freelance specializzato in siti, landing page e automazioni per aziende che vogliono vendere di piu.'
+        description: 'Studio freelance specializzato in siti, landing page e automazioni per aziende che vogliono vendere di più.'
       },
       nav: {
         services: 'Servizi',
@@ -36,8 +36,8 @@
         },
         card2: {
           title: 'Siti istituzionali',
-          body: 'Presenza digitale elegante, con SEO, contenuti scalabili e identita visiva coerente.',
-          tag: 'Alta credibilita'
+          body: 'Presenza digitale elegante, con SEO, contenuti scalabili e identità visiva coerente.',
+          tag: 'Alta credibilità'
         },
         card3: {
           title: 'Automazioni & Funnel',
@@ -91,7 +91,7 @@
         submit: 'Invia proposta',
         sending: 'Invio in corso...',
         success: 'Messaggio inviato con successo! Ti risponderemo entro 24h.',
-        error: 'Non e stato possibile inviare. Riprova tra poco.',
+        error: 'Non è stato possibile inviare. Riprova tra poco.',
         authRequired: 'Fai login per inviare il messaggio.'
       },
       footer: {
@@ -110,7 +110,7 @@
         intro: 'EtzahWeb tratta i dati personali forniti tramite il modulo di contatto per rispondere alle richieste, inviare preventivi e gestire le comunicazioni commerciali.',
         dataTitle: 'Dati raccolti',
         dataBody: 'Nome, email, azienda e messaggio inviato volontariamente.',
-        purposeTitle: 'Finalita del trattamento',
+        purposeTitle: 'Finalità del trattamento',
         purposeBody: 'Contattare il lead, preparare proposte, migliorare il servizio e adempiere a eventuali obblighi legali.',
         retentionTitle: 'Conservazione',
         retentionBody: 'I dati vengono conservati per il tempo necessario a gestire la richiesta e per eventuali obblighi amministrativi.',
@@ -128,10 +128,10 @@
         scopeBody: "Questi termini regolano l'uso del sito EtzahWeb e la richiesta di preventivi o servizi digitali.",
         proposalsTitle: 'Proposte e pagamenti',
         proposalsBody: 'Le proposte sono inviate su richiesta. I pagamenti, le scadenze e le condizioni specifiche sono definite nel contratto o nella proposta approvata.',
-        liabilityTitle: 'Responsabilita',
-        liabilityBody: 'EtzahWeb non e responsabile per interruzioni del servizio dovute a cause di forza maggiore o a terze parti.',
-        ipTitle: 'Proprieta intellettuale',
-        ipBody: 'Testi, layout e materiali creati restano di proprieta di EtzahWeb finche non vengono saldati i compensi concordati.',
+        liabilityTitle: 'Responsabilità',
+        liabilityBody: 'EtzahWeb non è responsabile per interruzioni del servizio dovute a cause di forza maggiore o a terze parti.',
+        ipTitle: 'Proprietà intellettuale',
+        ipBody: 'Testi, layout e materiali creati restano di proprietà di EtzahWeb finché non vengono saldati i compensi concordati.',
         changesTitle: 'Modifiche',
         changesBody: 'I termini possono essere aggiornati. Le versioni pubblicate su questa pagina sono quelle valide.',
         contactTitle: 'Contatto',
@@ -174,7 +174,7 @@
         purgeConfirm: 'Eliminare definitivamente il messaggio?',
         deletedStatus: 'Messaggio spostato nel cestino.',
         purgedStatus: 'Messaggio eliminato definitivamente.',
-        actionError: 'Non e stato possibile aggiornare il messaggio.',
+        actionError: 'Non è stato possibile aggiornare il messaggio.',
         leadName: 'Lead senza nome',
         emailLabel: 'Email',
         emailFallback: 'non fornita',
@@ -267,7 +267,7 @@
         nameLabel: 'Nome completo',
         namePlaceholder: 'Ex: Larissa Rocha',
         emailLabel: 'Email profissional',
-        emailPlaceholder: 'voce@empresa.com',
+        emailPlaceholder: 'você@empresa.com',
         phoneLabel: 'WhatsApp',
         phonePlaceholder: 'Ex: +55 11 99999-9999',
         companyLabel: 'Empresa',
@@ -278,7 +278,7 @@
         sending: 'Enviando...',
         success: 'Mensagem enviada com sucesso! Retornaremos em até 24h.',
         error: 'Não foi possível enviar. Tente novamente em instantes.',
-        authRequired: 'Faca login para enviar a mensagem.'
+        authRequired: 'Faça login para enviar a mensagem.'
       },
       footer: {
         tagline: 'Construindo experiências digitais que geram receita e reputação.',
@@ -289,44 +289,44 @@
         copyright: '© 2026 EtzahWeb. Todos os direitos reservados.'
       },
       privacy: {
-        headTitle: 'Politica de Privacidade | EtzahWeb',
-        headDescription: 'Politica de privacidade da EtzahWeb.',
-        title: 'Politica de Privacidade',
+        headTitle: 'Política de Privacidade | EtzahWeb',
+        headDescription: 'Política de privacidade da EtzahWeb.',
+        title: 'Política de Privacidade',
         updated: 'Atualizada em 07/02/2026.',
-        intro: 'A EtzahWeb trata os dados pessoais fornecidos pelo formulario de contato para responder solicitacoes, enviar propostas e gerenciar comunicacoes comerciais.',
+        intro: 'A EtzahWeb trata os dados pessoais fornecidos pelo formulário de contato para responder solicitações, enviar propostas e gerenciar comunicações comerciais.',
         dataTitle: 'Dados coletados',
         dataBody: 'Nome, email, empresa e mensagem enviada voluntariamente.',
         purposeTitle: 'Finalidade do tratamento',
-        purposeBody: 'Contatar o lead, preparar propostas, melhorar o servico e cumprir eventuais obrigacoes legais.',
-        retentionTitle: 'Retencao',
-        retentionBody: 'Os dados sao armazenados pelo tempo necessario para tratar a solicitacao e por obrigacoes administrativas.',
+        purposeBody: 'Contatar o lead, preparar propostas, melhorar o serviço e cumprir eventuais obrigações legais.',
+        retentionTitle: 'Retenção',
+        retentionBody: 'Os dados são armazenados pelo tempo necessário para tratar a solicitação e por obrigações administrativas.',
         rightsTitle: 'Direitos do titular',
-        rightsBody: 'Voce pode solicitar acesso, retificacao ou exclusao dos dados escrevendo para contato@etzahweb.com.',
+        rightsBody: 'Você pode solicitar acesso, retificação ou exclusão dos dados escrevendo para contato@etzahweb.com.',
         contactTitle: 'Contato',
-        contactBody: 'Para qualquer duvida, escreva para contato@etzahweb.com.'
+        contactBody: 'Para qualquer dúvida, escreva para contato@etzahweb.com.'
       },
       terms: {
-        headTitle: 'Termos de Servico | EtzahWeb',
-        headDescription: 'Termos de servico da EtzahWeb.',
-        title: 'Termos de Servico',
+        headTitle: 'Termos de Serviço | EtzahWeb',
+        headDescription: 'Termos de serviço da EtzahWeb.',
+        title: 'Termos de Serviço',
         updated: 'Atualizados em 07/02/2026.',
         scopeTitle: 'Escopo',
-        scopeBody: 'Estes termos regulam o uso do site EtzahWeb e a solicitacao de orcamentos ou servicos digitais.',
+        scopeBody: 'Estes termos regulam o uso do site EtzahWeb e a solicitação de orçamentos ou serviços digitais.',
         proposalsTitle: 'Propostas e pagamentos',
-        proposalsBody: 'As propostas sao enviadas sob solicitacao. Pagamentos, prazos e condicoes especificas sao definidos no contrato ou na proposta aprovada.',
+        proposalsBody: 'As propostas são enviadas sob solicitação. Pagamentos, prazos e condições específicas são definidos no contrato ou na proposta aprovada.',
         liabilityTitle: 'Responsabilidade',
-        liabilityBody: 'A EtzahWeb nao se responsabiliza por interrupcoes do servico por motivos de forca maior ou terceiros.',
+        liabilityBody: 'A EtzahWeb não se responsabiliza por interrupções do serviço por motivos de força maior ou terceiros.',
         ipTitle: 'Propriedade intelectual',
-        ipBody: 'Textos, layout e materiais criados permanecem propriedade da EtzahWeb ate o pagamento integral.',
-        changesTitle: 'Alteracoes',
-        changesBody: 'Os termos podem ser atualizados. As versoes publicadas nesta pagina sao as vigentes.',
+        ipBody: 'Textos, layout e materiais criados permanecem propriedade da EtzahWeb até o pagamento integral.',
+        changesTitle: 'Alterações',
+        changesBody: 'Os termos podem ser atualizados. As versões publicadas nesta página são as vigentes.',
         contactTitle: 'Contato',
-        contactBody: 'Para duvidas sobre os termos, escreva para contato@etzahweb.com.'
+        contactBody: 'Para dúvidas sobre os termos, escreva para contato@etzahweb.com.'
       },
       login: {
         title: 'Área administrativa',
         subtitle: 'Acesse para visualizar as mensagens recebidas.',
-        emailLabel: 'Usuario',
+        emailLabel: 'Usuário',
         emailPlaceholder: 'admin',
         passwordLabel: 'Senha',
         passwordPlaceholder: '********',
@@ -359,15 +359,15 @@
         deleteConfirm: 'Mover esta mensagem para a lixeira?',
         purgeConfirm: 'Excluir definitivamente esta mensagem?',
         deletedStatus: 'Mensagem movida para a lixeira.',
-        purgedStatus: 'Mensagem excluida definitivamente.',
-        actionError: 'Nao foi possivel atualizar a mensagem.',
+        purgedStatus: 'Mensagem excluída definitivamente.',
+        actionError: 'Não foi possível atualizar a mensagem.',
         leadName: 'Lead sem nome',
         emailLabel: 'Email',
         emailFallback: 'não informado',
         phoneLabel: 'WhatsApp',
         phoneFallback: 'não informado',
         companyLabel: 'Empresa',
-        companyFallback: 'nao informada',
+        companyFallback: 'não informada',
         messageLabel: 'Mensagem',
         messageFallback: 'Sem mensagem'
       }
