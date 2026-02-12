@@ -69,8 +69,8 @@
         title: 'Mettiamo online il tuo progetto?',
         subtitle: 'Invia i tuoi dati e ricevi risposta entro 24h con una proposta chiara.',
         card1: {
-          label: 'Canale Instagram',
-          value: '7-14 giorni'
+          label: 'Canale ',
+          value: 'Instagram'
         },
         card2: {
           label: 'Canale ',
@@ -255,8 +255,8 @@
         title: 'Vamos colocar seu projeto no ar?',
         subtitle: 'Envie seus dados e retorno em até 24h com uma proposta clara e objetiva.',
         card1: {
-          label: 'Canal Instagram',
-          value: '7 a 14 dias'
+          label: 'Canal ',
+          value: 'Instagram'
         },
         card2: {
           label: 'Canal ',
@@ -441,8 +441,8 @@
         title: 'Ready to launch your project?',
         subtitle: 'Send your details and get a reply within 24h with a clear proposal.',
         card1: {
-          label: 'Instagram channel',
-          value: '7 to 14 days'
+          label: 'Channel ',
+          value: 'Instagram'
         },
         card2: {
           label: 'Channel ',
