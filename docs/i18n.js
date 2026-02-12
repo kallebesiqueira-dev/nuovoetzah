@@ -74,7 +74,7 @@
         },
         card2: {
           label: 'Canale ',
-          value: 'WhatsApp + Email'
+          value: 'WhatsApp'
         }
       },
       form: {
@@ -260,7 +260,7 @@
         },
         card2: {
           label: 'Canal ',
-          value: 'WhatsApp + Email'
+          value: 'WhatsApp'
         }
       },
       form: {
@@ -446,7 +446,7 @@
         },
         card2: {
           label: 'Channel ',
-          value: 'WhatsApp + Email'
+          value: 'WhatsApp'
         }
       },
       form: {
