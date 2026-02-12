@@ -3,53 +3,68 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#121318">
 		<meta name="robots" content="noindex,nofollow">
 		<meta name="description" content="Accesso amministrativo EtzahWeb.">
 		<meta name="api-base" content="https://api.etzahweb.com">
 		<title data-i18n-title="title">Login | EtzahWeb</title>
+		<link rel="icon" href="favicon.svg" type="image/svg+xml">
+		<link rel="manifest" href="site.webmanifest">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body class="auth-page">
-		<div class="auth-card">
-			<div class="auth-switch">
-				<div class="lang-switch" aria-label="Language" data-lang-switch>
-					<button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
-						<span class="flag flag-it" aria-hidden="true"></span>
-						<span class="lang-label">IT</span>
-						<span class="lang-caret" aria-hidden="true"></span>
-					</button>
-					<div class="lang-menu" role="listbox">
-						<button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+	<body class="policy-page auth-page">
+		<div class="bg-orbit"></div>
+		<header class="site-header">
+			<div class="container nav-wrap admin-nav-wrap">
+				<a class="logo" href="index.html">Etzah<span>Web</span></a>
+				<div class="auth-switch">
+					<div class="lang-switch" aria-label="Language" data-lang-switch>
+						<button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
 							<span class="flag flag-it" aria-hidden="true"></span>
-							<span>IT</span>
+							<span class="lang-label">IT</span>
+							<span class="lang-caret" aria-hidden="true"></span>
 						</button>
-						<button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
-							<span class="flag flag-pt" aria-hidden="true"></span>
-							<span>PT</span>
-						</button>
-						<button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
-							<span class="flag flag-en" aria-hidden="true"></span>
-							<span>EN</span>
-						</button>
+						<div class="lang-menu" role="listbox">
+							<button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+								<span class="flag flag-it" aria-hidden="true"></span>
+								<span>IT</span>
+							</button>
+							<button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
+								<span class="flag flag-pt" aria-hidden="true"></span>
+								<span>PT</span>
+							</button>
+							<button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
+								<span class="flag flag-en" aria-hidden="true"></span>
+								<span>EN</span>
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
-			<a class="logo" href="index.html">Etzah<span>Web</span></a>
-			<h2 data-i18n="login.title">Area amministrativa</h2>
-			<p class="lead" data-i18n="login.subtitle">Accedi per visualizzare i messaggi ricevuti.</p>
-			<form id="loginForm">
-				<div class="field">
-					<label for="username" data-i18n="login.emailLabel">Utente</label>
-					<input id="username" name="username" type="text" placeholder="admin" data-i18n-placeholder="login.emailPlaceholder" autocomplete="username" required>
+		</header>
+
+		<main>
+			<section class="section auth-main">
+				<div class="container auth-container">
+					<div class="auth-card">
+						<h1 data-i18n="login.title">Area amministrativa</h1>
+						<p class="lead" data-i18n="login.subtitle">Accedi per visualizzare i messaggi ricevuti.</p>
+						<form id="loginForm">
+							<div class="field">
+								<label for="username" data-i18n="login.emailLabel">Utente</label>
+								<input id="username" name="username" type="text" placeholder="admin" data-i18n-placeholder="login.emailPlaceholder" autocomplete="username" required>
+							</div>
+							<div class="field">
+								<label for="password" data-i18n="login.passwordLabel">Password</label>
+								<input id="password" name="password" type="password" placeholder="********" data-i18n-placeholder="login.passwordPlaceholder" autocomplete="current-password" required>
+							</div>
+							<button class="btn btn-primary" type="submit" data-i18n="login.submit">Entra</button>
+							<p id="loginStatus" class="form-status" role="status"></p>
+						</form>
+					</div>
 				</div>
-				<div class="field">
-					<label for="password" data-i18n="login.passwordLabel">Password</label>
-					<input id="password" name="password" type="password" placeholder="********" data-i18n-placeholder="login.passwordPlaceholder" autocomplete="current-password" required>
-				</div>
-				<button class="btn btn-primary" type="submit" data-i18n="login.submit">Entra</button>
-				<p id="loginStatus" class="form-status" role="status"></p>
-			</form>
-		</div>
+			</section>
+		</main>
 		<script src="i18n.js" defer></script>
 		<script src="login.js" defer></script>
 	</body>

@@ -849,10 +849,17 @@ a {
 
 .auth-page {
   min-height: 100vh;
+}
+
+.auth-main {
+  min-height: calc(100vh - 90px);
+  display: grid;
+  align-items: center;
+}
+
+.auth-container {
   display: grid;
   place-items: center;
-  padding: 40px 0;
-  background: linear-gradient(160deg, rgba(245, 185, 66, 0.12), rgba(15, 17, 21, 0.9));
 }
 
 .auth-card {
@@ -867,12 +874,24 @@ a {
 .auth-switch {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 16px;
 }
 
-.auth-card h2 {
-  margin-top: 0;
+.auth-card h1 {
+  margin: 0 0 12px;
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+}
+
+.auth-card .lead {
+  margin-bottom: 20px;
+}
+
+.auth-card .btn {
+  width: 100%;
+}
+
+.auth-card .form-status {
+  margin-top: 14px;
 }
 
 .admin-page {
