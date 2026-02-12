@@ -543,14 +543,6 @@ a {
   margin: 0 0 10px;
 }
 
-.pricing-price {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  font-size: 2.2rem;
-  margin: 0 0 18px;
-  color: var(--accent);
-  text-shadow: 0 0 16px rgba(245, 185, 66, 0.35);
-}
-
 .pricing-list {
   margin: 0;
   padding: 0;
