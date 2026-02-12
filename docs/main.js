@@ -2,13 +2,28 @@
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
 
+const normalizeLegacyHash = () => {
+  const hashMap = {
+    '#servicos': '#servizi',
+    '#contato': '#contatto'
+  };
+
+  const nextHash = hashMap[window.location.hash];
+  if (nextHash) {
+    window.location.replace(nextHash);
+  }
+};
+
 const normalizeContactNavLinks = () => {
-  const contactNavLinks = document.querySelectorAll('.nav a[href="#contato"], .nav a[href="index.html#contato"]');
+  const contactNavLinks = document.querySelectorAll(
+    '.nav a[href="#contatto"], .nav a[href="index.html#contatto"], .nav a[href="#contato"], .nav a[href="index.html#contato"]'
+  );
   contactNavLinks.forEach((link) => {
     link.classList.remove('btn', 'btn-outline');
   });
 };
 
+normalizeLegacyHash();
 normalizeContactNavLinks();
 
 if (hamburger && nav) {
