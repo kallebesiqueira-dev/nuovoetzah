@@ -1296,6 +1296,30 @@ a {
   transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
+.home-page .reveal-item {
+  opacity: 0;
+  transform: translateY(26px) scale(0.985);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+  will-change: opacity, transform;
+}
+
+.home-page .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.home-page .card.reveal-item:nth-of-type(2),
+.home-page .pricing-card.reveal-item:nth-of-type(2),
+.home-page .step.reveal-item:nth-of-type(2) {
+  transition-delay: 0.08s;
+}
+
+.home-page .card.reveal-item:nth-of-type(3),
+.home-page .pricing-card.reveal-item:nth-of-type(3),
+.home-page .step.reveal-item:nth-of-type(3) {
+  transition-delay: 0.14s;
+}
+
 .home-page .card:hover,
 .home-page .step:hover,
 .home-page .pricing-card:hover,
@@ -1386,5 +1410,12 @@ a {
 
   .home-page .hero-actions .btn::before {
     display: none;
+  }
+
+  .home-page .reveal-item,
+  .home-page .reveal-item.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

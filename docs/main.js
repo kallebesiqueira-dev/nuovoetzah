@@ -35,41 +35,134 @@ const apiMeta = document.querySelector('meta[name="api-base"]');
 const apiBase = apiMeta && apiMeta.content.trim()
   ? apiMeta.content.trim()
   : (window.location.port === '5500' ? 'http://127.0.0.1:3000' : '');
+const isHomePage = document.body.classList.contains('home-page');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 I18N.init({ fallback: 'it' });
 I18N.onChange(() => {
-  statusEl.textContent = '';
-});
-
-form.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  statusEl.textContent = I18N.t('form.sending');
-
-  const formData = new FormData(form);
-  const payload = {
-    name: formData.get('nome'),
-    email: formData.get('email'),
-    phone: formData.get('telefone') || '',
-    company: formData.get('empresa') || '',
-    message: formData.get('mensagem') || ''
-  };
-
-  try {
-    const response = await fetch(`${apiBase}/api/messages`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    if (!response.ok) {
-      throw new Error('Falha ao enviar.');
-    }
-
-    statusEl.textContent = I18N.t('form.success');
-    form.reset();
-  } catch (error) {
-    statusEl.textContent = I18N.t('form.error');
+  if (statusEl) {
+    statusEl.textContent = '';
   }
 });
+
+if (form && statusEl) {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    statusEl.textContent = I18N.t('form.sending');
+
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get('nome'),
+      email: formData.get('email'),
+      phone: formData.get('telefone') || '',
+      company: formData.get('empresa') || '',
+      message: formData.get('mensagem') || ''
+    };
+
+    try {
+      const response = await fetch(`${apiBase}/api/messages`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Falha ao enviar.');
+      }
+
+      statusEl.textContent = I18N.t('form.success');
+      form.reset();
+    } catch (error) {
+      statusEl.textContent = I18N.t('form.error');
+    }
+  });
+}
+
+if (isHomePage) {
+  const revealTargets = document.querySelectorAll(
+    '.section .card, .section .step, .section .pricing-card, .section .mini-card, .section .form-card, .hero-card'
+  );
+
+  revealTargets.forEach((element) => {
+    element.classList.add('reveal-item');
+  });
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealTargets.forEach((element) => {
+      element.classList.add('is-visible');
+    });
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -8% 0px'
+      }
+    );
+
+    revealTargets.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  }
+
+  if (!prefersReducedMotion) {
+    const auroraEl = document.querySelector('.bg-aurora');
+    const gridEl = document.querySelector('.bg-grid');
+    const orbitEl = document.querySelector('.bg-orbit');
+
+    let pointerX = 0;
+    let pointerY = 0;
+    let scrollY = window.scrollY;
+    let ticking = false;
+
+    const applyParallax = () => {
+      ticking = false;
+
+      const x1 = pointerX * 12;
+      const y1 = pointerY * 10 + scrollY * 0.015;
+      const x2 = pointerX * -8;
+      const y2 = pointerY * -6 + scrollY * 0.008;
+
+      if (auroraEl) {
+        auroraEl.style.transform = `translate3d(${x1}px, ${y1}px, 0)`;
+      }
+
+      if (gridEl) {
+        gridEl.style.transform = `translate3d(${x2}px, ${y2}px, 0)`;
+      }
+
+      if (orbitEl) {
+        orbitEl.style.transform = `translate3d(${pointerX * -14}px, ${pointerY * 14 + scrollY * 0.02}px, 0)`;
+      }
+    };
+
+    const requestParallaxFrame = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(applyParallax);
+      }
+    };
+
+    window.addEventListener('mousemove', (event) => {
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      pointerX = x - 0.5;
+      pointerY = y - 0.5;
+      requestParallaxFrame();
+    }, { passive: true });
+
+    window.addEventListener('scroll', () => {
+      scrollY = window.scrollY;
+      requestParallaxFrame();
+    }, { passive: true });
+  }
+}
