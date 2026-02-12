@@ -96,8 +96,6 @@
     width: 90vw;
   }
 }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap');
-
 :root {
   color-scheme: light;
   --bg: #121318;
