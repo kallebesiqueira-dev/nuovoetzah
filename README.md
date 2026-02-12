@@ -31,3 +31,8 @@ Defina estas variaveis no Render para receber leads:
 
 ## Deploy
 - GitHub Pages a partir de /docs
+
+## Licenca
+Este projeto e proprietario (All Rights Reserved).
+Uso, copia, modificacao e redistribuicao sem autorizacao previa por escrito nao sao permitidos.
+Consulte [LICENSE](LICENSE).
