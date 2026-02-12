@@ -1,6 +1,16 @@
 // Modern hamburger menu toggle and close
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.nav');
+
+const normalizeContactNavLinks = () => {
+  const contactNavLinks = document.querySelectorAll('.nav a[href="#contato"], .nav a[href="index.html#contato"]');
+  contactNavLinks.forEach((link) => {
+    link.classList.remove('btn', 'btn-outline');
+  });
+};
+
+normalizeContactNavLinks();
+
 if (hamburger && nav) {
   hamburger.addEventListener('click', () => {
     const expanded = hamburger.getAttribute('aria-expanded') === 'true';

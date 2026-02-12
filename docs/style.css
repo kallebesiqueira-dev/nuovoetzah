@@ -182,36 +182,23 @@ a {
   font-weight: 500;
 }
 
-.nav a:not(.btn) {
+.nav a {
   position: relative;
-  padding: 6px 2px;
+  display: inline-block;
+  padding: 6px 2px 8px;
   border: none;
+  border-bottom: 2px solid transparent;
   border-radius: 0;
   background: transparent;
-  transition: color 0.2s ease;
-}
-
-.nav a:not(.btn)::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .nav a:hover,
 .nav a:focus-visible {
   color: var(--accent);
+  border-bottom-color: var(--accent);
   outline: none;
   text-shadow: none;
-}
-
-.nav a:not(.btn):hover::after,
-.nav a:not(.btn):focus-visible::after {
-  width: 100%;
 }
 
 .lang-switch {
@@ -363,9 +350,9 @@ a {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.8rem;
-  color: var(--accent);
+  color: #f0bf5c;
   margin: 0 0 8px;
-  text-shadow: 0 0 12px rgba(232, 176, 74, 0.45), 0 0 24px rgba(232, 176, 74, 0.25);
+  text-shadow: 0 0 16px rgba(232, 176, 74, 0.52), 0 0 28px rgba(232, 176, 74, 0.3);
 }
 
 .lead {
@@ -1070,28 +1057,14 @@ a {
 @media (max-width: 840px) {
   .nav a {
     position: relative;
-    transition: color 0.2s ease;
-  }
-
-  .nav a:not(.btn)::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: var(--accent);
-    transition: width 0.2s ease;
+    display: inline-block;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
 
   .nav a:hover,
   .nav a:focus-visible {
     color: var(--accent);
-  }
-
-  .nav a:not(.btn):hover::after,
-  .nav a:not(.btn):focus-visible::after {
-    width: 100%;
+    border-bottom-color: var(--accent);
   }
   .footer-brand {
     text-align: center;
@@ -1176,20 +1149,20 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  background: radial-gradient(circle, rgba(147, 183, 255, 0.16) 0%, rgba(147, 183, 255, 0.06) 36%, transparent 70%);
-  filter: blur(14px);
+  background: radial-gradient(circle, rgba(147, 183, 255, 0.11) 0%, rgba(147, 183, 255, 0.035) 38%, transparent 72%);
+  filter: blur(12px);
   opacity: 0;
   transform: translate3d(-999px, -999px, 0);
   transition: opacity 0.25s ease;
 }
 
 .home-page.cursor-active .cursor-glow {
-  opacity: 1;
+  opacity: 0.72;
 }
 
 .home-page .site-header {
@@ -1198,17 +1171,24 @@ a {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.home-page .nav a:not(.btn-outline) {
+.home-page .nav a {
   padding: 6px 2px;
   border-radius: 0;
-  border: none;
   background: transparent;
 }
 
-.home-page .nav a:not(.btn-outline):hover,
-.home-page .nav a:not(.btn-outline):focus-visible {
-  border: none;
+.home-page .nav a:hover,
+.home-page .nav a:focus-visible {
   background: transparent;
+}
+
+#primary-nav a:hover,
+#primary-nav a:focus-visible {
+  color: var(--accent) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
 }
 
 .policy-page {
