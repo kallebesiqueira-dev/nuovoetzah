@@ -65,6 +65,7 @@ const isLuxuryMinimal = document.body.classList.contains('luxury-minimal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const cookieBanner = document.querySelector('[data-cookie-banner]');
 const cookieAcceptButtons = document.querySelectorAll('[data-cookie-accept]');
+const cookieCloseButton = document.querySelector('[data-cookie-close]');
 const cookieConsentKey = 'etzah_cookie_consent';
 
 I18N.init({ fallback: 'it' });
@@ -72,7 +73,23 @@ I18N.onChange(() => {
   if (statusEl) {
     statusEl.textContent = '';
   }
+
+  if (cookieBanner) {
+    cookieBanner.setAttribute('aria-label', I18N.t('cookie.bannerAriaLabel', 'Cookie notice'));
+  }
+
+  if (cookieCloseButton) {
+    cookieCloseButton.setAttribute('aria-label', I18N.t('cookie.closeAriaLabel', 'Close cookie notice'));
+  }
 });
+
+if (cookieBanner) {
+  cookieBanner.setAttribute('aria-label', I18N.t('cookie.bannerAriaLabel', 'Cookie notice'));
+}
+
+if (cookieCloseButton) {
+  cookieCloseButton.setAttribute('aria-label', I18N.t('cookie.closeAriaLabel', 'Close cookie notice'));
+}
 
 const setCookieConsent = () => {
   try {

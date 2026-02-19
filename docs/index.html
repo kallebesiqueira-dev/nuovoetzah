@@ -310,16 +310,15 @@
     </footer>
 
     <aside class="cookie-banner" data-cookie-banner role="dialog" aria-live="polite" aria-label="Informativa cookie" hidden>
-      <button class="cookie-close" type="button" data-cookie-accept aria-label="Chiudi informativa cookie">×</button>
-      <p class="cookie-title">Informativa</p>
+      <button class="cookie-close" type="button" data-cookie-close data-cookie-accept aria-label="Chiudi informativa cookie">×</button>
+      <p class="cookie-title" data-i18n="cookie.title">Informativa</p>
       <p class="cookie-text">
-        Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e, con il tuo consenso,
-        anche per altre finalità come specificato nella
-        <a href="privacy.html">cookie policy</a>.
+        <span data-i18n="cookie.bodyPrefix">Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e, con il tuo consenso, anche per altre finalità come specificato nella</span>
+        <a href="privacy.html" data-i18n="cookie.policyLink">cookie policy</a><span data-i18n="cookie.bodySuffix">.</span>
       </p>
       <div class="cookie-actions">
-        <a class="btn btn-ghost" href="privacy.html">Scopri di più</a>
-        <button class="btn btn-primary" type="button" data-cookie-accept>Accetta</button>
+        <a class="btn btn-ghost" href="privacy.html" data-i18n="cookie.learnMore">Scopri di più</a>
+        <button class="btn btn-primary" type="button" data-cookie-accept data-i18n="cookie.accept">Accetta</button>
       </div>
     </aside>
 

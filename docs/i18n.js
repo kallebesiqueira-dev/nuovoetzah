@@ -102,6 +102,16 @@
         linksTerms: 'Termini',
         copyright: '© 2026 EtzahWeb. Tutti i diritti riservati.'
       },
+      cookie: {
+        title: 'Informativa',
+        bodyPrefix: 'Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e, con il tuo consenso, anche per altre finalità come specificato nella',
+        policyLink: 'cookie policy',
+        bodySuffix: '.',
+        learnMore: 'Scopri di più',
+        accept: 'Accetta',
+        bannerAriaLabel: 'Informativa cookie',
+        closeAriaLabel: 'Chiudi informativa cookie'
+      },
       privacy: {
         headTitle: 'Informativa sulla Privacy | EtzahWeb',
         headDescription: 'Informativa sulla privacy di EtzahWeb.',
@@ -288,6 +298,16 @@
         linksTerms: 'Termos',
         copyright: '© 2026 EtzahWeb. Todos os direitos reservados.'
       },
+      cookie: {
+        title: 'Informativo',
+        bodyPrefix: 'Nós e terceiros selecionados usamos cookies ou tecnologias semelhantes para finalidades técnicas e, com o seu consentimento, também para outras finalidades conforme especificado na',
+        policyLink: 'política de cookies',
+        bodySuffix: '.',
+        learnMore: 'Saiba mais',
+        accept: 'Aceitar',
+        bannerAriaLabel: 'Aviso de cookies',
+        closeAriaLabel: 'Fechar aviso de cookies'
+      },
       privacy: {
         headTitle: 'Política de Privacidade | EtzahWeb',
         headDescription: 'Política de privacidade da EtzahWeb.',
@@ -473,6 +493,16 @@
         linksPrivacy: 'Privacy',
         linksTerms: 'Terms',
         copyright: '© 2026 EtzahWeb. All rights reserved.'
+      },
+      cookie: {
+        title: 'Notice',
+        bodyPrefix: 'We and selected third parties use cookies or similar technologies for technical purposes and, with your consent, for other purposes as specified in the',
+        policyLink: 'cookie policy',
+        bodySuffix: '.',
+        learnMore: 'Learn more',
+        accept: 'Accept',
+        bannerAriaLabel: 'Cookie notice',
+        closeAriaLabel: 'Close cookie notice'
       },
       privacy: {
         headTitle: 'Privacy Policy | EtzahWeb',
