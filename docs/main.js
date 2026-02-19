@@ -63,6 +63,9 @@ const apiBase = apiMeta && apiMeta.content.trim()
 const isHomePage = document.body.classList.contains('home-page');
 const isLuxuryMinimal = document.body.classList.contains('luxury-minimal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cookieBanner = document.querySelector('[data-cookie-banner]');
+const cookieAcceptButtons = document.querySelectorAll('[data-cookie-accept]');
+const cookieConsentKey = 'etzah_cookie_consent';
 
 I18N.init({ fallback: 'it' });
 I18N.onChange(() => {
@@ -70,6 +73,47 @@ I18N.onChange(() => {
     statusEl.textContent = '';
   }
 });
+
+const setCookieConsent = () => {
+  try {
+    localStorage.setItem(cookieConsentKey, 'accepted');
+  } catch (error) {
+    // noop
+  }
+};
+
+const hasCookieConsent = () => {
+  try {
+    return localStorage.getItem(cookieConsentKey) === 'accepted';
+  } catch (error) {
+    return false;
+  }
+};
+
+if (cookieBanner && cookieAcceptButtons.length) {
+  const hideBanner = () => {
+    cookieBanner.classList.remove('is-visible');
+    window.setTimeout(() => {
+      cookieBanner.hidden = true;
+    }, 280);
+  };
+
+  const acceptConsent = () => {
+    setCookieConsent();
+    hideBanner();
+  };
+
+  cookieAcceptButtons.forEach((button) => {
+    button.addEventListener('click', acceptConsent);
+  });
+
+  if (!hasCookieConsent()) {
+    cookieBanner.hidden = false;
+    requestAnimationFrame(() => {
+      cookieBanner.classList.add('is-visible');
+    });
+  }
+}
 
 if (form && statusEl) {
   form.addEventListener('submit', async (event) => {

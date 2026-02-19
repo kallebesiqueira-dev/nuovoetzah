@@ -868,6 +868,95 @@ a {
   font-size: 0.9rem;
 }
 
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 18px);
+  width: min(980px, calc(100vw - 24px));
+  background: linear-gradient(145deg, rgba(238, 241, 248, 0.95), rgba(222, 226, 236, 0.96));
+  color: #222831;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  padding: 16px 18px;
+  box-shadow: 0 16px 46px rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s;
+}
+
+.cookie-banner.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.cookie-title {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.cookie-text {
+  margin: 0;
+  color: #303846;
+  max-width: 920px;
+}
+
+.cookie-text a {
+  color: #222831;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-actions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.cookie-banner .btn {
+  min-width: 136px;
+}
+
+.cookie-banner .btn-ghost {
+  color: #1f3f8f;
+  background: #1f3f8f;
+  border-color: #1f3f8f;
+  color: #ffffff;
+}
+
+.cookie-banner .btn-primary {
+  background: #14a77c;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.cookie-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  color: #525965;
+  font-size: 1.45rem;
+  line-height: 1;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.cookie-close:hover,
+.cookie-close:focus-visible {
+  color: #191f29;
+}
+
 .auth-page {
   min-height: 100vh;
 }
@@ -1062,6 +1151,20 @@ a {
   }
 
   .admin-actions .btn {
+    width: 100%;
+  }
+
+  .cookie-banner {
+    bottom: 12px;
+    padding: 14px;
+  }
+
+  .cookie-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cookie-banner .btn {
     width: 100%;
   }
 }
@@ -1588,6 +1691,12 @@ a {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .cookie-banner,
+  .cookie-banner.is-visible {
+    transition: none;
+    transform: translate(-50%, 0);
   }
 }
 
