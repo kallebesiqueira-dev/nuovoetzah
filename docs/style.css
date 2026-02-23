@@ -597,16 +597,14 @@ a {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  justify-items: center;
+  justify-items: start;
 }
 
 .chi-siamo-content > p {
   margin: 0;
   color: var(--muted);
   max-width: 760px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .chi-siamo-article {
@@ -615,12 +613,12 @@ a {
   gap: 12px;
   margin-left: auto;
   margin-right: auto;
-  justify-items: center;
+  justify-items: start;
 }
 
 .chi-siamo-article h3 {
   margin: 12px 0 2px;
-  text-align: center;
+  text-align: left;
 }
 
 .chi-siamo-article p {
@@ -632,20 +630,16 @@ a {
   -webkit-line-clamp: 3;
   line-clamp: 3;
   overflow: hidden;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 #chi-siamo .section-title p {
   max-width: 760px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 #chi-siamo .section-title {
-  text-align: center;
+  text-align: left;
 }
 
 #chi-siamo .chi-siamo-article .pricing-list li {
@@ -655,8 +649,8 @@ a {
 
 #chi-siamo .chi-siamo-article .pricing-list {
   width: min(760px, 100%);
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   display: inline-grid;
   justify-items: start;
   text-align: left;
