@@ -2,7 +2,7 @@
   const translations = {
     it: {
       head: {
-        title: '✅ EtzahWeb | Siti Web, Landing Page, SEO e Automazioni',
+        title: 'EtzahWeb | Siti Web, Landing Page, SEO e Automazioni',
         description: 'Studio digitale specializzato in siti web su misura, landing page ad alta conversione, SEO tecnica e automazioni.'
       },
       nav: {
@@ -236,7 +236,7 @@
     },
     pt: {
       head: {
-        title: '✅ EtzahWeb | Sites, Landing Pages, SEO e Automações',
+        title: 'EtzahWeb | Sites, Landing Pages, SEO e Automações',
         description: 'Estúdio digital especializado em sites sob medida, landing pages de alta conversão, SEO técnico e automações.'
       },
       nav: {
@@ -470,7 +470,7 @@
     },
     en: {
       head: {
-        title: '✅ EtzahWeb | Websites, Landing Pages, SEO & Automation',
+        title: 'EtzahWeb | Websites, Landing Pages, SEO & Automation',
         description: 'Digital studio specialized in custom websites, high-converting landing pages, technical SEO, and automation.'
       },
       nav: {
