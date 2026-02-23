@@ -1527,18 +1527,16 @@ a {
   margin-top: 0;
   padding: 68px 0 28px;
   border-top: none;
-  background-image: url("img2/img_footer/Footer.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #050810;
+  background:
+    radial-gradient(680px 280px at 50% -10%, rgba(155, 120, 255, 0.14), transparent 68%),
+    linear-gradient(180deg, #0f1320 0%, #0d1118 100%);
   overflow: hidden;
 }
 
 .footer-showcase .footer-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(5, 8, 16, 0.66) 0%, rgba(5, 8, 16, 0.82) 100%);
+  background: linear-gradient(180deg, rgba(8, 10, 16, 0.2) 0%, rgba(8, 10, 16, 0.34) 100%);
 }
 
 .footer-showcase-grid,
