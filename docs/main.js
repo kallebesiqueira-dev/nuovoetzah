@@ -297,3 +297,221 @@ if (isHomePage) {
     requestParallaxFrame();
   }
 }
+
+const portfolioCarousel = document.querySelector('[data-portfolio-carousel]');
+
+if (portfolioCarousel) {
+  const portfolioItems = Array.from(portfolioCarousel.querySelectorAll('[data-portfolio-item]'));
+  const intervalMs = Number(portfolioCarousel.getAttribute('data-interval')) || 10000;
+
+  let activeIndex = 0;
+  let autoRotateId = null;
+
+  const setActiveCard = (nextIndex) => {
+    if (!portfolioItems.length) {
+      return;
+    }
+
+    portfolioItems.forEach((item, index) => {
+      item.classList.toggle('is-active', index === nextIndex);
+    });
+
+    activeIndex = nextIndex;
+  };
+
+  const nextCard = () => {
+    if (!portfolioItems.length) {
+      return;
+    }
+
+    const nextIndex = (activeIndex + 1) % portfolioItems.length;
+    setActiveCard(nextIndex);
+  };
+
+  const startAutoRotate = () => {
+    if (prefersReducedMotion || portfolioItems.length < 2) {
+      return;
+    }
+
+    if (autoRotateId) {
+      window.clearInterval(autoRotateId);
+    }
+
+    autoRotateId = window.setInterval(nextCard, intervalMs);
+  };
+
+  const stopAutoRotate = () => {
+    if (!autoRotateId) {
+      return;
+    }
+
+    window.clearInterval(autoRotateId);
+    autoRotateId = null;
+  };
+
+  setActiveCard(0);
+  startAutoRotate();
+
+  portfolioCarousel.addEventListener('mouseenter', stopAutoRotate);
+  portfolioCarousel.addEventListener('mouseleave', startAutoRotate);
+  portfolioCarousel.addEventListener('focusin', stopAutoRotate);
+  portfolioCarousel.addEventListener('focusout', (event) => {
+    if (!portfolioCarousel.contains(event.relatedTarget)) {
+      startAutoRotate();
+    }
+  });
+
+  portfolioItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+      setActiveCard(index);
+    });
+  });
+
+  const lightbox = document.querySelector('[data-portfolio-lightbox]');
+  const lightboxImage = lightbox ? lightbox.querySelector('[data-lightbox-image]') : null;
+  const lightboxCloseControls = lightbox ? lightbox.querySelectorAll('[data-lightbox-close]') : [];
+
+  if (lightbox && lightboxImage) {
+    const openLightbox = (source, altText) => {
+      lightboxImage.src = source;
+      lightboxImage.alt = altText || 'Portfolio image';
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+      lightbox.hidden = true;
+      lightboxImage.src = '';
+      lightboxImage.alt = '';
+      document.body.style.overflow = '';
+    };
+
+    portfolioCarousel.addEventListener('click', (event) => {
+      const trigger = event.target.closest('[data-lightbox-src]');
+      if (!trigger) {
+        return;
+      }
+
+      openLightbox(trigger.getAttribute('data-lightbox-src'), trigger.getAttribute('data-lightbox-alt'));
+    });
+
+    lightboxCloseControls.forEach((control) => {
+      control.addEventListener('click', closeLightbox);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !lightbox.hidden) {
+        closeLightbox();
+      }
+    });
+  }
+}
+
+const headerBackground = document.querySelector('[data-header-bg]');
+
+if (headerBackground) {
+  const slideA = headerBackground.querySelector('[data-header-slide-a]');
+  const slideB = headerBackground.querySelector('[data-header-slide-b]');
+  const headerImages = [
+    'img2/IMG_6252.jpg',
+    'img2/IMG_6254.jpg',
+    'img2/IMG_6255.jpg'
+  ];
+
+  if (slideA && slideB && headerImages.length) {
+    let activeSlide = slideA;
+    let hiddenSlide = slideB;
+    let imageIndex = 0;
+
+    const applyImage = (slide, source) => {
+      slide.style.backgroundImage = `url("${source}")`;
+    };
+
+    applyImage(activeSlide, headerImages[0]);
+    applyImage(hiddenSlide, headerImages[1] || headerImages[0]);
+
+    if (!prefersReducedMotion && headerImages.length > 1) {
+      window.setInterval(() => {
+        imageIndex = (imageIndex + 1) % headerImages.length;
+        applyImage(hiddenSlide, headerImages[imageIndex]);
+
+        hiddenSlide.classList.add('is-active');
+        activeSlide.classList.remove('is-active');
+
+        const previous = activeSlide;
+        activeSlide = hiddenSlide;
+        hiddenSlide = previous;
+      }, 12000);
+    }
+  }
+}
+
+const reviewSlider = document.querySelector('[data-review-slider]');
+
+if (reviewSlider) {
+  const reviewTrack = reviewSlider.querySelector('[data-review-track]');
+  const prevButton = document.querySelector('[data-review-prev]');
+  const nextButton = document.querySelector('[data-review-next]');
+
+  if (reviewTrack) {
+    const reviewCards = Array.from(reviewTrack.querySelectorAll('.review-card'));
+    const gapPx = 16;
+    let pageIndex = 0;
+    let visibleCount = window.innerWidth <= 840 ? 1 : 2;
+
+    const getPageStarts = () => {
+      const starts = [];
+      for (let index = 0; index < reviewCards.length; index += visibleCount) {
+        starts.push(index);
+      }
+      return starts;
+    };
+
+    const updateVisibleCards = (starts) => {
+      const activeStart = starts[pageIndex] || 0;
+      const activeEnd = activeStart + visibleCount;
+      reviewCards.forEach((card, index) => {
+        card.classList.toggle('is-in-view', index >= activeStart && index < activeEnd);
+      });
+    };
+
+    const goToPage = (nextPage) => {
+      const starts = getPageStarts();
+      if (!starts.length) {
+        return;
+      }
+
+      const totalPages = starts.length;
+      pageIndex = (nextPage + totalPages) % totalPages;
+
+      const targetCard = reviewCards[starts[pageIndex]];
+      if (!targetCard) {
+        return;
+      }
+
+      const offset = targetCard.offsetLeft;
+      reviewTrack.style.transform = `translateX(${-offset}px)`;
+      updateVisibleCards(starts);
+    };
+
+    const refreshLayout = () => {
+      visibleCount = window.innerWidth <= 840 ? 1 : 2;
+      goToPage(0);
+    };
+
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        goToPage(pageIndex - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        goToPage(pageIndex + 1);
+      });
+    }
+
+    window.addEventListener('resize', refreshLayout, { passive: true });
+    refreshLayout();
+  }
+}
