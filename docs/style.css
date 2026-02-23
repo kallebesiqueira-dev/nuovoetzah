@@ -658,12 +658,8 @@ a {
   margin-left: auto;
   margin-right: auto;
   display: inline-grid;
-  justify-items: center;
-  text-align: center;
-}
-
-#chi-siamo .chi-siamo-article .pricing-list li {
-  text-align: center;
+  justify-items: start;
+  text-align: left;
 }
 
 .chi-siamo-article .pricing-list {
