@@ -1546,12 +1546,15 @@ a {
   display: grid;
   gap: 24px 28px;
   grid-template-columns: minmax(220px, 1.3fr) repeat(3, minmax(190px, 1fr));
+  align-items: start;
 }
 
 .footer-col h4 {
   margin: 0 0 16px;
   color: #ffffff;
   font-size: 1.06rem;
+  line-height: 1.2;
+  min-height: 1.4rem;
 }
 
 .footer-col p,
@@ -1568,6 +1571,14 @@ a {
 
 .footer-brand-col p {
   max-width: 320px;
+}
+
+.footer-brand-col .logo {
+  display: inline-block;
+  font-size: 1.22rem;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  min-height: 1.4rem;
 }
 
 .footer-cta {
@@ -2551,6 +2562,15 @@ a {
 .home-page .section-title h2 {
   position: relative;
   display: inline-block;
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.home-page .section-title h1,
+.home-page .contact .reveal-stack > h2,
+.home-page .portfolio-subtitle-title {
+  font-size: clamp(1.8rem, 2.4vw, 2.2rem) !important;
+  line-height: 1.2;
 }
 
 .home-page .section-title h2::after {
@@ -2778,8 +2798,11 @@ a {
 }
 
 .home-page.luxury-minimal .eyebrow {
-  font-size: 0.95rem;
-  letter-spacing: 4px;
+  font-size: clamp(1.45rem, 1.95vw, 1.8rem);
+  line-height: 1.2;
+  letter-spacing: clamp(1.2px, 0.28vw, 3px);
+  color: #e1d2ff;
+  text-shadow: 0 0 14px rgba(168, 131, 255, 0.72), 0 0 26px rgba(150, 111, 250, 0.52), 0 0 42px rgba(132, 93, 236, 0.32);
   margin-bottom: 18px;
 }
 
