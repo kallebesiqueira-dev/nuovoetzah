@@ -2570,6 +2570,21 @@ a {
   }
 }
 
+@media (max-width: 840px) {
+  .home-page .hero-copy h1,
+  .home-page .section-title h1,
+  .home-page .section-title h2,
+  .home-page .portfolio-subtitle-title,
+  .home-page .reviews-summary h3,
+  .home-page .portfolio-content h3,
+  .home-page .review-card h3,
+  .home-page .chi-siamo-article h3 {
+    line-height: 1.22;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
+
 .home-page.luxury-minimal .btn:focus-visible {
   outline: 2px solid rgba(191, 152, 255, 0.72);
   outline-offset: 2px;
