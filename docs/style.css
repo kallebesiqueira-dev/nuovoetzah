@@ -1082,11 +1082,12 @@ a {
   position: relative;
   z-index: 1;
   width: min(92vw, 1100px);
-  border: 1px solid rgba(245, 185, 66, 0.4);
+  border: 1px solid rgba(171, 119, 255, 0.46);
   border-radius: 20px;
   overflow: hidden;
   background: rgba(15, 17, 21, 0.95);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.58);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.58), 0 0 18px rgba(139, 95, 255, 0.22);
+  animation: lightboxVioletPulse 2.2s ease-in-out infinite;
 }
 
 .portfolio-lightbox-dialog img {
@@ -1114,9 +1115,22 @@ a {
 
 .portfolio-lightbox-close:hover,
 .portfolio-lightbox-close:focus-visible {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: #b58cff;
+  color: #d8c4ff;
+  box-shadow: 0 0 14px rgba(149, 112, 255, 0.38);
   outline: none;
+}
+
+@keyframes lightboxVioletPulse {
+  0%,
+  100% {
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.58), 0 0 14px rgba(139, 95, 255, 0.18);
+    border-color: rgba(171, 119, 255, 0.38);
+  }
+  50% {
+    box-shadow: 0 28px 66px rgba(0, 0, 0, 0.6), 0 0 24px rgba(149, 112, 255, 0.32);
+    border-color: rgba(189, 146, 255, 0.56);
+  }
 }
 
 .pricing {
