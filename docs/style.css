@@ -2565,8 +2565,9 @@ a {
 }
 
 @media (max-width: 680px) {
-  #servizi .section-title h2::after {
-    width: 46%;
+  #servizi .section-title h2::after,
+  #portfolio .section-title h2::after {
+    width: clamp(136px, 42vw, 196px);
   }
 }
 
