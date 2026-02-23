@@ -45,6 +45,44 @@
           tag: 'Processi intelligenti'
         }
       },
+      about: {
+        title: 'Chi Siamo – EtzahWeb',
+        intro: 'EtzahWeb nasce con un obiettivo chiaro: aiutare professionisti e aziende a crescere online con siti web moderni, efficaci e realmente orientati ai risultati. Crediamo che un sito web non sia solo una vetrina, ma uno strumento strategico per generare contatti, aumentare la credibilità e distinguersi dalla concorrenza.',
+        real: {
+          title: 'Portfolio e recensioni reali',
+          body: 'La trasparenza è alla base del nostro lavoro. Mettiamo a disposizione portfolio verificabili e recensioni autentiche dei nostri clienti, perché i risultati parlano più di qualsiasi promessa.'
+        },
+        full: {
+          title: 'Servizi completi, dal design allo sviluppo',
+          intro: 'Seguiamo ogni progetto in modo completo:',
+          item1: 'Analisi e strategia',
+          item2: 'Web design professionale',
+          item3: 'Sviluppo tecnico',
+          item4: 'Ottimizzazione SEO',
+          item5: 'Integrazione WhatsApp, moduli e strumenti di conversione',
+          outro: 'Con EtzahWeb hai un unico partner per tutto il processo digitale.'
+        },
+        exp: {
+          title: 'Esperienza comprovata',
+          body: 'Collaboriamo con attività locali, professionisti e imprese che desiderano migliorare la propria presenza online. L’esperienza maturata in diversi settori ci permette di creare soluzioni efficaci, mirate e orientate al mercato reale.'
+        },
+        quote: {
+          title: 'Preventivi trasparenti',
+          body: 'Nessuna sorpresa, nessun costo nascosto. Forniamo preventivi dettagliati e chiari, così sai esattamente cosa stai acquistando e quale valore stai ricevendo.'
+        },
+        support: {
+          title: 'Supporto anche dopo il lancio',
+          body: 'Il nostro lavoro non finisce con la pubblicazione del sito. Offriamo assistenza tecnica e supporto post-lancio per garantire sicurezza, aggiornamenti e continuità operativa.'
+        },
+        tech: {
+          title: 'Tecnologie moderne e sicure',
+          body: 'Utilizziamo piattaforme aggiornate, sicure e scalabili, progettate per crescere insieme alla tua attività e garantire performance elevate nel tempo.'
+        },
+        custom: {
+          title: 'Siti su misura, non template generici',
+          body: 'Ogni progetto è personalizzato. Non utilizziamo soluzioni standardizzate: il tuo sito deve rappresentare la tua identità, i tuoi valori e i tuoi obiettivi di business.'
+        }
+      },
       process: {
         title: 'Processo chiaro, senza giri di parole',
         subtitle: 'Dal briefing alla consegna finale, segui tutto con trasparenza.',
@@ -241,6 +279,44 @@
           tag: 'Processos inteligentes'
         }
       },
+      about: {
+        title: 'Quem Somos – EtzahWeb',
+        intro: 'A EtzahWeb nasceu com um objetivo claro: ajudar profissionais e empresas a crescer online com sites modernos, eficazes e orientados a resultados. Acreditamos que um site não é apenas vitrine, mas uma ferramenta estratégica para gerar contatos, aumentar credibilidade e se destacar da concorrência.',
+        real: {
+          title: 'Portfólio e avaliações reais',
+          body: 'Transparência é a base do nosso trabalho. Disponibilizamos portfólios verificáveis e avaliações autênticas dos nossos clientes, porque resultados falam mais que promessas.'
+        },
+        full: {
+          title: 'Serviços completos, do design ao desenvolvimento',
+          intro: 'Acompanhamos cada projeto de forma completa:',
+          item1: 'Análise e estratégia',
+          item2: 'Web design profissional',
+          item3: 'Desenvolvimento técnico',
+          item4: 'Otimização SEO',
+          item5: 'Integração com WhatsApp, formulários e ferramentas de conversão',
+          outro: 'Com a EtzahWeb, você tem um parceiro único para todo o processo digital.'
+        },
+        exp: {
+          title: 'Experiência comprovada',
+          body: 'Trabalhamos com negócios locais, profissionais e empresas que desejam melhorar sua presença online. A experiência em diferentes setores permite criar soluções eficazes, direcionadas e orientadas ao mercado real.'
+        },
+        quote: {
+          title: 'Orçamentos transparentes',
+          body: 'Sem surpresas, sem custos ocultos. Fornecemos propostas detalhadas e claras, para você saber exatamente o que está contratando e qual valor está recebendo.'
+        },
+        support: {
+          title: 'Suporte também após o lançamento',
+          body: 'Nosso trabalho não termina com a publicação do site. Oferecemos suporte técnico e pós-lançamento para garantir segurança, atualizações e continuidade operacional.'
+        },
+        tech: {
+          title: 'Tecnologias modernas e seguras',
+          body: 'Utilizamos plataformas atualizadas, seguras e escaláveis, preparadas para crescer com o seu negócio e manter alta performance ao longo do tempo.'
+        },
+        custom: {
+          title: 'Sites sob medida, não templates genéricos',
+          body: 'Cada projeto é personalizado. Não usamos soluções padronizadas: seu site deve representar sua identidade, seus valores e seus objetivos de negócio.'
+        }
+      },
       process: {
         title: 'Processo claro, sem enrolação',
         subtitle: 'Do diagnóstico a entrega final, você acompanha tudo com transparência.',
@@ -435,6 +511,44 @@
           title: 'Automation & Funnels',
           body: 'Integrations with CRM, WhatsApp + Email so no lead is lost.',
           tag: 'Smart processes'
+        }
+      },
+      about: {
+        title: 'About Us – EtzahWeb',
+        intro: 'EtzahWeb was created with a clear goal: helping professionals and companies grow online with modern, effective, results-driven websites. We believe a website is not just a showcase, but a strategic tool to generate leads, increase credibility, and stand out from competitors.',
+        real: {
+          title: 'Real portfolio and reviews',
+          body: 'Transparency is at the core of our work. We provide verifiable portfolios and authentic client reviews, because results speak louder than promises.'
+        },
+        full: {
+          title: 'Complete services, from design to development',
+          intro: 'We manage every project end to end:',
+          item1: 'Analysis and strategy',
+          item2: 'Professional web design',
+          item3: 'Technical development',
+          item4: 'SEO optimization',
+          item5: 'WhatsApp, forms, and conversion tool integrations',
+          outro: 'With EtzahWeb, you get one partner for the entire digital process.'
+        },
+        exp: {
+          title: 'Proven experience',
+          body: 'We work with local businesses, professionals, and companies that want to improve their online presence. Our cross-industry experience helps us build effective, targeted, market-oriented solutions.'
+        },
+        quote: {
+          title: 'Transparent quotes',
+          body: 'No surprises and no hidden costs. We provide clear, detailed proposals so you know exactly what you are buying and what value you are getting.'
+        },
+        support: {
+          title: 'Support after launch',
+          body: 'Our work does not end when the site goes live. We provide technical and post-launch support to ensure security, updates, and operational continuity.'
+        },
+        tech: {
+          title: 'Modern and secure technologies',
+          body: 'We use up-to-date, secure, scalable platforms designed to grow with your business and keep strong performance over time.'
+        },
+        custom: {
+          title: 'Custom websites, not generic templates',
+          body: 'Every project is custom. We do not use standardized solutions: your website should reflect your identity, values, and business goals.'
         }
       },
       process: {
