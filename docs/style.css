@@ -1533,9 +1533,11 @@ a {
   margin-top: 0;
   padding: 68px 0 28px;
   border-top: none;
-  background-image: url("img2/img_footer/footer2.jpg");
-  background-size: cover;
-  background-position: center 50%;
+  background-image: url("img2/img_footer/Footer.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #050810;
   overflow: hidden;
 }
 
@@ -1670,7 +1672,7 @@ a {
 @media (max-width: 680px) {
   .footer-showcase {
     padding-top: 42px;
-    background-position: center 42%;
+    background-position: center top;
   }
 
   .footer-showcase-grid {
