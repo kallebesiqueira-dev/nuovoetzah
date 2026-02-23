@@ -594,9 +594,9 @@ a {
 .chi-siamo-content {
   display: grid;
   gap: 22px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
   justify-items: start;
 }
 
@@ -608,11 +608,11 @@ a {
 }
 
 .chi-siamo-article {
-  max-width: 860px;
+  max-width: 100%;
   display: grid;
   gap: 12px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   justify-items: start;
 }
 
