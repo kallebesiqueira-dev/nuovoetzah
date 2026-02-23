@@ -1534,9 +1534,9 @@ a {
   padding: 68px 0 28px;
   border-top: none;
   background-image: url("img2/img_footer/Footer.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: center center;
   background-color: #050810;
   overflow: hidden;
 }
