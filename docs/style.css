@@ -1899,43 +1899,47 @@ a {
 
 .admin-actions {
   display: flex;
-  gap: 14px;
+  gap: 20px;
   flex-wrap: wrap;
   margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--stroke);
 }
 
-.admin-actions .btn {
+.admin-actions .admin-nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 6px 2px 8px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
   color: #ddd7ef;
-  box-shadow: none;
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.admin-actions .btn-outline {
-  border-color: rgba(174, 139, 255, 0.48);
-  background: rgba(123, 77, 255, 0.16);
-  color: #efe7ff;
-}
-
-.admin-actions .btn-ghost {
-  border-color: rgba(158, 114, 255, 0.24);
-  background: rgba(16, 18, 24, 0.5);
-  color: #cdc3e6;
-}
-
-.admin-actions .btn,
+.admin-actions .admin-nav-link,
 .message-actions .btn {
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.admin-actions .btn:hover,
-.admin-actions .btn:focus-visible,
+.admin-actions .admin-nav-link:hover,
+.admin-actions .admin-nav-link:focus-visible,
 .message-actions .btn:hover,
 .message-actions .btn:focus-visible {
-  color: #f1eaff;
-  border-color: rgba(189, 146, 255, 0.58);
-  box-shadow: 0 0 0 2px rgba(123, 77, 255, 0.2);
+  color: var(--accent);
+  border-color: transparent;
+  box-shadow: none;
   transform: none;
+}
+
+.admin-actions .admin-nav-link:hover,
+.admin-actions .admin-nav-link:focus-visible,
+.admin-actions .admin-nav-link.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
 }
 
 .btn-icon {

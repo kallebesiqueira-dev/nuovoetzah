@@ -243,10 +243,8 @@ function setView(view) {
   updateHeader();
   updateStatus();
   if (inboxBtn && trashBtn) {
-    inboxBtn.classList.toggle('btn-outline', view === 'inbox');
-    inboxBtn.classList.toggle('btn-ghost', view !== 'inbox');
-    trashBtn.classList.toggle('btn-outline', view === 'trash');
-    trashBtn.classList.toggle('btn-ghost', view !== 'trash');
+    inboxBtn.classList.toggle('is-active', view === 'inbox');
+    trashBtn.classList.toggle('is-active', view === 'trash');
   }
   loadMessages();
 }
@@ -260,10 +258,20 @@ messagesContainer.addEventListener('click', (event) => {
   deleteMessage(id, action);
 });
 
-refreshBtn.addEventListener('click', loadMessages);
-if (inboxBtn) inboxBtn.addEventListener('click', () => setView('inbox'));
-if (trashBtn) trashBtn.addEventListener('click', () => setView('trash'));
-logoutBtn.addEventListener('click', async () => {
+refreshBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  loadMessages();
+});
+if (inboxBtn) inboxBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  setView('inbox');
+});
+if (trashBtn) trashBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  setView('trash');
+});
+logoutBtn.addEventListener('click', async (event) => {
+  event.preventDefault();
   try {
     await fetch(`${apiBase}/api/auth/logout`, {
       method: 'POST',
