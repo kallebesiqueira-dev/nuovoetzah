@@ -1682,10 +1682,10 @@ a {
   width: min(980px, calc(100vw - 24px));
   background: linear-gradient(145deg, rgba(18, 22, 32, 0.96), rgba(10, 13, 21, 0.96));
   color: var(--text);
-  border: 1px solid rgba(245, 185, 66, 0.26);
+  border: 1px solid rgba(151, 116, 255, 0.32);
   border-radius: 18px;
   padding: 16px 18px;
-  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.45), 0 0 24px rgba(245, 185, 66, 0.12);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.45), 0 0 24px rgba(151, 116, 255, 0.2);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   z-index: 90;
@@ -1715,7 +1715,7 @@ a {
 }
 
 .cookie-text a {
-  color: var(--accent);
+  color: #ceb7ff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1735,13 +1735,13 @@ a {
 .cookie-banner .btn-ghost {
   background: rgba(255, 255, 255, 0.04);
   border-color: rgba(255, 255, 255, 0.18);
-  color: #f3e2bf;
+  color: #e2d2ff;
 }
 
 .cookie-banner .btn-primary {
-  background: linear-gradient(135deg, #efc679 0%, #e8b04a 100%);
-  color: #1b1302;
-  box-shadow: 0 8px 22px rgba(232, 176, 74, 0.24);
+  background: linear-gradient(135deg, #b89cff 0%, #8f69ff 100%);
+  color: #140a2c;
+  box-shadow: 0 8px 22px rgba(143, 105, 255, 0.34);
 }
 
 .cookie-close {
