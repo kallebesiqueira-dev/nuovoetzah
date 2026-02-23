@@ -594,16 +594,17 @@ a {
 .chi-siamo-content {
   display: grid;
   gap: 22px;
+  max-width: 900px;
 }
 
 .chi-siamo-content > p {
   margin: 0;
   color: var(--muted);
-  max-width: 960px;
+  max-width: 760px;
 }
 
 .chi-siamo-article {
-  max-width: 980px;
+  max-width: 860px;
   display: grid;
   gap: 12px;
 }
@@ -615,6 +616,20 @@ a {
 .chi-siamo-article p {
   margin: 0;
   color: var(--muted);
+  max-width: 760px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+#chi-siamo .section-title p {
+  max-width: 760px;
+}
+
+#chi-siamo .chi-siamo-article .pricing-list li {
+  max-width: 760px;
 }
 
 .chi-siamo-article .pricing-list {
