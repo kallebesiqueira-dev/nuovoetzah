@@ -103,6 +103,9 @@
           body: 'Training, ultimi ritocchi e accompagnamento iniziale.'
         }
       },
+      reviews: {
+        count: 'In base a 9 recensioni'
+      },
       contact: {
         title: 'Mettiamo online il tuo progetto?',
         subtitle: 'Invia i tuoi dati e ricevi risposta entro 24h con una proposta chiara.',
@@ -337,6 +340,9 @@
           body: 'Treinamento, ajustes finais e acompanhamento inicial.'
         }
       },
+      reviews: {
+        count: 'Com base em 9 avaliações'
+      },
       contact: {
         title: 'Vamos colocar seu projeto no ar?',
         subtitle: 'Envie seus dados e retorno em até 24h com uma proposta clara e objetiva.',
@@ -570,6 +576,9 @@
           title: 'Delivery and support',
           body: 'Training, final tweaks, and early support.'
         }
+      },
+      reviews: {
+        count: 'Based on 9 reviews'
       },
       contact: {
         title: 'Ready to launch your project?',
