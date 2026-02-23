@@ -625,11 +625,8 @@ a {
   margin: 0;
   color: var(--muted);
   max-width: 760px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
   text-align: left;
 }
 
@@ -1020,11 +1017,11 @@ a {
   }
 
   .review-card p:last-child {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
   }
 }
 
@@ -1060,11 +1057,11 @@ a {
   }
 
   .review-card p:last-child {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
   }
 
   .reviews-nav {
@@ -3169,6 +3166,14 @@ a {
   .home-page.luxury-minimal .reviews-nav[data-review-next] {
     right: 8px !important;
     left: auto !important;
+  }
+
+  .chi-siamo-article p {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
   }
 }
 
