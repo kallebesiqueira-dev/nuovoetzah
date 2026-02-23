@@ -597,6 +597,7 @@ a {
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  justify-items: center;
 }
 
 .chi-siamo-content > p {
@@ -614,6 +615,7 @@ a {
   gap: 12px;
   margin-left: auto;
   margin-right: auto;
+  justify-items: center;
 }
 
 .chi-siamo-article h3 {
@@ -642,14 +644,22 @@ a {
   margin-right: auto;
 }
 
+#chi-siamo .section-title {
+  text-align: center;
+}
+
 #chi-siamo .chi-siamo-article .pricing-list li {
   max-width: 760px;
+  width: 100%;
 }
 
 #chi-siamo .chi-siamo-article .pricing-list {
-  width: fit-content;
+  width: min(760px, 100%);
   margin-left: auto;
   margin-right: auto;
+  display: inline-grid;
+  justify-items: start;
+  text-align: left;
 }
 
 .chi-siamo-article .pricing-list {
