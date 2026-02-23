@@ -2,8 +2,8 @@
   const translations = {
     it: {
       head: {
-        title: 'EtzahWeb | Soluzioni Digitali Premium',
-        description: 'Studio freelance specializzato in siti, landing page e automazioni per aziende che vogliono vendere di più.'
+        title: '✅ EtzahWeb | Siti Web, Landing Page, SEO e Automazioni',
+        description: 'Studio digitale specializzato in siti web su misura, landing page ad alta conversione, SEO tecnica e automazioni.'
       },
       nav: {
         services: 'Servizi',
@@ -198,8 +198,8 @@
     },
     pt: {
       head: {
-        title: 'EtzahWeb | Soluções Digitais Premium',
-        description: 'Studio freelance especializado em sites, landing pages e automações para negócios que querem vender mais.'
+        title: '✅ EtzahWeb | Sites, Landing Pages, SEO e Automações',
+        description: 'Estúdio digital especializado em sites sob medida, landing pages de alta conversão, SEO técnico e automações.'
       },
       nav: {
         services: 'Serviços',
@@ -394,8 +394,8 @@
     },
     en: {
       head: {
-        title: 'EtzahWeb | Premium Digital Solutions',
-        description: 'EtzahWeb specializes in websites, landing pages and automation for businesses that want to sell more.'
+        title: '✅ EtzahWeb | Websites, Landing Pages, SEO & Automation',
+        description: 'Digital studio specialized in custom websites, high-converting landing pages, technical SEO, and automation.'
       },
       nav: {
         services: 'Services',
