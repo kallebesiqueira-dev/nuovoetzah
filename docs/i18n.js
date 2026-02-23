@@ -104,7 +104,12 @@
         }
       },
       reviews: {
-        count: 'In base a 9 recensioni'
+        sectionTitle: 'Recensioni clienti',
+        sectionSubtitle: 'Testimonianze utili per verificare affidabilità, comunicazione e supporto dopo il lancio.',
+        kicker: 'Nostre recensioni',
+        excellent: 'ECCELLENTE',
+        count: 'In base a 9 recensioni',
+        google: 'Google'
       },
       contact: {
         title: 'Mettiamo online il tuo progetto?',
@@ -341,7 +346,12 @@
         }
       },
       reviews: {
-        count: 'Com base em 9 avaliações'
+        sectionTitle: 'Avaliações de clientes',
+        sectionSubtitle: 'Depoimentos úteis para verificar confiabilidade, comunicação e suporte após o lançamento.',
+        kicker: 'Nossas avaliações',
+        excellent: 'EXCELENTE',
+        count: 'Com base em 9 avaliações',
+        google: 'Google'
       },
       contact: {
         title: 'Vamos colocar seu projeto no ar?',
@@ -578,7 +588,12 @@
         }
       },
       reviews: {
-        count: 'Based on 9 reviews'
+        sectionTitle: 'Client reviews',
+        sectionSubtitle: 'Testimonials that help verify reliability, communication, and post-launch support.',
+        kicker: 'Our reviews',
+        excellent: 'EXCELLENT',
+        count: 'Based on 9 reviews',
+        google: 'Google'
       },
       contact: {
         title: 'Ready to launch your project?',
