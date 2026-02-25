@@ -3475,7 +3475,7 @@ a {
 
 @media (min-width: 1025px) {
   .home-page.luxury-minimal .portfolio-grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
