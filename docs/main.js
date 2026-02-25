@@ -455,9 +455,10 @@ if (reviewSlider) {
 
   if (reviewTrack) {
     const reviewCards = Array.from(reviewTrack.querySelectorAll('.review-card'));
-    const gapPx = 16;
     let pageIndex = 0;
-    let visibleCount = window.innerWidth <= 840 ? 1 : 2;
+    const singleCardQuery = window.matchMedia('(max-width: 1024px)');
+    let visibleCount = singleCardQuery.matches ? 1 : 2;
+    let refreshFrameId = 0;
 
     const getPageStarts = () => {
       const starts = [];
@@ -495,8 +496,19 @@ if (reviewSlider) {
     };
 
     const refreshLayout = () => {
-      visibleCount = window.innerWidth <= 840 ? 1 : 2;
+      visibleCount = singleCardQuery.matches ? 1 : 2;
       goToPage(0);
+    };
+
+    const scheduleRefreshLayout = () => {
+      if (refreshFrameId) {
+        cancelAnimationFrame(refreshFrameId);
+      }
+
+      refreshFrameId = requestAnimationFrame(() => {
+        refreshFrameId = 0;
+        refreshLayout();
+      });
     };
 
     if (prevButton) {
@@ -511,7 +523,137 @@ if (reviewSlider) {
       });
     }
 
-    window.addEventListener('resize', refreshLayout, { passive: true });
+    let pointerStartX = 0;
+    let pointerStartY = 0;
+    let pointerEndX = 0;
+    let pointerEndY = 0;
+    let activePointerId = null;
+    const swipeThreshold = 45;
+
+    const finishSwipe = () => {
+      if (!singleCardQuery.matches) {
+        return;
+      }
+
+      const deltaX = pointerEndX - pointerStartX;
+      const deltaY = pointerEndY - pointerStartY;
+
+      if (Math.abs(deltaX) < swipeThreshold || Math.abs(deltaX) <= Math.abs(deltaY)) {
+        return;
+      }
+
+      if (deltaX < 0) {
+        goToPage(pageIndex + 1);
+      } else {
+        goToPage(pageIndex - 1);
+      }
+    };
+
+    reviewSlider.addEventListener('pointerdown', (event) => {
+      if (!singleCardQuery.matches) {
+        return;
+      }
+
+      activePointerId = event.pointerId;
+      pointerStartX = event.clientX;
+      pointerStartY = event.clientY;
+      pointerEndX = event.clientX;
+      pointerEndY = event.clientY;
+      reviewSlider.classList.add('is-dragging');
+
+      if (typeof reviewSlider.setPointerCapture === 'function') {
+        reviewSlider.setPointerCapture(event.pointerId);
+      }
+    });
+
+    reviewSlider.addEventListener('pointermove', (event) => {
+      if (activePointerId !== event.pointerId || !singleCardQuery.matches) {
+        return;
+      }
+
+      pointerEndX = event.clientX;
+      pointerEndY = event.clientY;
+
+      const deltaX = Math.abs(pointerEndX - pointerStartX);
+      const deltaY = Math.abs(pointerEndY - pointerStartY);
+
+      if (deltaX > deltaY) {
+        event.preventDefault();
+      }
+    }, { passive: false });
+
+    const handlePointerEnd = (event) => {
+      if (activePointerId !== event.pointerId) {
+        return;
+      }
+
+      reviewSlider.classList.remove('is-dragging');
+      finishSwipe();
+      activePointerId = null;
+    };
+
+    reviewSlider.addEventListener('pointerup', handlePointerEnd);
+    reviewSlider.addEventListener('pointercancel', handlePointerEnd);
+    reviewSlider.addEventListener('lostpointercapture', (event) => {
+      if (activePointerId !== event.pointerId) {
+        return;
+      }
+
+      reviewSlider.classList.remove('is-dragging');
+      activePointerId = null;
+    });
+
+    if (!('PointerEvent' in window)) {
+      reviewSlider.addEventListener('touchstart', (event) => {
+        if (!singleCardQuery.matches || !event.touches.length) {
+          return;
+        }
+
+        const touch = event.touches[0];
+        pointerStartX = touch.clientX;
+        pointerStartY = touch.clientY;
+        pointerEndX = touch.clientX;
+        pointerEndY = touch.clientY;
+      }, { passive: true });
+
+      reviewSlider.addEventListener('touchmove', (event) => {
+        if (!singleCardQuery.matches || !event.touches.length) {
+          return;
+        }
+
+        const touch = event.touches[0];
+        pointerEndX = touch.clientX;
+        pointerEndY = touch.clientY;
+
+        const deltaX = Math.abs(pointerEndX - pointerStartX);
+        const deltaY = Math.abs(pointerEndY - pointerStartY);
+
+        if (deltaX > deltaY) {
+          event.preventDefault();
+        }
+      }, { passive: false });
+
+      reviewSlider.addEventListener('touchend', () => {
+        finishSwipe();
+      });
+    }
+
+    window.addEventListener('resize', scheduleRefreshLayout, { passive: true });
+    window.addEventListener('orientationchange', scheduleRefreshLayout, { passive: true });
+    window.addEventListener('load', scheduleRefreshLayout, { passive: true });
+
+    if (typeof singleCardQuery.addEventListener === 'function') {
+      singleCardQuery.addEventListener('change', scheduleRefreshLayout);
+    }
+
+    if (typeof ResizeObserver === 'function') {
+      const sliderResizeObserver = new ResizeObserver(() => {
+        scheduleRefreshLayout();
+      });
+      sliderResizeObserver.observe(reviewSlider);
+      sliderResizeObserver.observe(reviewTrack);
+    }
+
     refreshLayout();
   }
 }
