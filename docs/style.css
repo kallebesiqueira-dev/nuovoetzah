@@ -1433,6 +1433,14 @@ a {
   background: #25d366;
 }
 
+.social-link.whatsapp .whatsapp-icon {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+  stroke: none;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.45));
+}
+
 .social-link:hover,
 .social-link:focus-visible {
   transform: translateY(-2px);
@@ -1633,6 +1641,14 @@ a {
   stroke-width: 1.8;
   fill: none;
   flex-shrink: 0;
+}
+
+.whatsapp-float .whatsapp-icon {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+  stroke: none;
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.5));
 }
 
 .whatsapp-float:hover,
