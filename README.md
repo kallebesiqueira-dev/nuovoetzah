@@ -9,8 +9,8 @@ Repositorio publico do EtzahWeb.
 Abra os arquivos dentro de docs/ em um servidor estatico ou publique diretamente no GitHub Pages.
 
 ## Formulario de contato
-O formulario da home envia mensagens diretamente para contato@etzahweb.com usando FormSubmit.
-Na primeira configuracao, o endereco de email precisa ser confirmado no proprio servico.
+O formulario da home envia mensagens usando FormSubmit com o identificador invisivel configurado para a caixa de entrada da EtzahWeb.
+Se o FormSubmit exigir uma confirmacao inicial ou revalidacao, ela precisa ser feita no proprio servico.
 
 ## Deploy
 - GitHub Pages a partir de /docs

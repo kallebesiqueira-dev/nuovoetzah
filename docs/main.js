@@ -56,7 +56,7 @@ if (hamburger && nav) {
 }
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('formStatus');
-const formEndpoint = form?.getAttribute('action') || 'https://formsubmit.co/ajax/contato@etzahweb.com';
+const formEndpoint = form?.getAttribute('action') || 'https://formsubmit.co/ajax/6bd2ada033bd47ab703548d1b8da98db';
 const isHomePage = document.body.classList.contains('home-page');
 const isLuxuryMinimal = document.body.classList.contains('luxury-minimal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
