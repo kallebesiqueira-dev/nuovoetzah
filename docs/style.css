@@ -4606,6 +4606,14 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
   line-height: 1.62;
 }
 
+html[lang="pt-BR"] .home-page.azure-showcase .founder-lead {
+  font-size: 1.69rem !important;
+}
+
+html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
+  font-size: 1.02rem;
+}
+
 .home-page.azure-showcase .founder-copy span {
   color: #5e7fbc !important;
 }
@@ -5757,6 +5765,14 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
     font-size: 1.04rem;
     line-height: 1.64;
   }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-lead {
+    font-size: clamp(1.28rem, 2.34vw, 1.52rem) !important;
+  }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
+    font-size: 0.99rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -5788,6 +5804,14 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
     max-width: 58ch;
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-lead {
+    font-size: 1.36rem !important;
+  }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
+    font-size: 0.96rem;
   }
 }
 
@@ -5994,6 +6018,10 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
     max-width: 24ch;
     text-align: center;
     margin-inline: auto;
+  }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-lead {
+    font-size: 1.22rem !important;
   }
 
   .home-page.azure-showcase .founder-copy {
@@ -6356,6 +6384,10 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
   .home-page.azure-showcase .founder-copy p {
     font-size: 1rem;
     line-height: 1.74;
+  }
+
+  html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
+    font-size: 0.96rem;
   }
 
   .home-page.azure-showcase .footer-col,
