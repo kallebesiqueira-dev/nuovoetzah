@@ -678,7 +678,7 @@
         }
       },
       founder: {
-        title: 'Quem Sou Eu',
+        title: 'Quem sou',
         imageAlt: 'Retrato de Kallebe Gallo',
         p1Intro: 'Meu nome é',
         p1FirstName: 'Kallebe',
