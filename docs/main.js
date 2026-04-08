@@ -56,10 +56,7 @@ if (hamburger && nav) {
 }
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('formStatus');
-const apiMeta = document.querySelector('meta[name="api-base"]');
-const apiBase = apiMeta && apiMeta.content.trim()
-  ? apiMeta.content.trim()
-  : (window.location.port === '5500' ? 'http://127.0.0.1:3000' : '');
+const formEndpoint = form?.getAttribute('action') || 'https://formsubmit.co/ajax/contato@etzahweb.com';
 const isHomePage = document.body.classList.contains('home-page');
 const isLuxuryMinimal = document.body.classList.contains('luxury-minimal');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -67,6 +64,136 @@ const cookieBanner = document.querySelector('[data-cookie-banner]');
 const cookieAcceptButtons = document.querySelectorAll('[data-cookie-accept]');
 const cookieCloseButton = document.querySelector('[data-cookie-close]');
 const cookieConsentKey = 'etzah_cookie_consent';
+const heroTitleSequence = document.querySelector('[data-hero-title-sequence]');
+const heroPrimaryCta = document.querySelector('.hero-actions .btn-primary[data-i18n="hero.ctaPrimary"]');
+const aboutSectionCta = document.querySelector('.about-section-btn[data-i18n="about.cta"]');
+const contactSectionTitle = document.querySelector('#contatto .contact-copy h2[data-i18n="contact.title"]');
+let heroTitleSequenceTimeout = 0;
+
+const updateHeroMobileCtaLabel = () => {
+  if (!heroPrimaryCta) {
+    return;
+  }
+
+  const isMobile = window.matchMedia('(max-width: 600px)').matches;
+  const lang = I18N.getCurrentLang();
+
+  if (isMobile && lang === 'pt') {
+    heroPrimaryCta.textContent = 'Peça já!';
+    return;
+  }
+
+  if (isMobile && lang === 'it') {
+    heroPrimaryCta.textContent = 'Preventivo';
+    return;
+  }
+
+  heroPrimaryCta.textContent = I18N.t('hero.ctaPrimary');
+};
+
+const updateAboutMobileCtaLabel = () => {
+  if (!aboutSectionCta) {
+    return;
+  }
+
+  const isMobile = window.matchMedia('(max-width: 600px)').matches;
+  const lang = I18N.getCurrentLang();
+
+  if (isMobile && lang === 'pt') {
+    aboutSectionCta.textContent = 'Quero meu site';
+    return;
+  }
+
+  if (isMobile && lang === 'it') {
+    aboutSectionCta.textContent = 'Voglio il mio sito';
+    return;
+  }
+
+  if (isMobile && lang === 'en') {
+    aboutSectionCta.textContent = 'I want my website';
+    return;
+  }
+
+  aboutSectionCta.textContent = I18N.t('about.cta');
+};
+
+const updateContactMobileTitle = () => {
+  if (!contactSectionTitle) {
+    return;
+  }
+
+  const isMobile = window.matchMedia('(max-width: 600px)').matches;
+  const lang = I18N.getCurrentLang();
+
+  if (isMobile && lang === 'pt') {
+    contactSectionTitle.innerHTML = 'Vamos colocar seu<br>projeto no ar?';
+    return;
+  }
+
+  if (isMobile && lang === 'it') {
+    contactSectionTitle.innerHTML = 'Mettiamo online<br>il tuo progetto?';
+    return;
+  }
+
+  if (isMobile && lang === 'en') {
+    contactSectionTitle.innerHTML = 'Ready to launch<br>your project?';
+    return;
+  }
+
+  contactSectionTitle.textContent = I18N.t('contact.title');
+};
+
+const startHeroTitleSequence = () => {
+  if (!heroTitleSequence) {
+    return;
+  }
+
+  const lines = Array.from(heroTitleSequence.querySelectorAll('.hero-title-line'));
+
+  window.clearTimeout(heroTitleSequenceTimeout);
+
+  if (!lines.length) {
+    return;
+  }
+
+  if (prefersReducedMotion) {
+    lines.forEach((line) => {
+      line.classList.add('is-visible');
+    });
+    return;
+  }
+
+  lines.forEach((line) => {
+    line.classList.remove('is-visible');
+  });
+
+  const revealLine = (index) => {
+    if (!lines[index]) {
+      return;
+    }
+
+    lines[index].classList.add('is-visible');
+
+    if (index < lines.length - 1) {
+      heroTitleSequenceTimeout = window.setTimeout(() => {
+        revealLine(index + 1);
+      }, 2000);
+      return;
+    }
+
+    heroTitleSequenceTimeout = window.setTimeout(() => {
+      lines.forEach((line) => {
+        line.classList.remove('is-visible');
+      });
+
+      heroTitleSequenceTimeout = window.setTimeout(() => {
+        revealLine(0);
+      }, 220);
+    }, 3200);
+  };
+
+  revealLine(0);
+};
 
 I18N.init({ fallback: 'it' });
 I18N.onChange(() => {
@@ -81,7 +208,20 @@ I18N.onChange(() => {
   if (cookieCloseButton) {
     cookieCloseButton.setAttribute('aria-label', I18N.t('cookie.closeAriaLabel', 'Close cookie notice'));
   }
+
+  updateHeroMobileCtaLabel();
+  updateAboutMobileCtaLabel();
+  updateContactMobileTitle();
+  startHeroTitleSequence();
 });
+
+window.addEventListener('resize', updateHeroMobileCtaLabel);
+window.addEventListener('resize', updateAboutMobileCtaLabel);
+window.addEventListener('resize', updateContactMobileTitle);
+updateHeroMobileCtaLabel();
+updateAboutMobileCtaLabel();
+updateContactMobileTitle();
+startHeroTitleSequence();
 
 if (cookieBanner) {
   cookieBanner.setAttribute('aria-label', I18N.t('cookie.bannerAriaLabel', 'Cookie notice'));
@@ -138,21 +278,14 @@ if (form && statusEl) {
     statusEl.textContent = I18N.t('form.sending');
 
     const formData = new FormData(form);
-    const payload = {
-      name: formData.get('nome'),
-      email: formData.get('email'),
-      phone: formData.get('telefone') || '',
-      company: formData.get('empresa') || '',
-      message: formData.get('mensagem') || ''
-    };
 
     try {
-      const response = await fetch(`${apiBase}/api/messages`, {
+      const response = await fetch(formEndpoint, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          Accept: 'application/json'
         },
-        body: JSON.stringify(payload)
+        body: formData
       });
 
       if (!response.ok) {
@@ -168,18 +301,77 @@ if (form && statusEl) {
 }
 
 if (isHomePage) {
-  const revealTargets = document.querySelectorAll(
-    '.section .card, .section .step, .section .pricing-card, .section .mini-card, .section .form-card, .hero-card'
-  );
+  const faqGrid = document.querySelector('.faq-grid');
+  const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+
+  if (faqGrid && faqItems.length) {
+    const leftColumn = document.createElement('div');
+    const rightColumn = document.createElement('div');
+
+    leftColumn.className = 'faq-column';
+    rightColumn.className = 'faq-column';
+
+    faqItems.forEach((item, index) => {
+      if (index % 2 === 0) {
+        leftColumn.appendChild(item);
+      } else {
+        rightColumn.appendChild(item);
+      }
+    });
+
+    faqGrid.replaceChildren(leftColumn, rightColumn);
+  }
+
+  const revealSelector = [
+    '.home-page main > .section .section-title',
+    '.home-page main > .section .about-section-cta',
+    '.home-page main > .section .founder-media',
+    '.home-page main > .section .founder-copy',
+    '.home-page main > .section .portfolio-showcase-item',
+    '.home-page main > .section .reviews-summary',
+    '.home-page main > .section .reviews-slider-shell',
+    '.home-page main > .section .business-benefit-card',
+    '.home-page main > .section .blog-copy',
+    '.home-page main > .section .blog-media',
+    '.home-page main > .section .faq-item',
+    '.home-page main > .section .contact-copy',
+    '.home-page main > .section .contact-map-card',
+    '.section .card',
+    '.section .step',
+    '.section .pricing-card',
+    '.section .mini-card',
+    '.section .form-card',
+    '.hero-card'
+  ].join(', ');
+  const revealTargets = Array.from(document.querySelectorAll(revealSelector));
   const cinematicSections = document.querySelectorAll('.home-page .hero, .home-page .section');
+  const heroSection = document.querySelector('.home-page.azure-showcase .hero');
+  const staggerGroups = document.querySelectorAll(
+    '.about-services-grid, .portfolio-showcase-grid, .business-benefits-grid, .faq-grid .faq-column, .contact-cards, .founder-grid, .blog-grid'
+  );
 
   revealTargets.forEach((element) => {
     element.classList.add('reveal-item');
   });
 
+  staggerGroups.forEach((group) => {
+    Array.from(group.children).forEach((element, index) => {
+      if (!element.classList.contains('reveal-item')) {
+        element.classList.add('reveal-item');
+      }
+
+      element.style.setProperty('--reveal-delay', `${Math.min(index * 90, 360)}ms`);
+    });
+  });
+
   if (prefersReducedMotion || !('IntersectionObserver' in window)) {
     revealTargets.forEach((element) => {
       element.classList.add('is-visible');
+    });
+    staggerGroups.forEach((group) => {
+      Array.from(group.children).forEach((element) => {
+        element.classList.add('is-visible');
+      });
     });
   } else {
     const revealObserver = new IntersectionObserver(
@@ -199,6 +391,28 @@ if (isHomePage) {
 
     revealTargets.forEach((element) => {
       revealObserver.observe(element);
+    });
+
+    staggerGroups.forEach((group) => {
+      Array.from(group.children).forEach((element) => {
+        revealObserver.observe(element);
+      });
+    });
+  }
+
+  if (faqItems.length) {
+    faqItems.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) {
+          return;
+        }
+
+        faqItems.forEach((otherItem) => {
+          if (otherItem !== item) {
+            otherItem.open = false;
+          }
+        });
+      });
     });
   }
 
@@ -366,45 +580,46 @@ if (portfolioCarousel) {
       setActiveCard(index);
     });
   });
+}
 
-  const lightbox = document.querySelector('[data-portfolio-lightbox]');
-  const lightboxImage = lightbox ? lightbox.querySelector('[data-lightbox-image]') : null;
-  const lightboxCloseControls = lightbox ? lightbox.querySelectorAll('[data-lightbox-close]') : [];
+const lightbox = document.querySelector('[data-portfolio-lightbox]');
+const lightboxImage = lightbox ? lightbox.querySelector('[data-lightbox-image]') : null;
+const lightboxCloseControls = lightbox ? lightbox.querySelectorAll('[data-lightbox-close]') : [];
 
-  if (lightbox && lightboxImage) {
-    const openLightbox = (source, altText) => {
-      lightboxImage.src = source;
-      lightboxImage.alt = altText || 'Portfolio image';
-      lightbox.hidden = false;
-      document.body.style.overflow = 'hidden';
-    };
+if (lightbox && lightboxImage) {
+  const openLightbox = (source, altText) => {
+    lightboxImage.src = source;
+    lightboxImage.alt = altText || 'Portfolio image';
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  };
 
-    const closeLightbox = () => {
-      lightbox.hidden = true;
-      lightboxImage.src = '';
-      lightboxImage.alt = '';
-      document.body.style.overflow = '';
-    };
+  const closeLightbox = () => {
+    lightbox.hidden = true;
+    lightboxImage.src = '';
+    lightboxImage.alt = '';
+    document.body.style.overflow = '';
+  };
 
-    portfolioCarousel.addEventListener('click', (event) => {
-      const trigger = event.target.closest('[data-lightbox-src]');
-      if (!trigger) {
-        return;
-      }
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-lightbox-src]');
+    if (!trigger) {
+      return;
+    }
 
-      openLightbox(trigger.getAttribute('data-lightbox-src'), trigger.getAttribute('data-lightbox-alt'));
-    });
+    event.preventDefault();
+    openLightbox(trigger.getAttribute('data-lightbox-src'), trigger.getAttribute('data-lightbox-alt'));
+  });
 
-    lightboxCloseControls.forEach((control) => {
-      control.addEventListener('click', closeLightbox);
-    });
+  lightboxCloseControls.forEach((control) => {
+    control.addEventListener('click', closeLightbox);
+  });
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && !lightbox.hidden) {
-        closeLightbox();
-      }
-    });
-  }
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !lightbox.hidden) {
+      closeLightbox();
+    }
+  });
 }
 
 const headerBackground = document.querySelector('[data-header-bg]');
@@ -413,36 +628,50 @@ if (headerBackground) {
   const slideA = headerBackground.querySelector('[data-header-slide-a]');
   const slideB = headerBackground.querySelector('[data-header-slide-b]');
   const headerImages = [
-    'img2/IMG_6252.jpg',
-    'img2/IMG_6254.jpg',
-    'img2/IMG_6255.jpg'
+    'img2/hero.png'
   ];
 
-  if (slideA && slideB && headerImages.length) {
+  if (slideA && headerImages.length) {
     let activeSlide = slideA;
-    let hiddenSlide = slideB;
-    let imageIndex = 0;
 
     const applyImage = (slide, source) => {
       slide.style.backgroundImage = `url("${source}")`;
     };
 
     applyImage(activeSlide, headerImages[0]);
-    applyImage(hiddenSlide, headerImages[1] || headerImages[0]);
+    activeSlide.classList.add('is-active');
 
-    if (!prefersReducedMotion && headerImages.length > 1) {
-      window.setInterval(() => {
-        imageIndex = (imageIndex + 1) % headerImages.length;
-        applyImage(hiddenSlide, headerImages[imageIndex]);
-
-        hiddenSlide.classList.add('is-active');
-        activeSlide.classList.remove('is-active');
-
-        const previous = activeSlide;
-        activeSlide = hiddenSlide;
-        hiddenSlide = previous;
-      }, 12000);
+    if (slideB) {
+      slideB.style.backgroundImage = 'none';
+      slideB.classList.remove('is-active');
     }
+  }
+
+  const heroSection = document.querySelector('.hero');
+
+  if (heroSection && !prefersReducedMotion) {
+    let heroScrollFrame = 0;
+
+    const updateHeroBackgroundShift = () => {
+      const heroHeight = heroSection.offsetHeight || 1;
+      const progress = Math.max(0, Math.min(1, window.scrollY / heroHeight));
+      const shiftY = Math.round(progress * 120);
+
+      heroSection.style.setProperty('--hero-bg-shift', `${shiftY}px`);
+      heroScrollFrame = 0;
+    };
+
+    const requestHeroBackgroundShift = () => {
+      if (heroScrollFrame) {
+        return;
+      }
+
+      heroScrollFrame = window.requestAnimationFrame(updateHeroBackgroundShift);
+    };
+
+    updateHeroBackgroundShift();
+    window.addEventListener('scroll', requestHeroBackgroundShift, { passive: true });
+    window.addEventListener('resize', requestHeroBackgroundShift);
   }
 }
 
@@ -450,210 +679,116 @@ const reviewSlider = document.querySelector('[data-review-slider]');
 
 if (reviewSlider) {
   const reviewTrack = reviewSlider.querySelector('[data-review-track]');
-  const prevButton = document.querySelector('[data-review-prev]');
-  const nextButton = document.querySelector('[data-review-next]');
 
   if (reviewTrack) {
-    const reviewCards = Array.from(reviewTrack.querySelectorAll('.review-card'));
-    let pageIndex = 0;
-    const singleCardQuery = window.matchMedia('(max-width: 1024px)');
-    let visibleCount = singleCardQuery.matches ? 1 : 2;
-    let refreshFrameId = 0;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const originalCards = Array.from(reviewTrack.querySelectorAll('.review-card'));
+    let animationFrameId = 0;
+    let lastTimestamp = 0;
+    let marqueeOffset = 0;
+    let pauseMarquee = false;
+    let trackResetWidth = 0;
 
-    const getPageStarts = () => {
-      const starts = [];
-      for (let index = 0; index < reviewCards.length; index += visibleCount) {
-        starts.push(index);
-      }
-      return starts;
-    };
-
-    const updateVisibleCards = (starts) => {
-      const activeStart = starts[pageIndex] || 0;
-      const activeEnd = activeStart + visibleCount;
-      reviewCards.forEach((card, index) => {
-        card.classList.toggle('is-in-view', index >= activeStart && index < activeEnd);
+    const clearClones = () => {
+      reviewTrack.querySelectorAll('[data-review-clone="true"]').forEach((card) => {
+        card.remove();
       });
     };
 
-    const goToPage = (nextPage) => {
-      const starts = getPageStarts();
-      if (!starts.length) {
-        return;
-      }
-
-      const totalPages = starts.length;
-      pageIndex = (nextPage + totalPages) % totalPages;
-
-      const targetCard = reviewCards[starts[pageIndex]];
-      if (!targetCard) {
-        return;
-      }
-
-      const offset = targetCard.offsetLeft;
-      reviewTrack.style.transform = `translateX(${-offset}px)`;
-      updateVisibleCards(starts);
-    };
-
-    const refreshLayout = () => {
-      visibleCount = singleCardQuery.matches ? 1 : 2;
-      goToPage(0);
-    };
-
-    const scheduleRefreshLayout = () => {
-      if (refreshFrameId) {
-        cancelAnimationFrame(refreshFrameId);
-      }
-
-      refreshFrameId = requestAnimationFrame(() => {
-        refreshFrameId = 0;
-        refreshLayout();
+    const buildMarquee = () => {
+      clearClones();
+      originalCards.forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.dataset.reviewClone = 'true';
+        clone.setAttribute('aria-hidden', 'true');
+        reviewTrack.appendChild(clone);
       });
     };
 
-    if (prevButton) {
-      prevButton.addEventListener('click', () => {
-        goToPage(pageIndex - 1);
-      });
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener('click', () => {
-        goToPage(pageIndex + 1);
-      });
-    }
-
-    let pointerStartX = 0;
-    let pointerStartY = 0;
-    let pointerEndX = 0;
-    let pointerEndY = 0;
-    let activePointerId = null;
-    const swipeThreshold = 45;
-
-    const finishSwipe = () => {
-      if (!singleCardQuery.matches) {
-        return;
+    const measureResetWidth = () => {
+      const firstClone = reviewTrack.querySelector('[data-review-clone="true"]');
+      if (firstClone) {
+        trackResetWidth = firstClone.offsetLeft;
       }
 
-      const deltaX = pointerEndX - pointerStartX;
-      const deltaY = pointerEndY - pointerStartY;
-
-      if (Math.abs(deltaX) < swipeThreshold || Math.abs(deltaX) <= Math.abs(deltaY)) {
-        return;
-      }
-
-      if (deltaX < 0) {
-        goToPage(pageIndex + 1);
-      } else {
-        goToPage(pageIndex - 1);
+      if (!trackResetWidth) {
+        trackResetWidth = originalCards.reduce((sum, card) => sum + card.offsetWidth, 0);
       }
     };
 
-    reviewSlider.addEventListener('pointerdown', (event) => {
-      if (!singleCardQuery.matches) {
-        return;
+    const renderTrack = () => {
+      reviewTrack.style.transform = `translate3d(${marqueeOffset}px, 0, 0)`;
+    };
+
+    const stepMarquee = (timestamp) => {
+      if (!lastTimestamp) {
+        lastTimestamp = timestamp;
       }
 
-      activePointerId = event.pointerId;
-      pointerStartX = event.clientX;
-      pointerStartY = event.clientY;
-      pointerEndX = event.clientX;
-      pointerEndY = event.clientY;
-      reviewSlider.classList.add('is-dragging');
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
 
-      if (typeof reviewSlider.setPointerCapture === 'function') {
-        reviewSlider.setPointerCapture(event.pointerId);
+      if (!pauseMarquee && !prefersReducedMotion && trackResetWidth > 0) {
+        marqueeOffset -= delta * 0.04;
+
+        if (Math.abs(marqueeOffset) >= trackResetWidth) {
+          marqueeOffset += trackResetWidth;
+        }
+
+        renderTrack();
       }
+
+      animationFrameId = window.requestAnimationFrame(stepMarquee);
+    };
+
+    const refreshMarquee = () => {
+      marqueeOffset = 0;
+      lastTimestamp = 0;
+      measureResetWidth();
+      renderTrack();
+    };
+
+    buildMarquee();
+    refreshMarquee();
+
+    reviewSlider.addEventListener('mouseenter', () => {
+      pauseMarquee = true;
     });
 
-    reviewSlider.addEventListener('pointermove', (event) => {
-      if (activePointerId !== event.pointerId || !singleCardQuery.matches) {
-        return;
-      }
-
-      pointerEndX = event.clientX;
-      pointerEndY = event.clientY;
-
-      const deltaX = Math.abs(pointerEndX - pointerStartX);
-      const deltaY = Math.abs(pointerEndY - pointerStartY);
-
-      if (deltaX > deltaY) {
-        event.preventDefault();
-      }
-    }, { passive: false });
-
-    const handlePointerEnd = (event) => {
-      if (activePointerId !== event.pointerId) {
-        return;
-      }
-
-      reviewSlider.classList.remove('is-dragging');
-      finishSwipe();
-      activePointerId = null;
-    };
-
-    reviewSlider.addEventListener('pointerup', handlePointerEnd);
-    reviewSlider.addEventListener('pointercancel', handlePointerEnd);
-    reviewSlider.addEventListener('lostpointercapture', (event) => {
-      if (activePointerId !== event.pointerId) {
-        return;
-      }
-
-      reviewSlider.classList.remove('is-dragging');
-      activePointerId = null;
+    reviewSlider.addEventListener('mouseleave', () => {
+      pauseMarquee = false;
     });
 
-    if (!('PointerEvent' in window)) {
-      reviewSlider.addEventListener('touchstart', (event) => {
-        if (!singleCardQuery.matches || !event.touches.length) {
-          return;
-        }
+    reviewSlider.addEventListener('focusin', () => {
+      pauseMarquee = true;
+    });
 
-        const touch = event.touches[0];
-        pointerStartX = touch.clientX;
-        pointerStartY = touch.clientY;
-        pointerEndX = touch.clientX;
-        pointerEndY = touch.clientY;
-      }, { passive: true });
+    reviewSlider.addEventListener('focusout', () => {
+      pauseMarquee = false;
+    });
 
-      reviewSlider.addEventListener('touchmove', (event) => {
-        if (!singleCardQuery.matches || !event.touches.length) {
-          return;
-        }
+    reviewSlider.addEventListener('touchstart', () => {
+      pauseMarquee = true;
+    }, { passive: true });
 
-        const touch = event.touches[0];
-        pointerEndX = touch.clientX;
-        pointerEndY = touch.clientY;
+    reviewSlider.addEventListener('touchend', () => {
+      pauseMarquee = false;
+    }, { passive: true });
 
-        const deltaX = Math.abs(pointerEndX - pointerStartX);
-        const deltaY = Math.abs(pointerEndY - pointerStartY);
-
-        if (deltaX > deltaY) {
-          event.preventDefault();
-        }
-      }, { passive: false });
-
-      reviewSlider.addEventListener('touchend', () => {
-        finishSwipe();
-      });
-    }
-
-    window.addEventListener('resize', scheduleRefreshLayout, { passive: true });
-    window.addEventListener('orientationchange', scheduleRefreshLayout, { passive: true });
-    window.addEventListener('load', scheduleRefreshLayout, { passive: true });
-
-    if (typeof singleCardQuery.addEventListener === 'function') {
-      singleCardQuery.addEventListener('change', scheduleRefreshLayout);
-    }
+    window.addEventListener('resize', refreshMarquee, { passive: true });
+    window.addEventListener('orientationchange', refreshMarquee, { passive: true });
+    window.addEventListener('load', refreshMarquee, { passive: true });
 
     if (typeof ResizeObserver === 'function') {
       const sliderResizeObserver = new ResizeObserver(() => {
-        scheduleRefreshLayout();
+        refreshMarquee();
       });
       sliderResizeObserver.observe(reviewSlider);
       sliderResizeObserver.observe(reviewTrack);
     }
 
-    refreshLayout();
+    if (!prefersReducedMotion) {
+      animationFrameId = window.requestAnimationFrame(stepMarquee);
+    }
   }
 }

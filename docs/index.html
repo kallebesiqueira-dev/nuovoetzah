@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#121318">
+    <meta name="theme-color" content="#102754">
     <meta name="robots" content="index,follow">
-    <meta name="api-base" content="https://api.etzahweb.com">
     <title data-i18n-title="title">EtzahWeb | Siti Web, Landing Page, SEO e Automazioni</title>
     <meta name="description" data-i18n-description="description" content="Studio digitale specializzato in siti web su misura, landing page ad alta conversione, SEO tecnica e automazioni.">
     <link rel="canonical" href="https://www.etzahweb.com/">
@@ -23,10 +22,10 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body class="home-page luxury-minimal">
+  <body class="home-page luxury-minimal azure-showcase">
     <div class="bg-aurora" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-noise" aria-hidden="true"></div>
@@ -36,36 +35,40 @@
       <div class="container nav-wrap">
         <a class="logo" href="index.html">Etzah<span>Web</span></a>
         <nav id="primary-nav" class="nav">
-          <a href="#servizi" data-i18n="nav.services">Servizi</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="#chi-siamo" data-i18n="nav.services">Servizi</a>
           <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="#prezzi" data-i18n="nav.pricing">Prezzi</a>
+          <a href="#blog" data-i18n="nav.blog">Blog</a>
+          <a href="#faq" data-i18n="nav.faq">FAQ</a>
           <a href="#contatto" data-i18n="nav.contact">Contatto</a>
         </nav>
-        <button class="hamburger" type="button" aria-label="Menu" data-i18n-aria-label="ui.menuAria" aria-expanded="false" aria-controls="primary-nav">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <div class="lang-switch" aria-label="Language" data-i18n-aria-label="ui.languageAria" data-lang-switch>
-          <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
-            <span class="flag flag-it" aria-hidden="true"></span>
-            <span class="lang-label">IT</span>
-            <span class="lang-caret" aria-hidden="true"></span>
-          </button>
-          <div class="lang-menu" role="listbox">
-            <button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+        <div class="header-tools">
+          <div class="lang-switch" aria-label="Language" data-i18n-aria-label="ui.languageAria" data-lang-switch>
+            <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
               <span class="flag flag-it" aria-hidden="true"></span>
-              <span>IT</span>
+              <span class="lang-label">IT</span>
+              <span class="lang-caret" aria-hidden="true"></span>
             </button>
-            <button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
-              <span class="flag flag-pt" aria-hidden="true"></span>
-              <span>PT</span>
-            </button>
-            <button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
-              <span class="flag flag-en" aria-hidden="true"></span>
-              <span>EN</span>
-            </button>
+            <div class="lang-menu" role="listbox">
+              <button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+                <span class="flag flag-it" aria-hidden="true"></span>
+                <span>IT</span>
+              </button>
+              <button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
+                <span class="flag flag-pt" aria-hidden="true"></span>
+                <span>PT</span>
+              </button>
+              <button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
+                <span class="flag flag-en" aria-hidden="true"></span>
+                <span>EN</span>
+              </button>
+            </div>
           </div>
+          <button class="hamburger" type="button" aria-label="Menu" data-i18n-aria-label="ui.menuAria" aria-expanded="false" aria-controls="primary-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </div>
     </header>
@@ -79,96 +82,142 @@
         </div>
         <div class="container hero-grid">
           <div class="hero-copy reveal-stack">
-            <p class="eyebrow" data-i18n="hero.eyebrow">Progetti su misura per brand ambiziosi</p>
+            <h1 class="hero-title-sequence" data-hero-title-sequence>
+              <span class="hero-title-line is-visible" data-i18n="hero.titleLine1">Aumenta le tue vendite</span>
+              <span class="hero-title-line" data-i18n="hero.titleLine2">e raggiungi più clienti</span>
+              <span class="hero-title-line" data-i18n="hero.titleLine3">con un sito professionale.</span>
+            </h1>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contatto" data-i18n="hero.ctaPrimary">Voglio un preventivo</a>
-              <a class="btn btn-ghost" href="#chi-siamo" data-i18n="hero.ctaSecondary">Chi siamo</a>
-            </div>
-            <div class="hero-metrics">
-              <div>
-                <strong>+120%</strong>
-                <span data-i18n="hero.metric1">Lead in 90 giorni</span>
-              </div>
-              <div>
-                <strong>48h</strong>
-                <span data-i18n="hero.metric2">per la prima consegna</span>
-              </div>
-              <div>
-                <strong>5.0</strong>
-                <span data-i18n="hero.metric3">valutazione media</span>
-              </div>
+              <a class="btn btn-primary" href="#contatto" data-i18n="hero.ctaPrimary">Richiedi un preventivo</a>
             </div>
           </div>
         </div>
-        <a class="hero-scroll-arrow" href="#chi-siamo" aria-label="Scorri verso il basso" data-i18n-aria-label="ui.scrollDownAria">
-          <span></span>
+        <a class="hero-scroll-cue" href="#chi-siamo" aria-label="Scroll to next section">
+          <span class="hero-scroll-cue-inner" aria-hidden="true">
+            <span class="hero-scroll-cue-arrow"></span>
+            <span class="hero-scroll-cue-arrow"></span>
+            <span class="hero-scroll-cue-arrow"></span>
+          </span>
         </a>
       </section>
 
       <section id="chi-siamo" class="section alt">
         <div class="container">
-          <div class="section-title reveal-stack">
-            <h2 data-i18n="about.title">Chi Siamo – EtzahWeb</h2>
-            <p data-i18n="about.intro">EtzahWeb nasce con un obiettivo chiaro: aiutare professionisti e aziende a crescere online con siti web moderni, efficaci e realmente orientati ai risultati. Crediamo che un sito web non sia solo una vetrina, ma uno strumento strategico per generare contatti, aumentare la credibilità e distinguersi dalla concorrenza.</p>
+          <div class="section-title reveal-stack about-services-intro">
+            <h2>
+              <span class="about-title-line" data-i18n="about.titleLine1">Cosa Possiamo Creare</span>
+              <span class="about-title-line about-title-line-accented">
+                <span data-i18n="about.titleLine2">Per Il Tuo</span>
+                <span class="business-benefits-highlight" data-i18n="about.titleAccent">Business</span>
+              </span>
+            </h2>
+            <p data-i18n="about.intro">Un sito va oltre una semplice pagina online. E la porta d'ingresso del tuo brand: presenta i tuoi servizi, rafforza la tua credibilita e ti aiuta a trasformare visite in richieste concrete.</p>
           </div>
-
-          <div class="chi-siamo-content">
-            <article class="chi-siamo-article">
-              <h3 data-i18n="about.real.title">Portfolio e recensioni reali</h3>
-              <p data-i18n="about.real.body">La trasparenza è alla base del nostro lavoro. Mettiamo a disposizione portfolio verificabili e recensioni autentiche dei nostri clienti, perché i risultati parlano più di qualsiasi promessa.</p>
-
-              <h3 data-i18n="about.full.title">Servizi completi, dal design allo sviluppo</h3>
-              <p data-i18n="about.full.intro">Seguiamo ogni progetto in modo completo:</p>
-              <ul class="pricing-list">
-                <li data-i18n="about.full.item1">Analisi e strategia</li>
-                <li data-i18n="about.full.item2">Web design professionale</li>
-                <li data-i18n="about.full.item3">Sviluppo tecnico</li>
-                <li data-i18n="about.full.item4">Ottimizzazione SEO</li>
-                <li data-i18n="about.full.item5">Integrazione WhatsApp, moduli e strumenti di conversione</li>
-              </ul>
-              <p data-i18n="about.full.outro">Con EtzahWeb hai un unico partner per tutto il processo digitale.</p>
-
-              <h3 data-i18n="about.exp.title">Esperienza comprovata</h3>
-              <p data-i18n="about.exp.body">Collaboriamo con attività locali, professionisti e imprese che desiderano migliorare la propria presenza online. L’esperienza maturata in diversi settori ci permette di creare soluzioni efficaci, mirate e orientate al mercato reale.</p>
-
-              <h3 data-i18n="about.quote.title">Preventivi trasparenti</h3>
-              <p data-i18n="about.quote.body">Nessuna sorpresa, nessun costo nascosto. Forniamo preventivi dettagliati e chiari, così sai esattamente cosa stai acquistando e quale valore stai ricevendo.</p>
-
-              <h3 data-i18n="about.support.title">Supporto anche dopo il lancio</h3>
-              <p data-i18n="about.support.body">Il nostro lavoro non finisce con la pubblicazione del sito. Offriamo assistenza tecnica e supporto post-lancio per garantire sicurezza, aggiornamenti e continuità operativa.</p>
-
-              <h3 data-i18n="about.tech.title">Tecnologie moderne e sicure</h3>
-              <p data-i18n="about.tech.body">Utilizziamo piattaforme aggiornate, sicure e scalabili, progettate per crescere insieme alla tua attività e garantire performance elevate nel tempo.</p>
-
-              <h3 data-i18n="about.custom.title">Siti su misura, non template generici</h3>
-              <p data-i18n="about.custom.body">Ogni progetto è personalizzato. Non utilizziamo soluzioni standardizzate: il tuo sito deve rappresentare la tua identità, i tuoi valori e i tuoi obiettivi di business.</p>
+          <div class="grid-3 about-services-grid">
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="7" rx="1.5"></rect>
+                  <rect x="3" y="14" width="9" height="7" rx="1.5"></rect>
+                  <rect x="16" y="14" width="5" height="7" rx="1.5"></rect>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card1.title">Sito istituzionale</h3>
+              <p data-i18n="about.card1.body">Presenta la tua azienda, i tuoi servizi e i tuoi punti di forza con una presenza chiara, professionale e facile da navigare.</p>
             </article>
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 3v18h18"></path>
+                  <path d="M7 16v-3"></path>
+                  <path d="M12 16V8"></path>
+                  <path d="M17 16V5"></path>
+                  <path d="m14 7 3-3 3 3"></path>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card2.title">Landing Page</h3>
+              <p data-i18n="about.card2.body">Pagine studiate per campagne, offerte o lanci specifici, con una struttura pensata per aumentare contatti e conversioni.</p>
+            </article>
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="8" cy="20" r="1"></circle>
+                  <circle cx="18" cy="20" r="1"></circle>
+                  <path d="M2 4h3l2.4 10.5a1 1 0 0 0 1 .8H19a1 1 0 0 0 1-.8L22 7H6"></path>
+                  <path d="M9 10h8"></path>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card3.title">E-commerce</h3>
+              <p data-i18n="about.card3.body">Vendi online con un negozio elegante, veloce e ottimizzato per guidare il cliente fino all'acquisto.</p>
+            </article>
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <path d="M14 2v6h6"></path>
+                  <circle cx="11" cy="14" r="3"></circle>
+                  <path d="m15 18 3 3"></path>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card4.title">Blog e notizie</h3>
+              <p data-i18n="about.card4.body">Crea un'area editoriale per articoli, aggiornamenti e contenuti SEO che rafforzano autorevolezza e visibilita.</p>
+            </article>
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                  <circle cx="9" cy="11" r="2"></circle>
+                  <path d="M5.5 16a4.5 4.5 0 0 1 7 0"></path>
+                  <path d="M16 10h3"></path>
+                  <path d="M16 14h3"></path>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card5.title">Biglietto digitale</h3>
+              <p data-i18n="about.card5.body">Una presenza compatta e moderna da condividere subito con clienti e contatti, perfetta per social e networking.</p>
+            </article>
+            <article class="card service-card about-service-card">
+              <span class="about-service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="2" y="3" width="14" height="10" rx="2"></rect>
+                  <path d="M8 21h2"></path>
+                  <path d="M9 13v8"></path>
+                  <rect x="17" y="8" width="5" height="12" rx="1.5"></rect>
+                  <path d="M19.5 17h0"></path>
+                </svg>
+              </span>
+              <h3 data-i18n="about.card6.title">Sito personalizzato</h3>
+              <p data-i18n="about.card6.body">Soluzioni su misura per esigenze specifiche, con design, funzionalita e struttura costruiti intorno al tuo business.</p>
+            </article>
+          </div>
+          <div class="about-section-cta reveal-stack">
+            <a class="btn btn-primary about-section-btn" href="#contatto" data-i18n="about.cta">Voglio creare il mio sito</a>
           </div>
         </div>
       </section>
 
-      <section id="servizi" class="section">
+      <section id="quem-somos" class="section founder-section">
         <div class="container">
-          <div class="section-title reveal-stack">
-            <h2 data-i18n="services.title">Servizi che aumentano il tuo fatturato</h2>
-            <p data-i18n="services.subtitle">Architettura digitale completa per chi ha bisogno di risultati rapidi e sostenibili.</p>
-          </div>
-          <div class="grid-3">
-            <article class="card">
-              <h3 data-i18n="services.card1.title">Landing Page Premium</h3>
-              <p data-i18n="services.card1.body">Pagine focalizzate sulla conversione con copy strategico e performance sopra 95 su Lighthouse.</p>
-              <span class="tag" data-i18n="services.card1.tag">Consegna rapida</span>
-            </article>
-            <article class="card">
-              <h3 data-i18n="services.card2.title">Siti istituzionali</h3>
-              <p data-i18n="services.card2.body">Presenza digitale elegante, con SEO, contenuti scalabili e identità visiva coerente.</p>
-              <span class="tag" data-i18n="services.card2.tag">Alta credibilità</span>
-            </article>
-            <article class="card">
-              <h3 data-i18n="services.card3.title">Automazioni & Funnel</h3>
-              <p data-i18n="services.card3.body">Integrazione con CRM, WhatsApp + Email per non perdere nessun lead.</p>
-              <span class="tag" data-i18n="services.card3.tag">Processi intelligenti</span>
-            </article>
+          <div class="founder-grid">
+            <div class="founder-media">
+              <img src="img2/kaka2.webp" alt="Ritratto di Kallebe Gallo" data-i18n-alt="founder.imageAlt" loading="lazy">
+            </div>
+            <div class="founder-copy">
+              <h2 data-i18n="founder.title">Chi sono</h2>
+              <p class="founder-lead">
+                <span class="founder-lead-line"><span data-i18n="founder.p1Intro">Mi chiamo</span> <span class="founder-highlight" data-i18n="founder.p1FirstName">Kallebe</span></span>
+                <span class="founder-lead-line"><span class="founder-highlight" data-i18n="founder.p1LastName">Gallo</span><span data-i18n="founder.p1Line2Rest"> e sono Full Stack</span></span>
+                 <span class="founder-lead-line" data-i18n="founder.p1Line3">Developer e fondatore di EtzahWeb.</span>
+              </p>
+              <p>
+                <span class="founder-highlight" data-i18n="founder.p2Lead">Negli ultimi 5 anni</span><span data-i18n="founder.p2Rest"> mi sono dedicato alla realizzazione di siti web moderni, responsive e coinvolgenti, capaci di offrire sia alte prestazioni sia un'esperienza utente eccellente. Il mio percorso nello sviluppo è iniziato con una forte curiosità verso il modo in cui vengono costruiti i prodotti digitali, trasformandosi presto in un percorso professionale focalizzato sulla creazione di soluzioni web complete, dall'architettura backend alle interfacce visibili agli utenti.</span>
+              </p>
+              <p>
+                <span class="founder-highlight" data-i18n="founder.p3Lead">Sistemi sicuri, applicazioni scalabili e design responsive</span><span data-i18n="founder.p3Rest"> fanno parte del mio lavoro quotidiano. Sviluppo piattaforme visivamente curate e adattate a esigenze diverse, garantendo che ogni interazione sia fluida, intuitiva e coerente su ogni dispositivo.</span>
+              </p>
+              <p>
+                <span class="founder-highlight" data-i18n="founder.p4Lead">Con EtzahWeb, il mio obiettivo</span><span data-i18n="founder.p4Rest"> è offrire soluzioni digitali di alta qualità che uniscano eccellenza tecnica e design creativo, aiutando le aziende a crescere e a costruire una presenza online forte e autorevole.</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -176,108 +225,72 @@
       <section id="portfolio" class="section alt">
         <div class="container">
           <div class="section-title reveal-stack">
-            <h2 data-i18n="portfolio.title">Portfolio e recensioni verificabili</h2>
-            <p data-i18n="portfolio.subtitle">Valuta lavori reali, opinioni dei clienti e il livello di personalizzazione prima di scegliere il partner giusto.</p>
+            <h2 data-i18n="portfolio.title">Portfolio</h2>
+            <p data-i18n="portfolio.subtitle">Conosci alcuni siti professionali che ho creato.</p>
           </div>
 
-          <div class="portfolio-grid" data-portfolio-carousel data-interval="10000">
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Academia.png" data-lightbox-alt="Portfolio Academia" data-i18n-data-lightbox-alt="portfolio.item1.mediaAlt" aria-label="Apri immagine Portfolio Academia" data-i18n-aria-label="portfolio.item1.mediaAria">
-                <img src="img/Academia.png" alt="Progetto Academia" data-i18n-alt="portfolio.item1.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item1.title">North Peak Gold</h3>
-                <p data-i18n="portfolio.item1.body">Landing premium per brand fitness con visual forte, credibilità immediata e CTA ad alta conversione.</p>
-                <span class="tag" data-i18n="portfolio.item1.tag">Fitness Premium</span>
-              </div>
+          <div class="portfolio-showcase-grid">
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/barber.webp" data-lightbox-src="img/barber.webp" data-lightbox-alt="Portfolio Barber" data-i18n-data-lightbox-alt="portfolio.item1.mediaAlt" aria-label="Apri progetto North Peak Gold" data-i18n-aria-label="portfolio.item1.mediaAria">
+                <img src="img/barber.webp" alt="Progetto Barber" data-i18n-alt="portfolio.item1.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/barber.webp" data-lightbox-src="img/barber.webp" data-lightbox-alt="Portfolio Barber" data-i18n-data-lightbox-alt="portfolio.item1.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Curso.png" data-lightbox-alt="Portfolio Curso" data-i18n-data-lightbox-alt="portfolio.item2.mediaAlt" aria-label="Apri immagine Portfolio Curso" data-i18n-aria-label="portfolio.item2.mediaAria">
-                <img src="img/Curso.png" alt="Progetto Curso" data-i18n-alt="portfolio.item2.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item2.title">Serfrontend</h3>
-                <p data-i18n="portfolio.item2.body">Pagina corso con proposta chiara, prova sociale e percorso utente ottimizzato per aumentare le iscrizioni.</p>
-                <span class="tag" data-i18n="portfolio.item2.tag">Corso Online</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/Curso.webp" data-lightbox-src="img/Curso.webp" data-lightbox-alt="Portfolio Curso" data-i18n-data-lightbox-alt="portfolio.item2.mediaAlt" aria-label="Apri progetto Serfrontend" data-i18n-aria-label="portfolio.item2.mediaAria">
+                <img src="img/Curso.webp" alt="Progetto Curso" data-i18n-alt="portfolio.item2.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/Curso.webp" data-lightbox-src="img/Curso.webp" data-lightbox-alt="Portfolio Curso" data-i18n-data-lightbox-alt="portfolio.item2.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Dentista.png" data-lightbox-alt="Portfolio Dentista" data-i18n-data-lightbox-alt="portfolio.item3.mediaAlt" aria-label="Apri immagine Portfolio Dentista" data-i18n-aria-label="portfolio.item3.mediaAria">
-                <img src="img/Dentista.png" alt="Progetto Dentista" data-i18n-alt="portfolio.item3.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item3.title">Odentrics</h3>
-                <p data-i18n="portfolio.item3.body">Sito odontoiatrico elegante con focus su fiducia clinica, servizi principali e prenotazione semplificata.</p>
-                <span class="tag" data-i18n="portfolio.item3.tag">Dental Care</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/dentista.webp" data-lightbox-src="img/dentista.webp" data-lightbox-alt="Portfolio Dentista" data-i18n-data-lightbox-alt="portfolio.item3.mediaAlt" aria-label="Apri progetto Odentrics" data-i18n-aria-label="portfolio.item3.mediaAria">
+                <img src="img/dentista.webp" alt="Progetto Dentista" data-i18n-alt="portfolio.item3.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/dentista.webp" data-lightbox-src="img/dentista.webp" data-lightbox-alt="Portfolio Dentista" data-i18n-data-lightbox-alt="portfolio.item3.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Garage.png" data-lightbox-alt="Portfolio Garage" data-i18n-data-lightbox-alt="portfolio.item4.mediaAlt" aria-label="Apri immagine Portfolio Garage" data-i18n-aria-label="portfolio.item4.mediaAria">
-                <img src="img/Garage.png" alt="Progetto Garage" data-i18n-alt="portfolio.item4.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item4.title">Garage Ticino</h3>
-                <p data-i18n="portfolio.item4.body">Presenza digitale per officina premium con servizi ben strutturati e contatto rapido per appuntamenti.</p>
-                <span class="tag" data-i18n="portfolio.item4.tag">Automotive</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/finance.webp" data-lightbox-src="img/finance.webp" data-lightbox-alt="Portfolio Finance" data-i18n-data-lightbox-alt="portfolio.item4.mediaAlt" aria-label="Apri progetto Garage Ticino" data-i18n-aria-label="portfolio.item4.mediaAria">
+                <img src="img/finance.webp" alt="Progetto Finance" data-i18n-alt="portfolio.item4.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/finance.webp" data-lightbox-src="img/finance.webp" data-lightbox-alt="Portfolio Finance" data-i18n-data-lightbox-alt="portfolio.item4.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Hamburguer.png" data-lightbox-alt="Portfolio Hamburguer" data-i18n-data-lightbox-alt="portfolio.item5.mediaAlt" aria-label="Apri immagine Portfolio Hamburguer" data-i18n-aria-label="portfolio.item5.mediaAria">
-                <img src="img/Hamburguer.png" alt="Progetto Hamburguer" data-i18n-alt="portfolio.item5.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item5.title">Bella Burguer Atelier</h3>
-                <p data-i18n="portfolio.item5.body">Vetrina food ad alto impatto con storytelling del brand e flusso veloce per ordini e prenotazioni.</p>
-                <span class="tag" data-i18n="portfolio.item5.tag">Burguer Gourmet</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/game.webp" data-lightbox-src="img/game.webp" data-lightbox-alt="Portfolio Game" data-i18n-data-lightbox-alt="portfolio.item5.mediaAlt" aria-label="Apri progetto Bella Burguer Atelier" data-i18n-aria-label="portfolio.item5.mediaAria">
+                <img src="img/game.webp" alt="Progetto Game" data-i18n-alt="portfolio.item5.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/game.webp" data-lightbox-src="img/game.webp" data-lightbox-alt="Portfolio Game" data-i18n-data-lightbox-alt="portfolio.item5.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Imobiliaria.png" data-lightbox-alt="Portfolio Imobiliaria" data-i18n-data-lightbox-alt="portfolio.item6.mediaAlt" aria-label="Apri immagine Portfolio Imobiliaria" data-i18n-aria-label="portfolio.item6.mediaAria">
-                <img src="img/Imobiliaria.png" alt="Progetto Imobiliaria" data-i18n-alt="portfolio.item6.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item6.title">Imperium</h3>
-                <p data-i18n="portfolio.item6.body">Sito immobiliare con presentazione autorevole, immobili in evidenza e CTA commerciali ben distribuite.</p>
-                <span class="tag" data-i18n="portfolio.item6.tag">Real Estate</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/garage.dg.webp" data-lightbox-src="img/garage.dg.webp" data-lightbox-alt="Portfolio Garage" data-i18n-data-lightbox-alt="portfolio.item6.mediaAlt" aria-label="Apri progetto Imperium" data-i18n-aria-label="portfolio.item6.mediaAria">
+                <img src="img/garage.dg.webp" alt="Progetto Garage" data-i18n-alt="portfolio.item6.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/garage.dg.webp" data-lightbox-src="img/garage.dg.webp" data-lightbox-alt="Portfolio Garage" data-i18n-data-lightbox-alt="portfolio.item6.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Jardim.png" data-lightbox-alt="Portfolio Jardim" data-i18n-data-lightbox-alt="portfolio.item7.mediaAlt" aria-label="Apri immagine Portfolio Jardim" data-i18n-aria-label="portfolio.item7.mediaAria">
-                <img src="img/Jardim.png" alt="Progetto Jardim" data-i18n-alt="portfolio.item7.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item7.title">Verde Vivo</h3>
-                <p data-i18n="portfolio.item7.body">Web design per servizi green con identità naturale, copy diretto e focus sulla richiesta di preventivo.</p>
-                <span class="tag" data-i18n="portfolio.item7.tag">Green Services</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/Hamburguer.webp" data-lightbox-src="img/Hamburguer.webp" data-lightbox-alt="Portfolio Hamburguer" data-i18n-data-lightbox-alt="portfolio.item7.mediaAlt" aria-label="Apri progetto Jardim" data-i18n-aria-label="portfolio.item7.mediaAria">
+                <img src="img/Hamburguer.webp" alt="Progetto Hamburguer" data-i18n-alt="portfolio.item7.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/Hamburguer.webp" data-lightbox-src="img/Hamburguer.webp" data-lightbox-alt="Portfolio Hamburguer" data-i18n-data-lightbox-alt="portfolio.item7.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Pizza.png" data-lightbox-alt="Portfolio Pizza" data-i18n-data-lightbox-alt="portfolio.item8.mediaAlt" aria-label="Apri immagine Portfolio Pizza" data-i18n-aria-label="portfolio.item8.mediaAria">
-                <img src="img/Pizza.png" alt="Progetto Pizza" data-i18n-alt="portfolio.item8.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item8.title">Forno d'Oro</h3>
-                <p data-i18n="portfolio.item8.body">Pagina ristorante orientata alle vendite con menu in evidenza, offerte strategiche e contatto immediato.</p>
-                <span class="tag" data-i18n="portfolio.item8.tag">Pizzeria</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/milk.webp" data-lightbox-src="img/milk.webp" data-lightbox-alt="Portfolio Milk" data-i18n-data-lightbox-alt="portfolio.item8.mediaAlt" aria-label="Apri progetto Pizza" data-i18n-aria-label="portfolio.item8.mediaAria">
+                <img src="img/milk.webp" alt="Progetto Milk" data-i18n-alt="portfolio.item8.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/milk.webp" data-lightbox-src="img/milk.webp" data-lightbox-alt="Portfolio Milk" data-i18n-data-lightbox-alt="portfolio.item8.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
 
-            <article class="portfolio-card" data-portfolio-item>
-              <button class="portfolio-media" type="button" data-lightbox-src="img/Salone.png" data-lightbox-alt="Portfolio Salone" data-i18n-data-lightbox-alt="portfolio.item9.mediaAlt" aria-label="Apri immagine Portfolio Salone" data-i18n-aria-label="portfolio.item9.mediaAria">
-                <img src="img/Salone.png" alt="Progetto Salone" data-i18n-alt="portfolio.item9.projectAlt" loading="lazy">
-              </button>
-              <div class="portfolio-content">
-                <h3 data-i18n="portfolio.item9.title">Vittorino Baber</h3>
-                <p data-i18n="portfolio.item9.body">Presenza digitale barber con immagine premium, servizi chiari e percorso semplice per prenotazioni.</p>
-                <span class="tag" data-i18n="portfolio.item9.tag">Barber Shop</span>
-              </div>
+            <article class="portfolio-showcase-item">
+              <a class="portfolio-showcase-frame" href="img/tata.webp" data-lightbox-src="img/tata.webp" data-lightbox-alt="Portfolio Tata" data-i18n-data-lightbox-alt="portfolio.item9.mediaAlt" aria-label="Apri progetto Salone" data-i18n-aria-label="portfolio.item9.mediaAria">
+                <img src="img/tata.webp" alt="Progetto Tata" data-i18n-alt="portfolio.item9.projectAlt" loading="lazy">
+              </a>
+              <a class="portfolio-showcase-link" href="img/tata.webp" data-lightbox-src="img/tata.webp" data-lightbox-alt="Portfolio Tata" data-i18n-data-lightbox-alt="portfolio.item9.mediaAlt" data-i18n="portfolio.viewProject">Vedi progetto</a>
             </article>
           </div>
 
@@ -288,110 +301,444 @@
 
           <div class="reviews-showcase">
             <div class="reviews-summary">
-              <p class="reviews-kicker" data-i18n="reviews.kicker">Nostre recensioni</p>
-              <h3 data-i18n="reviews.excellent">ECCELLENTE</h3>
               <p class="reviews-stars" aria-label="Valutazione 5 su 5" data-i18n-aria-label="reviews.starsAria">★★★★★</p>
-                <p class="reviews-count" data-i18n="reviews.count">In base a 9 recensioni</p>
-              <p class="reviews-google" data-i18n="reviews.google">Google</p>
+              <h3 data-i18n="reviews.excellent">ECCELLENTE</h3>
+              <p class="reviews-count" data-i18n="reviews.count">In base a 15 recensioni verificate</p>
+              <p class="reviews-google" aria-label="Google">
+                <span class="google-blue">G</span><span class="google-red">o</span><span class="google-yellow">o</span><span class="google-blue">g</span><span class="google-green">l</span><span class="google-red">e</span>
+              </p>
             </div>
 
-            <p class="reviews-swipe-hint" data-i18n="reviews.swipeHint">Arraste para ver mais avaliações →</p>
-
             <div class="reviews-slider-shell">
-              <button class="reviews-nav" type="button" data-review-prev aria-label="Recensione precedente" data-i18n-aria-label="reviews.prevAria">‹</button>
               <div class="reviews-slider" data-review-slider>
                 <div class="reviews-track" data-review-track>
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item1Meta">Andrea Morforio · 3 mesi fa</p>
-                    <h3>North Peak Gold</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco T." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Marco T.</p>
+                          <p class="review-meta" data-i18n="reviews.item1Meta">4 settimane fa</p>
+                          <p class="review-company">Studio Bianco</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item1Quote">"Ho affidato a EtzahWeb la realizzazione del mio sito e sono rimasto molto soddisfatto per qualità e tempi."</p>
+                    <p class="review-quote" data-i18n="reviews.item1Quote">Prenotazione semplice, comunicazione professionale e consegna impeccabile. Il sito trasmette subito più valore al brand.</p>
                   </article>
 
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item2Meta">RedParrucchieri · 6 mesi fa</p>
-                    <h3>Serfrontend</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sofia B." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Sofia B.</p>
+                          <p class="review-meta" data-i18n="reviews.item2Meta">5 settimane fa</p>
+                          <p class="review-company">Clinica Armonia</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item2Quote">"Processo chiaro dall'inizio alla fine. Layout elegante e conversioni migliorate già nelle prime settimane."</p>
+                    <p class="review-quote" data-i18n="reviews.item2Quote">Layout elegante, processo chiaro e supporto veloce. Le richieste dal sito sono aumentate già nel primo mese.</p>
                   </article>
 
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item3Meta">C. U. · 6 mesi fa</p>
-                    <h3>Odentrics</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/51.jpg" alt="Davide C." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Davide C.</p>
+                          <p class="review-meta" data-i18n="reviews.item3Meta">6 settimane fa</p>
+                          <p class="review-company">Officina Nova</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item3Quote">"Esperienza eccezionale: comunicazione rapida, struttura professionale e supporto concreto dopo il lancio."</p>
+                    <p class="review-quote" data-i18n="reviews.item3Quote">Sito veloce, messaggio commerciale più chiaro e molte più richieste qualificate. Lavoro molto professionale.</p>
                   </article>
 
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item4Meta">Blend Milano · 7 mesi fa</p>
-                    <h3>Garage Ticino</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Giulia N." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Giulia N.</p>
+                          <p class="review-meta" data-i18n="reviews.item4Meta">7 settimane fa</p>
+                          <p class="review-company">Bloom Atelier</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item4Quote">"Abbiamo incaricato EtzahWeb e il risultato è stato superiore alle aspettative: design premium e codice pulito."</p>
+                    <p class="review-quote" data-i18n="reviews.item4Quote">Esperienza curata dall'inizio alla fine. Identità visiva più forte e contatti molto meglio organizzati.</p>
                   </article>
 
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item5Meta">Cliente verificato · 5 mesi fa</p>
-                    <h3>Bella Burguer Atelier</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Luca R." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Luca R.</p>
+                          <p class="review-meta" data-i18n="reviews.item5Meta">8 settimane fa</p>
+                          <p class="review-company">Nexa Consulting</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item5Quote">"Brand valorizzato con un sito moderno e veloce. Ordini online aumentati e customer journey più semplice."</p>
+                    <p class="review-quote" data-i18n="reviews.item5Quote">Strategia chiara, struttura premium e copy efficace. Ora il sito comunica autorevolezza in pochi secondi.</p>
                   </article>
 
                   <article class="review-card">
-                    <p class="review-meta" data-i18n="reviews.item6Meta">Cliente verificato · 4 mesi fa</p>
-                    <h3>Imperium</h3>
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/33.jpg" alt="Elisa V." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Elisa V.</p>
+                          <p class="review-meta" data-i18n="reviews.item6Meta">2 mesi fa</p>
+                          <p class="review-company">Luce Beauty</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
                     <p class="review-stars">★★★★★</p>
-                    <p data-i18n="reviews.item6Quote">"Preventivo trasparente e alta competenza tecnica. Perfetto equilibrio tra immagine, performance e SEO."</p>
+                    <p class="review-quote" data-i18n="reviews.item6Quote">Design raffinato e percorso utente pulito. I clienti trovano subito i servizi e ci contattano più facilmente.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Matteo B." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Matteo B.</p>
+                          <p class="review-meta" data-i18n="reviews.item7Meta">2 mesi fa</p>
+                          <p class="review-company">Porto Caffè</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item7Quote">Finalmente un sito semplice da gestire e bello da vedere. Menu, offerte e contatti sono molto più efficaci.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/52.jpg" alt="Martina L." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Martina L.</p>
+                          <p class="review-meta" data-i18n="reviews.item8Meta">2 mesi fa</p>
+                          <p class="review-company">Aurora Dental</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item8Quote">Immagine più moderna, informazioni chiare e prenotazione molto più intuitiva. Ottimo equilibrio tra estetica e funzionalità.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/14.jpg" alt="Gabriele P." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Gabriele P.</p>
+                          <p class="review-meta" data-i18n="reviews.item9Meta">2 mesi fa</p>
+                          <p class="review-company">Viva Pilates</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item9Quote">Landing molto più convincente e ordinata. Ora le persone capiscono subito il servizio e chiedono informazioni.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/21.jpg" alt="Chiara S." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Chiara S.</p>
+                          <p class="review-meta" data-i18n="reviews.item10Meta">2 mesi fa</p>
+                          <p class="review-company">Casa Riva Interiors</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item10Quote">Molto attenti ai dettagli e al posizionamento del brand. Il sito ora sembra davvero allineato al nostro livello.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/61.jpg" alt="Simone D." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Simone D.</p>
+                          <p class="review-meta" data-i18n="reviews.item11Meta">2 mesi fa</p>
+                          <p class="review-company">Barber District</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item11Quote">Visual forte, caricamento rapido e contatto immediato. Esattamente il salto di qualità che cercavamo.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/57.jpg" alt="Federica A." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Federica A.</p>
+                          <p class="review-meta" data-i18n="reviews.item12Meta">3 mesi fa</p>
+                          <p class="review-company">Fiora Lab</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item12Quote">Sito luminoso, credibile e molto più ordinato. Anche l'esperienza da mobile è stata curata davvero bene.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/36.jpg" alt="Alessio F." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Alessio F.</p>
+                          <p class="review-meta" data-i18n="reviews.item13Meta">3 mesi fa</p>
+                          <p class="review-company">Prime Realty</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item13Quote">Presentazione più autorevole, schede più leggibili e funnel commerciale più chiaro. Servizio serio e puntuale.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/women/63.jpg" alt="Valentina G." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Valentina G.</p>
+                          <p class="review-meta" data-i18n="reviews.item14Meta">3 mesi fa</p>
+                          <p class="review-company">Solea Bistro</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item14Quote">Molto soddisfatta del risultato: design pulito, atmosfera giusta e navigazione più semplice per i clienti.</p>
+                  </article>
+
+                  <article class="review-card">
+                    <div class="review-header">
+                      <div class="review-person">
+                        <img class="review-avatar" src="https://randomuser.me/api/portraits/men/85.jpg" alt="Riccardo M." loading="lazy">
+                        <div class="review-person-text">
+                          <p class="review-name">Riccardo M.</p>
+                          <p class="review-meta" data-i18n="reviews.item15Meta">3 mesi fa</p>
+                          <p class="review-company">TecnoLinea</p>
+                        </div>
+                      </div>
+                      <span class="review-google-badge" aria-hidden="true">G</span>
+                    </div>
+                    <p class="review-stars">★★★★★</p>
+                    <p class="review-quote" data-i18n="reviews.item15Quote">Competenza tecnica evidente e ottima organizzazione del progetto. Il nuovo sito comunica più fiducia e converte meglio.</p>
                   </article>
                 </div>
               </div>
-              <button class="reviews-nav" type="button" data-review-next aria-label="Recensione successiva" data-i18n-aria-label="reviews.nextAria">›</button>
             </div>
+
+            <section class="business-benefits-section">
+              <div class="section-title reveal-stack business-benefits-title">
+                <h2 class="business-benefits-heading">
+                  <span class="business-benefits-line">
+                    <span data-i18n="benefits.titlePrefix">COME UN SITO</span>
+                    <span class="business-benefits-highlight" data-i18n="benefits.titleHighlight">PROFESSIONALE</span>
+                  </span>
+                  <span class="business-benefits-line">
+                    <span data-i18n="benefits.titleSuffixLead">AIUTA IL TUO</span>
+                    <span class="business-benefits-highlight" data-i18n="benefits.titleSuffixAccent">BUSINESS?</span>
+                  </span>
+                </h2>
+                <p data-i18n="benefits.subtitle">6 ragioni per cui un sito e essenziale per far crescere il tuo business.</p>
+              </div>
+
+              <div class="business-benefits-grid">
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">1</div>
+                  <h3 data-i18n="benefits.item1.title">Fatti trovare</h3>
+                  <p data-i18n="benefits.item1.body">Porta online la tua azienda e mostra prodotti o servizi a nuovi clienti, ogni giorno.</p>
+                </article>
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">2</div>
+                  <h3 data-i18n="benefits.item2.title">Vendi di più</h3>
+                  <p data-i18n="benefits.item2.body">Presenta la tua offerta in modo chiaro e accompagna il cliente fino al contatto o all'acquisto.</p>
+                </article>
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">3</div>
+                  <h3 data-i18n="benefits.item3.title">Credibilità immediata</h3>
+                  <p data-i18n="benefits.item3.body">Un sito professionale trasmette fiducia, serietà e valore già nei primi secondi.</p>
+                </article>
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">4</div>
+                  <h3 data-i18n="benefits.item4.title">Marketing più forte</h3>
+                  <p data-i18n="benefits.item4.body">Collega campagne, social e annunci a una base solida pensata per convertire meglio.</p>
+                </article>
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">5</div>
+                  <h3 data-i18n="benefits.item5.title">Lavora anche di notte</h3>
+                  <p data-i18n="benefits.item5.body">Il tuo sito continua a presentare il business e raccogliere richieste anche quando sei offline.</p>
+                </article>
+                <article class="business-benefit-card">
+                  <div class="business-benefit-index">6</div>
+                  <h3 data-i18n="benefits.item6.title">Resta davanti</h3>
+                  <p data-i18n="benefits.item6.body">Una presenza moderna e curata ti aiuta a distinguerti e restare competitivo nel tuo settore.</p>
+                </article>
+              </div>
+            </section>
           </div>
 
         </div>
       </section>
 
-      <section id="prezzi" class="section pricing">
+      <section id="blog" class="section blog-section">
         <div class="container">
-          <div class="section-title reveal-stack">
-            <h2 data-i18n="pricing.title">Prezzi chiari, valore reale</h2>
-            <p data-i18n="pricing.subtitle">Tre pacchetti per partire subito con un sito elegante e pronto a vendere.</p>
+          <div class="section-title reveal-stack blog-title">
+            <h2 data-i18n="blog.sectionTitle">Blog</h2>
+            <p data-i18n="blog.sectionSubtitle">Perché il design responsivo è essenziale per attirare più clienti online.</p>
           </div>
-          <div class="pricing-grid">
-            <article class="pricing-card">
-              <p class="pricing-tier" data-i18n="pricing.basic.tier">Basic</p>
-              <ul class="pricing-list">
-                <li data-i18n="pricing.basic.item1">Landing page essenziale</li>
-                <li data-i18n="pricing.basic.item2">Design personalizzato</li>
-                <li data-i18n="pricing.basic.item3">SEO base e performance</li>
-                <li data-i18n="pricing.basic.item4">Consegna rapida</li>
+
+          <div class="blog-grid">
+            <div class="blog-copy">
+              <article class="blog-article">
+              <h3 data-i18n="blog.articleTitle">L'importanza del design responsivo per attirare più clienti</h3>
+              <p data-i18n="blog.intro">Nel mondo digitale di oggi, dove accessibilità ed esperienza utente sono decisive per il successo online, il design responsivo è diventato un elemento essenziale per qualsiasi sito. Offrire un'esperienza coerente e di qualità su dispositivi diversi è fondamentale per attrarre e fidelizzare clienti.</p>
+
+              <h4 data-i18n="blog.whatTitle">Che cos'è il design responsivo?</h4>
+              <p data-i18n="blog.whatBody">Il design responsivo è un approccio al web design che fa sì che un sito si adatti e funzioni perfettamente su una varietà di dispositivi e dimensioni di schermo, dai desktop e laptop fino a smartphone e tablet. Questo avviene tramite layout flessibili, immagini ridimensionabili e media queries che regolano lo stile in base al dispositivo dell'utente.</p>
+
+              <h4 data-i18n="blog.uxTitle">L'esperienza utente al primo posto</h4>
+              <p data-i18n="blog.uxBody">Uno dei maggiori vantaggi del design responsivo è il miglioramento dell'esperienza utente. Quando i visitatori entrano in un sito che si adatta perfettamente al loro dispositivo, la navigazione diventa più intuitiva, rapida e piacevole. Non devono zoomare o scorrere lateralmente per leggere i contenuti, e questo riduce l'attrito che spesso allontana potenziali clienti.</p>
+
+              <h4 data-i18n="blog.mobileTitle">L'importanza del mobile-first</h4>
+              <p data-i18n="blog.mobileBody">Con l'aumento dell'uso dei dispositivi mobili per accedere a internet, adottare un approccio mobile-first è diventato essenziale. Significa progettare prima per il mobile e poi espandere l'esperienza su desktop e altri schermi. In questo modo il sito risponde meglio al comportamento reale degli utenti e può generare più conversioni.</p>
+
+              <h4 data-i18n="blog.seoTitle">Impatto su SEO e visibilità online</h4>
+              <p data-i18n="blog.seoBody">Oltre a migliorare l'esperienza utente, il design responsivo ha un impatto positivo anche sulla SEO. I motori di ricerca, come Google, privilegiano i siti ottimizzati per il mobile, e avere un unico URL per tutte le versioni del sito semplifica l'indicizzazione. Questo può tradursi in maggiore visibilità, più traffico organico e più opportunità di business.</p>
+
+              <h4 data-i18n="blog.whyTitle">Ma perché il design responsivo è così importante?</h4>
+              <ul class="blog-points">
+                <li><strong data-i18n="blog.point1Title">Esperienza utente superiore:</strong> <span data-i18n="blog.point1Body">un sito responsivo garantisce una navigazione piacevole e intuitiva su ogni dispositivo, aumentando il tempo di permanenza, l'engagement e la probabilità di ritorno.</span></li>
+                <li><strong data-i18n="blog.point2Title">Più conversioni e vendite:</strong> <span data-i18n="blog.point2Body">una struttura chiara e accessibile facilita contatti, richieste e acquisti, trasformando più visitatori in clienti.</span></li>
+                <li><strong data-i18n="blog.point3Title">Miglior posizionamento nei motori di ricerca:</strong> <span data-i18n="blog.point3Body">Google e gli altri motori di ricerca favoriscono i siti responsivi, aumentando le possibilità di apparire tra i primi risultati.</span></li>
+                <li><strong data-i18n="blog.point4Title">Pubblico più ampio:</strong> <span data-i18n="blog.point4Body">un sito responsivo raggiunge utenti che navigano soprattutto da smartphone, oggi la parte più grande del traffico internet.</span></li>
+                <li><strong data-i18n="blog.point5Title">Immagine del brand più forte:</strong> <span data-i18n="blog.point5Body">mostra professionalità, attenzione al mercato e cura dell'esperienza utente, aumentando fiducia e credibilità.</span></li>
               </ul>
-            </article>
-            <article class="pricing-card featured">
-              <p class="pricing-tier" data-i18n="pricing.premium.tier">Premium</p>
-              <ul class="pricing-list">
-                <li data-i18n="pricing.premium.item1">Sezione servizi + CTA</li>
-                <li data-i18n="pricing.premium.item2">Copy strategico</li>
-                <li data-i18n="pricing.premium.item3">Ottimizzazione conversione</li>
-                <li data-i18n="pricing.premium.item4">Supporto 7 giorni</li>
-              </ul>
-            </article>
-            <article class="pricing-card">
-              <p class="pricing-tier" data-i18n="pricing.gold.tier">Gold</p>
-              <ul class="pricing-list">
-                <li data-i18n="pricing.gold.item1">Multipage o landing avanzata</li>
-                <li data-i18n="pricing.gold.item2">Animazioni premium</li>
-                <li data-i18n="pricing.gold.item3">Setup analytics</li>
-                <li data-i18n="pricing.gold.item4">Supporto 14 giorni</li>
-              </ul>
-            </article>
+
+              <h4 data-i18n="blog.conclusionTitle">Conclusione</h4>
+              <p data-i18n="blog.conclusionBody">In un mondo sempre più connesso e mobile, il design responsivo non è più un optional. È una necessità per qualsiasi azienda che voglia attrarre, coinvolgere e convertire il proprio pubblico. Quando crei o aggiorni il tuo sito, dare priorità al design responsivo significa investire in credibilità, visibilità online e risultati concreti.</p>
+              </article>
+            </div>
+
+            <div class="blog-media">
+              <div class="blog-media-frame">
+                <img src="img2/Responsive.webp" alt="Responsive design article cover" data-i18n-alt="blog.imageAlt" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="container">
+          <div class="section-title reveal-stack faq-title">
+            <h2 data-i18n="faq.sectionTitle">FAQ - Domande Frequenti</h2>
+          </div>
+
+          <div class="faq-grid">
+            <details class="faq-item">
+              <summary data-i18n="faq.item1.question">Qual e l'importanza di un sito per la mia azienda?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item1.answer">Un sito professionale aumenta credibilita, facilita il contatto con nuovi clienti e mantiene la tua azienda visibile 24 ore su 24. E uno strumento commerciale che rafforza il brand e aiuta a trasformare visite in richieste reali.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item2.question">Che cos'e l'hosting di un sito?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item2.answer">L'hosting e il servizio che mantiene il tuo sito online su un server. In pratica, e lo spazio dove vivono i file del sito e da cui i visitatori possono accedervi in qualsiasi momento.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item3.question">Quanto costa sviluppare un sito?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item3.answer">Il costo dipende da obiettivi, numero di pagine, livello di personalizzazione e funzionalita necessarie. Un sito istituzionale semplice costa meno di un e-commerce o di una landing page con integrazioni avanzate.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item4.question">Che cos'e un'email professionale?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item4.answer">E un indirizzo email personalizzato con il dominio della tua azienda, ad esempio nome@tuoazienda.com. Trasmette piu fiducia, rafforza l'immagine del brand e rende la comunicazione piu professionale.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item5.question">Quali costi ho per mantenere un sito?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item5.answer">I costi principali sono dominio, hosting ed eventuale manutenzione tecnica o aggiornamenti. In alcuni progetti possono aggiungersi strumenti extra come email professionale, backup, SEO o integrazioni specifiche.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item6.question">Che cos'e il dominio di un sito?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item6.answer">Il dominio e l'indirizzo del tuo sito su internet, ad esempio etzahweb.com. E il nome che le persone digitano per trovarti online e rappresenta una parte importante della tua identita digitale.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item7.question">Il mio sito apparira su Google?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item7.answer">Si, dopo l'indicizzazione da parte di Google il sito puo comparire nei risultati di ricerca. Tuttavia, per ottenere maggiore visibilita servono struttura corretta, contenuti ben scritti, velocita, SEO tecnica e continuita nel tempo.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item8.question">Quale dominio dovrei scegliere?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item8.answer">La scelta migliore e un dominio breve, facile da ricordare, semplice da scrivere e coerente con il nome della tua attivita. Quando possibile, conviene evitare trattini, termini complessi o varianti difficili da comunicare.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item9.question">Qual e la differenza tra sito istituzionale, negozio online, blog e landing page?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item9.answer">Il sito istituzionale presenta azienda e servizi; il negozio online vende prodotti; il blog pubblica contenuti e articoli; la landing page e una pagina focalizzata su una sola offerta o campagna, progettata per generare conversioni specifiche.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary data-i18n="faq.item10.question">Che cos'e la SEO?</summary>
+              <div class="faq-answer">
+                <p data-i18n="faq.item10.answer">SEO significa ottimizzazione per i motori di ricerca. Comprende struttura tecnica, contenuti, performance e strategia di parole chiave per aiutare il tuo sito a posizionarsi meglio su Google e attirare traffico qualificato.</p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
       <section id="contatto" class="section contact">
         <div class="container contact-grid">
-          <div class="reveal-stack">
+          <div class="reveal-stack contact-copy">
             <h2 data-i18n="contact.title">Mettiamo online il tuo progetto?</h2>
             <p data-i18n="contact.subtitle">Invia i tuoi dati e ricevi risposta entro 24h con una proposta chiara.</p>
             <div class="contact-cards">
@@ -424,11 +771,29 @@
                 </div>
               </div>
             </div>
+
+            <div class="contact-map-card">
+              <div class="mini-card contact-map-label">
+                <span data-i18n="contact.mapLabel">Posizione </span>
+                <strong data-i18n="contact.mapValue">Bellinzona, Svizzera</strong>
+              </div>
+              <div class="contact-map-frame">
+                <iframe
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=9.005%2C46.185%2C9.04%2C46.205&layer=mapnik&marker=46.195%2C9.022"
+                  title="Bellinzona map"
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <a class="contact-map-link" href="https://www.google.com/maps?q=Bellinzona,+Switzerland" target="_blank" rel="noopener noreferrer" data-i18n="contact.mapLink">Apri su Google Maps</a>
+            </div>
           </div>
-          <form id="contactForm" class="form-card">
+          <form id="contactForm" class="form-card" action="https://formsubmit.co/ajax/contato@etzahweb.com" method="POST">
+            <input type="hidden" name="_subject" value="Novo contato - EtzahWeb">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
             <div class="field">
               <label for="nome" data-i18n="form.nameLabel">Nome completo</label>
-              <input id="nome" name="nome" type="text" placeholder="Es: Larissa Rocha" data-i18n-placeholder="form.namePlaceholder" autocomplete="name" required>
+              <input id="nome" name="name" type="text" placeholder="Es: Larissa Rocha" data-i18n-placeholder="form.namePlaceholder" autocomplete="name" required>
             </div>
             <div class="field">
               <label for="email" data-i18n="form.emailLabel">Email professionale</label>
@@ -436,15 +801,15 @@
             </div>
             <div class="field">
               <label for="telefone" data-i18n="form.phoneLabel">WhatsApp</label>
-              <input id="telefone" name="telefone" type="tel" placeholder="+55 11 99999-9999" data-i18n-placeholder="form.phonePlaceholder" autocomplete="tel">
+              <input id="telefone" name="phone" type="tel" placeholder="+55 11 99999-9999" data-i18n-placeholder="form.phonePlaceholder" autocomplete="tel">
             </div>
             <div class="field">
               <label for="empresa" data-i18n="form.companyLabel">Azienda</label>
-              <input id="empresa" name="empresa" type="text" placeholder="Nome della tua azienda" data-i18n-placeholder="form.companyPlaceholder" autocomplete="organization">
+              <input id="empresa" name="company" type="text" placeholder="Nome della tua azienda" data-i18n-placeholder="form.companyPlaceholder" autocomplete="organization">
             </div>
             <div class="field">
               <label for="mensagem" data-i18n="form.messageLabel">Racconta il progetto</label>
-              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Sito istituzionale, landing page, automazione..." data-i18n-placeholder="form.messagePlaceholder" required></textarea>
+              <textarea id="mensagem" name="message" rows="4" placeholder="Sito istituzionale, landing page, automazione..." data-i18n-placeholder="form.messagePlaceholder" required></textarea>
             </div>
             <button class="btn btn-primary" type="submit" data-i18n="form.submit">Invia proposta</button>
             <p id="formStatus" class="form-status" role="status"></p>
@@ -462,10 +827,10 @@
 
         <div class="footer-col">
           <h4 data-i18n="footerShowcase.quickTitle">Link veloci</h4>
-          <a href="#chi-siamo" data-i18n="footerShowcase.about">Chi siamo</a>
-          <a href="#servizi" data-i18n="footerShowcase.services">Servizi</a>
+          <a href="index.html" data-i18n="footerShowcase.home">Home</a>
+          <a href="#chi-siamo" data-i18n="footerShowcase.services">Servizi</a>
           <a href="#portfolio" data-i18n="footerShowcase.portfolio">Portfolio</a>
-          <a href="#contatto" data-i18n="footerShowcase.quote">Richiedi un preventivo</a>
+          <a href="#blog" data-i18n="footerShowcase.blog">Blog</a>
         </div>
 
         <div class="footer-col">

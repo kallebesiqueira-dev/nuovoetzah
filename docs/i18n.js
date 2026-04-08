@@ -6,17 +6,23 @@
         description: 'Studio digitale specializzato in siti web su misura, landing page ad alta conversione, SEO tecnica e automazioni.'
       },
       nav: {
+        home: 'Home',
         services: 'Servizi',
         portfolio: 'Portfolio',
+        blog: 'Blog',
+        faq: 'FAQ',
         process: 'Processo',
         pricing: 'Prezzi',
         contact: 'Contatto'
       },
       hero: {
         eyebrow: 'Progetti su misura per brand ambiziosi',
-        title: 'Trasforma il tuo sito in una macchina di conversione.',
+        title: 'Aumenta le tue vendite e raggiungi più clienti con un sito professionale.',
+        titleLine1: 'Aumenta le tue vendite',
+        titleLine2: 'e raggiungi più clienti',
+        titleLine3: 'con un sito professionale.',
         subtitle: 'Design strategico, performance e automazioni per accelerare le vendite, costruire autorevolezza e semplificare il funnel.',
-        ctaPrimary: 'Voglio un preventivo',
+        ctaPrimary: 'Richiedi un preventivo',
         ctaSecondary: 'Chi siamo',
         metric1: 'Lead in 90 giorni',
         metric2: 'per la prima consegna',
@@ -47,14 +53,38 @@
         }
       },
       about: {
-        title: 'Chi Siamo – EtzahWeb',
-        intro: 'EtzahWeb nasce con un obiettivo chiaro: aiutare professionisti e aziende a crescere online con siti web moderni, efficaci e realmente orientati ai risultati. Crediamo che un sito web non sia solo una vetrina, ma uno strumento strategico per generare contatti, aumentare la credibilità e distinguersi dalla concorrenza.',
+        titleLine1: 'Cosa Possiamo Creare',
+        titleLine2: 'Per Il Tuo',
+        titleAccent: 'Business',
+        intro: "Un sito va oltre una semplice pagina online. E la porta d'ingresso del tuo brand: presenta i tuoi servizi, rafforza la tua credibilita e ti aiuta a trasformare visite in richieste concrete.",
+        card1: {
+          title: 'Sito istituzionale',
+          body: 'Presenta la tua azienda, i tuoi servizi e i tuoi punti di forza con una presenza chiara, professionale e facile da navigare.'
+        },
+        card2: {
+          title: 'Landing Page',
+          body: 'Pagine studiate per campagne, offerte o lanci specifici, con una struttura pensata per aumentare contatti e conversioni.'
+        },
+        card3: {
+          title: 'E-commerce',
+          body: "Vendi online con un negozio elegante, veloce e ottimizzato per guidare il cliente fino all'acquisto."
+        },
+        card4: {
+          title: 'Blog e notizie',
+          body: 'Crea un\'area editoriale per articoli, aggiornamenti e contenuti SEO che rafforzano autorevolezza e visibilita.'
+        },
+        card5: {
+          title: 'Biglietto digitale',
+          body: 'Una presenza compatta e moderna da condividere subito con clienti e contatti, perfetta per social e networking.'
+        },
+        card6: {
+          title: 'Sito personalizzato',
+          body: 'Soluzioni su misura per esigenze specifiche, con design, funzionalita e struttura costruiti intorno al tuo business.'
+        },
+        cta: 'Voglio creare il mio sito',
         real: {
           title: 'Portfolio e recensioni reali',
-          body: 'La trasparenza è alla base del nostro lavoro. Mettiamo a disposizione portfolio verificabili e recensioni autentiche dei nostri clienti, perché i risultati parlano più di qualsiasi promessa.'
-        },
-        full: {
-          title: 'Servizi completi, dal design allo sviluppo',
+          body: 'La trasparenza è alla base del nostro lavoro. Mettiamo a disposizione portfolio verificabili e recensioni autentiche dei nostri clienti, perché i risultati parlano più di qualsiasi promessa.',
           intro: 'Seguiamo ogni progetto in modo completo:',
           item1: 'Analisi e strategia',
           item2: 'Web design professionale',
@@ -84,6 +114,21 @@
           body: 'Ogni progetto è personalizzato. Non utilizziamo soluzioni standardizzate: il tuo sito deve rappresentare la tua identità, i tuoi valori e i tuoi obiettivi di business.'
         }
       },
+      founder: {
+        title: 'Chi sono',
+        imageAlt: 'Ritratto di Kallebe Gallo',
+        p1Intro: 'Mi chiamo',
+        p1FirstName: 'Kallebe',
+        p1LastName: 'Gallo',
+        p1Line2Rest: ' e sono Full Stack',
+        p1Line3: 'Developer e fondatore di EtzahWeb.',
+        p2Lead: 'Negli ultimi 5 anni',
+        p2Rest: " mi sono dedicato alla realizzazione di siti web moderni, responsive e coinvolgenti, capaci di offrire sia alte prestazioni sia un'esperienza utente eccellente. Il mio percorso nello sviluppo è iniziato con una forte curiosità verso il modo in cui vengono costruiti i prodotti digitali, trasformandosi presto in un percorso professionale focalizzato sulla creazione di soluzioni web complete, dall'architettura backend alle interfacce visibili agli utenti.",
+        p3Lead: 'Sistemi sicuri, applicazioni scalabili e design responsive',
+        p3Rest: ' fanno parte del mio lavoro quotidiano. Sviluppo piattaforme visivamente curate e adattate a esigenze diverse, garantendo che ogni interazione sia fluida, intuitiva e coerente su ogni dispositivo.',
+        p4Lead: 'Con EtzahWeb, il mio obiettivo',
+        p4Rest: ' è offrire soluzioni digitali di alta qualità che uniscano eccellenza tecnica e design creativo, aiutando le aziende a crescere e a costruire una presenza online forte e autorevole.'
+      },
       process: {
         title: 'Processo chiaro, senza giri di parole',
         subtitle: 'Dal briefing alla consegna finale, segui tutto con trasparenza.',
@@ -105,8 +150,9 @@
         }
       },
       portfolio: {
-        title: 'Portfolio e recensioni verificabili',
-        subtitle: 'Valuta lavori reali, opinioni dei clienti e il livello di personalizzazione prima di scegliere il partner giusto.',
+        title: 'Portfolio',
+        subtitle: 'Scopri alcuni siti professionali che ho realizzato.',
+        viewProject: 'Vedi progetto',
         item1: {
           mediaAria: 'Apri immagine Portfolio Academia',
           mediaAlt: 'Portfolio Academia',
@@ -207,27 +253,147 @@
       },
       reviews: {
         sectionTitle: 'Recensioni clienti',
-        sectionSubtitle: 'Testimonianze utili per verificare affidabilità, comunicazione e supporto dopo il lancio.',
+        sectionSubtitle: 'Opinioni reali di aziende e professionisti che hanno scelto EtzahWeb per migliorare presenza online e conversioni.',
         kicker: 'Nostre recensioni',
         swipeHint: 'Scorri per vedere più recensioni →',
         excellent: 'ECCELLENTE',
-        count: 'In base a 9 recensioni',
+        count: 'In base a 15 recensioni verificate',
         google: 'Google',
         starsAria: 'Valutazione 5 su 5',
         prevAria: 'Recensione precedente',
         nextAria: 'Recensione successiva',
-        item1Meta: 'Andrea Morforio · 3 mesi fa',
-        item1Quote: 'Ho affidato a EtzahWeb la realizzazione del mio sito e sono rimasto molto soddisfatto per qualità e tempi.',
-        item2Meta: 'RedParrucchieri · 6 mesi fa',
-        item2Quote: "Processo chiaro dall'inizio alla fine. Layout elegante e conversioni migliorate già nelle prime settimane.",
-        item3Meta: 'C. U. · 6 mesi fa',
-        item3Quote: 'Esperienza eccezionale: comunicazione rapida, struttura professionale e supporto concreto dopo il lancio.',
-        item4Meta: 'Blend Milano · 7 mesi fa',
-        item4Quote: 'Abbiamo incaricato EtzahWeb e il risultato è stato superiore alle aspettative: design premium e codice pulito.',
-        item5Meta: 'Cliente verificato · 5 mesi fa',
-        item5Quote: 'Brand valorizzato con un sito moderno e veloce. Ordini online aumentati e customer journey più semplice.',
-        item6Meta: 'Cliente verificato · 4 mesi fa',
-        item6Quote: 'Preventivo trasparente e alta competenza tecnica. Perfetto equilibrio tra immagine, performance e SEO.'
+        item1Meta: '4 settimane fa',
+        item1Quote: 'Prenotazione semplice, comunicazione professionale e consegna impeccabile. Il sito trasmette subito più valore al brand.',
+        item2Meta: '5 settimane fa',
+        item2Quote: 'Layout elegante, processo chiaro e supporto veloce. Le richieste dal sito sono aumentate già nel primo mese.',
+        item3Meta: '6 settimane fa',
+        item3Quote: 'Sito veloce, messaggio commerciale più chiaro e molte più richieste qualificate. Lavoro molto professionale.',
+        item4Meta: '7 settimane fa',
+        item4Quote: "Esperienza curata dall'inizio alla fine. Identità visiva più forte e contatti molto meglio organizzati.",
+        item5Meta: '8 settimane fa',
+        item5Quote: 'Strategia chiara, struttura premium e copy efficace. Ora il sito comunica autorevolezza in pochi secondi.',
+        item6Meta: '2 mesi fa',
+        item6Quote: 'Design raffinato e percorso utente pulito. I clienti trovano subito i servizi e ci contattano più facilmente.',
+        item7Meta: '2 mesi fa',
+        item7Quote: 'Finalmente un sito semplice da gestire e bello da vedere. Menu, offerte e contatti sono molto più efficaci.',
+        item8Meta: '2 mesi fa',
+        item8Quote: 'Immagine più moderna, informazioni chiare e prenotazione molto più intuitiva. Ottimo equilibrio tra estetica e funzionalità.',
+        item9Meta: '2 mesi fa',
+        item9Quote: 'Landing molto più convincente e ordinata. Ora le persone capiscono subito il servizio e chiedono informazioni.',
+        item10Meta: '2 mesi fa',
+        item10Quote: 'Molto attenti ai dettagli e al posizionamento del brand. Il sito ora sembra davvero allineato al nostro livello.',
+        item11Meta: '2 mesi fa',
+        item11Quote: 'Visual forte, caricamento rapido e contatto immediato. Esattamente il salto di qualità che cercavamo.',
+        item12Meta: '3 mesi fa',
+        item12Quote: 'Sito luminoso, credibile e molto più ordinato. Anche l\'esperienza da mobile è stata curata davvero bene.',
+        item13Meta: '3 mesi fa',
+        item13Quote: 'Presentazione più autorevole, schede più leggibili e funnel commerciale più chiaro. Servizio serio e puntuale.',
+        item14Meta: '3 mesi fa',
+        item14Quote: 'Molto soddisfatta del risultato: design pulito, atmosfera giusta e navigazione più semplice per i clienti.',
+        item15Meta: '3 mesi fa',
+        item15Quote: 'Competenza tecnica evidente e ottima organizzazione del progetto. Il nuovo sito comunica più fiducia e converte meglio.'
+      },
+      benefits: {
+        titlePrefix: 'COME UN SITO',
+        titleHighlight: 'PROFESSIONALE',
+        titleSuffixLead: 'AIUTA IL TUO',
+        titleSuffixAccent: 'BUSINESS?',
+        subtitle: '6 ragioni per cui un sito e essenziale per far crescere il tuo business.',
+        item1: {
+          title: 'Fatti trovare',
+          body: 'Porta online la tua azienda e mostra prodotti o servizi a nuovi clienti, ogni giorno.'
+        },
+        item2: {
+          title: 'Vendi di più',
+          body: 'Presenta la tua offerta in modo chiaro e accompagna il cliente fino al contatto o all\'acquisto.'
+        },
+        item3: {
+          title: 'Credibilità immediata',
+          body: 'Un sito professionale trasmette fiducia, serietà e valore già nei primi secondi.'
+        },
+        item4: {
+          title: 'Marketing più forte',
+          body: 'Collega campagne, social e annunci a una base solida pensata per convertire meglio.'
+        },
+        item5: {
+          title: 'Lavora anche di notte',
+          body: 'Il tuo sito continua a presentare il business e raccogliere richieste anche quando sei offline.'
+        },
+        item6: {
+          title: 'Resta davanti',
+          body: 'Una presenza moderna e curata ti aiuta a distinguerti e restare competitivo nel tuo settore.'
+        }
+      },
+      blog: {
+        sectionTitle: 'Blog',
+        sectionSubtitle: 'Perché il design responsivo è essenziale per attirare più clienti online.',
+        articleTitle: 'L\'importanza del design responsivo per attirare più clienti',
+        imageAlt: 'Copertina articolo sul design responsivo',
+        intro: 'Nel mondo digitale di oggi, dove accessibilità ed esperienza utente sono decisive per il successo online, il design responsivo è diventato un elemento essenziale per qualsiasi sito. Offrire un\'esperienza coerente e di qualità su dispositivi diversi è fondamentale per attrarre e fidelizzare clienti.',
+        whatTitle: 'Che cos\'è il design responsivo?',
+        whatBody: 'Il design responsivo è un approccio al web design che fa sì che un sito si adatti e funzioni perfettamente su una varietà di dispositivi e dimensioni di schermo, dai desktop e laptop fino a smartphone e tablet. Questo avviene tramite layout flessibili, immagini ridimensionabili e media queries che regolano lo stile in base al dispositivo dell\'utente.',
+        uxTitle: 'L\'esperienza utente al primo posto',
+        uxBody: 'Uno dei maggiori vantaggi del design responsivo è il miglioramento dell\'esperienza utente. Quando i visitatori entrano in un sito che si adatta perfettamente al loro dispositivo, la navigazione diventa più intuitiva, rapida e piacevole. Non devono zoomare o scorrere lateralmente per leggere i contenuti, e questo riduce l\'attrito che spesso allontana potenziali clienti.',
+        mobileTitle: 'L\'importanza del mobile-first',
+        mobileBody: 'Con l\'aumento dell\'uso dei dispositivi mobili per accedere a internet, adottare un approccio mobile-first è diventato essenziale. Significa progettare prima per il mobile e poi espandere l\'esperienza su desktop e altri schermi. In questo modo il sito risponde meglio al comportamento reale degli utenti e può generare più conversioni.',
+        seoTitle: 'Impatto su SEO e visibilità online',
+        seoBody: 'Oltre a migliorare l\'esperienza utente, il design responsivo ha un impatto positivo anche sulla SEO. I motori di ricerca, come Google, privilegiano i siti ottimizzati per il mobile, e avere un unico URL per tutte le versioni del sito semplifica l\'indicizzazione. Questo può tradursi in maggiore visibilità, più traffico organico e più opportunità di business.',
+        whyTitle: 'Ma perché il design responsivo è così importante?',
+        point1Title: 'Esperienza utente superiore:',
+        point1Body: 'un sito responsivo garantisce una navigazione piacevole e intuitiva su ogni dispositivo, aumentando il tempo di permanenza, l\'engagement e la probabilità di ritorno.',
+        point2Title: 'Più conversioni e vendite:',
+        point2Body: 'una struttura chiara e accessibile facilita contatti, richieste e acquisti, trasformando più visitatori in clienti.',
+        point3Title: 'Miglior posizionamento nei motori di ricerca:',
+        point3Body: 'Google e gli altri motori di ricerca favoriscono i siti responsivi, aumentando le possibilità di apparire tra i primi risultati.',
+        point4Title: 'Pubblico più ampio:',
+        point4Body: 'un sito responsivo raggiunge utenti che navigano soprattutto da smartphone, oggi la parte più grande del traffico internet.',
+        point5Title: 'Immagine del brand più forte:',
+        point5Body: 'mostra professionalità, attenzione al mercato e cura dell\'esperienza utente, aumentando fiducia e credibilità.',
+        conclusionTitle: 'Conclusione',
+        conclusionBody: 'In un mondo sempre più connesso e mobile, il design responsivo non è più un optional. È una necessità per qualsiasi azienda che voglia attrarre, coinvolgere e convertire il proprio pubblico. Quando crei o aggiorni il tuo sito, dare priorità al design responsivo significa investire in credibilità, visibilità online e risultati concreti.'
+      },
+      faq: {
+        sectionTitle: 'FAQ - Domande Frequenti',
+        item1: {
+          question: 'Qual e l\'importanza di un sito per la mia azienda?',
+          answer: 'Un sito professionale aumenta credibilita, facilita il contatto con nuovi clienti e mantiene la tua azienda visibile 24 ore su 24. E uno strumento commerciale che rafforza il brand e aiuta a trasformare visite in richieste reali.'
+        },
+        item2: {
+          question: 'Che cos\'e l\'hosting di un sito?',
+          answer: 'L\'hosting e il servizio che mantiene il tuo sito online su un server. In pratica, e lo spazio dove vivono i file del sito e da cui i visitatori possono accedervi in qualsiasi momento.'
+        },
+        item3: {
+          question: 'Quanto costa sviluppare un sito?',
+          answer: 'Il costo dipende da obiettivi, numero di pagine, livello di personalizzazione e funzionalita necessarie. Un sito istituzionale semplice costa meno di un e-commerce o di una landing page con integrazioni avanzate.'
+        },
+        item4: {
+          question: 'Che cos\'e un\'email professionale?',
+          answer: 'E un indirizzo email personalizzato con il dominio della tua azienda, ad esempio nome@tuoazienda.com. Trasmette piu fiducia, rafforza l\'immagine del brand e rende la comunicazione piu professionale.'
+        },
+        item5: {
+          question: 'Quali costi ho per mantenere un sito?',
+          answer: 'I costi principali sono dominio, hosting ed eventuale manutenzione tecnica o aggiornamenti. In alcuni progetti possono aggiungersi strumenti extra come email professionale, backup, SEO o integrazioni specifiche.'
+        },
+        item6: {
+          question: 'Che cos\'e il dominio di un sito?',
+          answer: 'Il dominio e l\'indirizzo del tuo sito su internet, ad esempio etzahweb.com. E il nome che le persone digitano per trovarti online e rappresenta una parte importante della tua identita digitale.'
+        },
+        item7: {
+          question: 'Il mio sito apparira su Google?',
+          answer: 'Si, dopo l\'indicizzazione da parte di Google il sito puo comparire nei risultati di ricerca. Tuttavia, per ottenere maggiore visibilita servono struttura corretta, contenuti ben scritti, velocita, SEO tecnica e continuita nel tempo.'
+        },
+        item8: {
+          question: 'Quale dominio dovrei scegliere?',
+          answer: 'La scelta migliore e un dominio breve, facile da ricordare, semplice da scrivere e coerente con il nome della tua attivita. Quando possibile, conviene evitare trattini, termini complessi o varianti difficili da comunicare.'
+        },
+        item9: {
+          question: 'Qual e la differenza tra sito istituzionale, negozio online, blog e landing page?',
+          answer: 'Il sito istituzionale presenta azienda e servizi; il negozio online vende prodotti; il blog pubblica contenuti e articoli; la landing page e una pagina focalizzata su una sola offerta o campagna, progettata per generare conversioni specifiche.'
+        },
+        item10: {
+          question: 'Che cos\'e la SEO?',
+          answer: 'SEO significa ottimizzazione per i motori di ricerca. Comprende struttura tecnica, contenuti, performance e strategia di parole chiave per aiutare il tuo sito a posizionarsi meglio su Google e attirare traffico qualificato.'
+        }
       },
       contact: {
         title: 'Mettiamo online il tuo progetto?',
@@ -239,7 +405,10 @@
         card2: {
           label: 'Canale ',
           value: 'WhatsApp'
-        }
+        },
+        mapLabel: 'Posizione ',
+        mapValue: 'Bellinzona, Svizzera',
+        mapLink: 'Apri su Google Maps'
       },
       form: {
         nameLabel: 'Nome completo',
@@ -269,9 +438,12 @@
       footerShowcase: {
         brandDescription: 'EtzahWeb è uno studio digitale specializzato in siti web professionali, strategie orientate ai risultati e supporto continuo per aziende e professionisti.',
         quickTitle: 'Link veloci',
+        home: 'Home',
         about: 'Chi siamo',
         services: 'Servizi',
         portfolio: 'Portfolio',
+        blog: 'Blog',
+        faq: 'FAQ',
         quote: 'Richiedi un preventivo',
         servicesTitle: 'Servizi',
         service1: 'Creazioni siti web su misura',
@@ -335,10 +507,10 @@
         contactBody: 'Per domande sui termini, scrivi a contato@etzahweb.com.'
       },
       login: {
-        headTitle: 'Login | EtzahWeb',
-        headDescription: 'Accesso amministrativo EtzahWeb.',
-        title: 'Area amministrativa',
-        subtitle: 'Accedi per visualizzare i messaggi ricevuti.',
+        headTitle: 'Area interna | EtzahWeb',
+        headDescription: 'Area interna disattivata nella versione statica del sito EtzahWeb.',
+        title: 'Area interna rimossa',
+        subtitle: 'Questo sito ora funziona senza backend. I messaggi del modulo vengono inviati direttamente a contato@etzahweb.com.',
         emailLabel: 'Utente',
         emailPlaceholder: 'admin',
         passwordLabel: 'Password',
@@ -348,10 +520,10 @@
         error: 'Email o password non corretti.'
       },
       admin: {
-        headTitle: 'Pannello Admin | EtzahWeb',
-        headDescription: 'Pannello amministrativo EtzahWeb.',
-        title: 'Messaggi ricevuti',
-        subtitle: 'Segui i lead e rispondi rapidamente.',
+        headTitle: 'Informazioni | EtzahWeb',
+        headDescription: 'Pagina informativa della versione statica EtzahWeb.',
+        title: 'Inbox rimossa',
+        subtitle: 'Nella versione statica del sito, i contatti arrivano direttamente via email e non vengono salvati in un pannello interno.',
         titleInbox: 'Messaggi ricevuti',
         subtitleInbox: 'Segui i lead e rispondi rapidamente.',
         titleTrash: 'Messaggi eliminati',
@@ -361,8 +533,8 @@
         refresh: 'Aggiorna',
         logout: 'Esci',
         loading: 'Caricamento messaggi...',
-        emptyTitle: 'Nessun messaggio per ora',
-        emptyBody: 'Quando arrivano nuovi lead, appariranno qui.',
+        emptyTitle: 'Ricezione diretta via email',
+        emptyBody: 'Usa il modulo principale della home per ricevere nuove richieste su contato@etzahweb.com.',
         trashEmptyTitle: 'Nessun messaggio nel cestino',
         trashEmptyBody: 'I messaggi eliminati appariranno qui.',
         noneFound: 'Nessun messaggio trovato.',
@@ -394,17 +566,23 @@
         description: 'Estúdio digital especializado em sites sob medida, landing pages de alta conversão, SEO técnico e automações.'
       },
       nav: {
+        home: 'Home',
         services: 'Serviços',
         portfolio: 'Portfólio',
+        blog: 'Blog',
+        faq: 'FAQ',
         process: 'Processo',
         pricing: 'Preços',
         contact: 'Contato'
       },
       hero: {
         eyebrow: 'Projetos sob medida para marcas ambiciosas',
-        title: 'Transforme seu site em uma máquina de conversão.',
+        title: 'Aumente suas vendas e alcance mais clientes com um site profissional.',
+        titleLine1: 'Aumente suas vendas',
+        titleLine2: 'e alcance mais clientes',
+        titleLine3: 'com um site profissional.',
         subtitle: 'Design estratégico, performance e automações para acelerar vendas, gerar autoridade e simplificar seu funil.',
-        ctaPrimary: 'Quero um orçamento',
+        ctaPrimary: 'Solicitar orçamento',
         ctaSecondary: 'Quem somos',
         metric1: 'Leads em 90 dias',
         metric2: 'para primeira entrega',
@@ -435,8 +613,35 @@
         }
       },
       about: {
-        title: 'Quem Somos – EtzahWeb',
-        intro: 'A EtzahWeb nasceu com um objetivo claro: ajudar profissionais e empresas a crescer online com sites modernos, eficazes e orientados a resultados. Acreditamos que um site não é apenas vitrine, mas uma ferramenta estratégica para gerar contatos, aumentar credibilidade e se destacar da concorrência.',
+        titleLine1: 'O Que Podemos Criar',
+        titleLine2: 'Para O Seu',
+        titleAccent: 'Negocio',
+        intro: 'Um site vai alem de uma pagina online. Ele e a porta de entrada da sua marca: apresenta seus servicos, fortalece sua credibilidade e transforma visitas em pedidos reais.',
+        card1: {
+          title: 'Site institucional',
+          body: 'Apresente sua empresa, seus servicos e seus diferenciais com uma presenca clara, profissional e facil de navegar.'
+        },
+        card2: {
+          title: 'Landing Pages',
+          body: 'Paginas pensadas para campanhas, ofertas ou lancamentos, com estrutura focada em gerar mais contatos e conversoes.'
+        },
+        card3: {
+          title: 'Loja virtual',
+          body: 'Venda online com uma loja elegante, rapida e otimizada para conduzir o cliente ate a compra.'
+        },
+        card4: {
+          title: 'Blog e noticias',
+          body: 'Crie uma area editorial para artigos, atualizacoes e conteudos SEO que reforcam autoridade e visibilidade.'
+        },
+        card5: {
+          title: 'Cartao digital',
+          body: 'Uma presenca compacta e moderna para compartilhar com clientes e contatos, perfeita para redes sociais e networking.'
+        },
+        card6: {
+          title: 'Site personalizado',
+          body: 'Solucoes sob medida para necessidades especificas, com design, funcionalidades e estrutura criados para o seu negocio.'
+        },
+        cta: 'Quero criar meu site',
         real: {
           title: 'Portfólio e avaliações reais',
           body: 'Transparência é a base do nosso trabalho. Disponibilizamos portfólios verificáveis e avaliações autênticas dos nossos clientes, porque resultados falam mais que promessas.'
@@ -472,6 +677,21 @@
           body: 'Cada projeto é personalizado. Não usamos soluções padronizadas: seu site deve representar sua identidade, seus valores e seus objetivos de negócio.'
         }
       },
+      founder: {
+        title: 'Quem Sou Eu',
+        imageAlt: 'Retrato de Kallebe Gallo',
+        p1Intro: 'Meu nome é',
+        p1FirstName: 'Kallebe',
+        p1LastName: 'Gallo',
+        p1Line2Rest: ' e sou Desenvolvedor',
+        p1Line3: 'Full Stack e fundador da EtzahWeb.',
+        p2Lead: 'Nos últimos 5 anos',
+        p2Rest: ' tenho me dedicado a criar sites modernos, responsivos e envolventes, capazes de entregar alta performance e uma excelente experiência de uso. Minha jornada no desenvolvimento começou com uma forte curiosidade sobre como os produtos digitais são construídos e rapidamente se transformou em um caminho profissional focado na criação de soluções web completas, da arquitetura backend até as interfaces que o usuário vê e utiliza.',
+        p3Lead: 'Sistemas seguros, aplicações escaláveis e design responsivo',
+        p3Rest: ' fazem parte do meu trabalho diário. Desenvolvo plataformas visualmente marcantes e adaptadas a diferentes necessidades, garantindo que cada interação seja fluida, intuitiva e consistente em qualquer dispositivo.',
+        p4Lead: 'Com a EtzahWeb, meu objetivo',
+        p4Rest: ' é oferecer soluções digitais de alta qualidade que unam excelência técnica e design criativo, ajudando empresas a crescer e a construir uma presença online forte e profissional.'
+      },
       process: {
         title: 'Processo claro, sem enrolação',
         subtitle: 'Do diagnóstico a entrega final, você acompanha tudo com transparência.',
@@ -493,8 +713,9 @@
         }
       },
       portfolio: {
-        title: 'Portfólio e avaliações verificáveis',
-        subtitle: 'Analise trabalhos reais, opiniões de clientes e nível de personalização antes de escolher o parceiro ideal.',
+        title: 'Portfólio',
+        subtitle: 'Conheça alguns sites profissionais que já criei.',
+        viewProject: 'Ver projeto',
         item1: {
           mediaAria: 'Abrir imagem do portfólio Academia',
           mediaAlt: 'Portfólio Academia',
@@ -595,27 +816,147 @@
       },
       reviews: {
         sectionTitle: 'Avaliações de clientes',
-        sectionSubtitle: 'Depoimentos úteis para verificar confiabilidade, comunicação e suporte após o lançamento.',
+        sectionSubtitle: 'Opiniões reais de empresas e profissionais que escolheram a EtzahWeb para melhorar presença online e conversões.',
         kicker: 'Nossas avaliações',
         swipeHint: 'Arraste para ver mais avaliações →',
         excellent: 'EXCELENTE',
-        count: 'Com base em 9 avaliações',
+        count: 'Com base em 15 avaliações verificadas',
         google: 'Google',
         starsAria: 'Avaliação 5 de 5',
         prevAria: 'Avaliação anterior',
         nextAria: 'Próxima avaliação',
-        item1Meta: 'Andrea Morforio · há 3 meses',
-        item1Quote: 'Confiei à EtzahWeb a criação do meu site e fiquei muito satisfeito com qualidade e prazo.',
-        item2Meta: 'RedParrucchieri · há 6 meses',
-        item2Quote: 'Processo claro do início ao fim. Layout elegante e conversões melhores já nas primeiras semanas.',
-        item3Meta: 'C. U. · há 6 meses',
-        item3Quote: 'Experiência excelente: comunicação rápida, estrutura profissional e suporte real após o lançamento.',
-        item4Meta: 'Blend Milano · há 7 meses',
-        item4Quote: 'Contratamos a EtzahWeb e o resultado superou as expectativas: design premium e código limpo.',
-        item5Meta: 'Cliente verificado · há 5 meses',
-        item5Quote: 'Marca valorizada com um site moderno e rápido. Pedidos online cresceram e a jornada ficou mais simples.',
-        item6Meta: 'Cliente verificado · há 4 meses',
-        item6Quote: 'Orçamento transparente e alta competência técnica. Equilíbrio perfeito entre imagem, performance e SEO.'
+        item1Meta: 'há 4 semanas',
+        item1Quote: 'Agendamento simples, comunicação profissional e entrega impecável. O site transmite muito mais valor para a marca.',
+        item2Meta: 'há 5 semanas',
+        item2Quote: 'Layout elegante, processo claro e suporte rápido. Os contatos pelo site aumentaram já no primeiro mês.',
+        item3Meta: 'há 6 semanas',
+        item3Quote: 'Site rápido, mensagem comercial mais clara e muito mais pedidos qualificados. Trabalho muito profissional.',
+        item4Meta: 'há 7 semanas',
+        item4Quote: 'Experiência bem conduzida do início ao fim. Identidade visual mais forte e contatos muito melhor organizados.',
+        item5Meta: 'há 8 semanas',
+        item5Quote: 'Estratégia clara, estrutura premium e copy eficiente. Agora o site transmite autoridade em poucos segundos.',
+        item6Meta: 'há 2 meses',
+        item6Quote: 'Design refinado e navegação limpa. Os clientes encontram os serviços com facilidade e entram em contato mais rápido.',
+        item7Meta: 'há 2 meses',
+        item7Quote: 'Finalmente um site fácil de gerenciar e bonito de ver. Cardápio, ofertas e contatos ficaram muito mais eficientes.',
+        item8Meta: 'há 2 meses',
+        item8Quote: 'Imagem mais moderna, informações claras e agendamento muito mais intuitivo. Ótimo equilíbrio entre estética e função.',
+        item9Meta: 'há 2 meses',
+        item9Quote: 'Landing page muito mais convincente e organizada. Agora as pessoas entendem o serviço rapidamente e pedem informações.',
+        item10Meta: 'há 2 meses',
+        item10Quote: 'Muito cuidado com os detalhes e com o posicionamento da marca. O site agora parece realmente no nosso nível.',
+        item11Meta: 'há 2 meses',
+        item11Quote: 'Visual forte, carregamento rápido e contato imediato. Exatamente o salto de qualidade que estávamos procurando.',
+        item12Meta: 'há 3 meses',
+        item12Quote: 'Site mais leve, confiável e bem organizado. A experiência no mobile também ficou excelente.',
+        item13Meta: 'há 3 meses',
+        item13Quote: 'Apresentação mais profissional, páginas mais legíveis e funil comercial mais claro. Serviço sério e pontual.',
+        item14Meta: 'há 3 meses',
+        item14Quote: 'Muito satisfeita com o resultado: design limpo, atmosfera certa e navegação mais simples para os clientes.',
+        item15Meta: 'há 3 meses',
+        item15Quote: 'Competência técnica evidente e ótima organização do projeto. O novo site transmite mais confiança e converte melhor.'
+      },
+      benefits: {
+        titlePrefix: 'COMO UM SITE',
+        titleHighlight: 'PROFISSIONAL',
+        titleSuffixLead: 'AJUDA O SEU',
+        titleSuffixAccent: 'NEGÓCIO?',
+        subtitle: '6 razões pelas quais um site profissional é essencial para o seu negócio',
+        item1: {
+          title: 'Seja encontrado',
+          body: 'Crie sua empresa online e mostre seus produtos e serviços para o mundo, 24/7.'
+        },
+        item2: {
+          title: 'Venda mais',
+          body: 'Ofereça seus produtos ou serviços online e facilite a compra para seus clientes.'
+        },
+        item3: {
+          title: 'Credibilidade instantânea',
+          body: 'Ganhe a confiança dos clientes com um site profissional que mostre a seriedade do seu negócio.'
+        },
+        item4: {
+          title: 'Marketing imbatível',
+          body: 'Atraia novos clientes e fidelize os existentes com ferramentas poderosas e personalizadas.'
+        },
+        item5: {
+          title: 'Venda sem parar',
+          body: 'Seu site trabalha para você 24 horas por dia, 7 dias por semana, mesmo quando você está dormindo.'
+        },
+        item6: {
+          title: 'Fique à frente',
+          body: 'Seja competitivo e supere seus concorrentes com um site moderno e eficiente.'
+        }
+      },
+      blog: {
+        sectionTitle: 'Blog',
+        sectionSubtitle: 'Por que o design responsivo é essencial para atrair mais clientes online.',
+        articleTitle: 'A importância do design responsivo para atrair mais clientes',
+        imageAlt: 'Capa do artigo sobre design responsivo',
+        intro: 'No mundo digital de hoje, onde a acessibilidade e a experiência do usuário são cruciais para o sucesso online, o design responsivo emergiu como um elemento essencial para qualquer site. A capacidade de oferecer uma experiência consistente e de qualidade em diferentes dispositivos é fundamental para atrair e reter clientes.',
+        whatTitle: 'O que é design responsivo?',
+        whatBody: 'O design responsivo é uma abordagem de design web que garante que um site se adapte e funcione perfeitamente em uma variedade de dispositivos e tamanhos de tela, desde desktops e laptops até smartphones e tablets. Isso é alcançado por meio de layouts flexíveis, imagens redimensionáveis e media queries, que ajustam o estilo e o layout com base nas características do dispositivo do usuário.',
+        uxTitle: 'A experiência do usuário em primeiro lugar',
+        uxBody: 'Um dos principais benefícios do design responsivo é a melhoria da experiência do usuário. Quando os visitantes acessam um site que se adapta perfeitamente ao seu dispositivo, a navegação se torna mais agradável, intuitiva e eficiente. Não há necessidade de zoom excessivo ou rolagem horizontal para consumir o conteúdo, o que reduz atrito e aumenta o engajamento.',
+        mobileTitle: 'A importância do mobile-first',
+        mobileBody: 'Com o aumento do uso de dispositivos móveis para acessar a internet, adotar uma abordagem mobile-first tornou-se essencial. Isso significa projetar primeiro para a experiência móvel e depois expandir para desktops e outros dispositivos. Ao priorizar a versão móvel, você responde melhor ao comportamento atual dos usuários e pode conquistar taxas de conversão mais altas.',
+        seoTitle: 'Impacto no SEO e na visibilidade online',
+        seoBody: 'Além de melhorar a experiência do usuário, o design responsivo também impacta positivamente o SEO. Motores de busca como o Google favorecem sites otimizados para dispositivos móveis, e ter uma única URL para todas as versões simplifica a indexação. Isso pode gerar melhor posicionamento, mais tráfego orgânico e mais oportunidades de negócio.',
+        whyTitle: 'Mas por que o design responsivo é tão importante?',
+        point1Title: 'Experiência do usuário incomparável:',
+        point1Body: 'um site responsivo garante que seus visitantes tenham uma experiência agradável e intuitiva em qualquer dispositivo, aumentando permanência, engajamento e retorno.',
+        point2Title: 'Aumento nas conversões e vendas:',
+        point2Body: 'uma navegação mais clara e acessível facilita contatos, compras e pedidos, convertendo mais visitantes em clientes.',
+        point3Title: 'Melhor posicionamento nos resultados de busca:',
+        point3Body: 'Google e outros mecanismos de busca priorizam sites responsivos, aumentando as chances de aparecer nas primeiras posições.',
+        point4Title: 'Alcance de um público mais amplo:',
+        point4Body: 'um site responsivo permite alcançar também quem acessa a internet principalmente pelo celular, hoje a maior parte dos usuários.',
+        point5Title: 'Fortalecimento da imagem da marca:',
+        point5Body: 'mostra profissionalismo, cuidado com a experiência do usuário e atenção às tendências do mercado, aumentando confiança e credibilidade.',
+        conclusionTitle: 'Conclusão',
+        conclusionBody: 'Em um mundo cada vez mais conectado e móvel, o design responsivo deixou de ser opcional. Ele é uma necessidade para qualquer negócio que queira atrair, envolver e converter seu público. Ao criar ou atualizar o seu site, priorizar o design responsivo significa investir em credibilidade, visibilidade online e resultados concretos.'
+      },
+      faq: {
+        sectionTitle: 'FAQ - Perguntas Frequentes',
+        item1: {
+          question: 'Qual a importância de um site para minha empresa?',
+          answer: 'Um site profissional aumenta a credibilidade, facilita o contato com novos clientes e mantém a sua empresa visível 24 horas por dia. Ele funciona como uma ferramenta comercial que fortalece a marca e ajuda a transformar visitas em oportunidades reais.'
+        },
+        item2: {
+          question: 'O que é hospedagem de site?',
+          answer: 'Hospedagem é o serviço que mantém o seu site online em um servidor. Em outras palavras, é o espaço onde os arquivos do site ficam armazenados para que qualquer pessoa possa acessá-lo pela internet.'
+        },
+        item3: {
+          question: 'Quanto custa para desenvolver um site?',
+          answer: 'O valor depende dos objetivos do projeto, quantidade de páginas, nível de personalização e funcionalidades necessárias. Um site institucional simples custa menos do que uma loja virtual ou uma landing page com integrações mais avançadas.'
+        },
+        item4: {
+          question: 'O que é E-mail Profissional?',
+          answer: 'É um endereço de email personalizado com o domínio da sua empresa, por exemplo nome@suaempresa.com. Ele transmite mais confiança, reforça a imagem da marca e torna a comunicação mais profissional.'
+        },
+        item5: {
+          question: 'Quais os gastos eu tenho para manter um site?',
+          answer: 'Os custos mais comuns são domínio, hospedagem e possível manutenção técnica ou atualizações. Dependendo do projeto, também podem existir custos extras com email profissional, backup, SEO ou ferramentas integradas.'
+        },
+        item6: {
+          question: 'O que é o Domínio de um site?',
+          answer: 'Domínio é o endereço do seu site na internet, como etzahweb.com. É o nome que as pessoas digitam para encontrar sua empresa online e faz parte importante da sua identidade digital.'
+        },
+        item7: {
+          question: 'Meu site irá aparecer no sistema de busca do Google?',
+          answer: 'Sim, depois que o Google indexa o site ele pode aparecer nos resultados de busca. Mas para ganhar mais visibilidade é preciso ter boa estrutura, conteúdo relevante, velocidade, SEO técnico e consistência ao longo do tempo.'
+        },
+        item8: {
+          question: 'Qual domínio eu devo escolher?',
+          answer: 'O ideal é escolher um domínio curto, fácil de lembrar, simples de escrever e alinhado ao nome do seu negócio. Sempre que possível, vale evitar hífens, palavras complicadas ou variações difíceis de comunicar.'
+        },
+        item9: {
+          question: 'Qual a diferença entre site institucional, loja virtual, blog e LP?',
+          answer: 'O site institucional apresenta a empresa e os serviços; a loja virtual vende produtos; o blog publica conteúdos e artigos; e a landing page é uma página focada em uma única oferta ou campanha, criada para gerar uma conversão específica.'
+        },
+        item10: {
+          question: 'O que é SEO?',
+          answer: 'SEO significa otimização para mecanismos de busca. Envolve estrutura técnica, conteúdo, performance e estratégia de palavras-chave para ajudar seu site a aparecer melhor no Google e atrair tráfego qualificado.'
+        }
       },
       contact: {
         title: 'Vamos colocar seu projeto no ar?',
@@ -627,7 +968,10 @@
         card2: {
           label: 'Canal ',
           value: 'WhatsApp'
-        }
+        },
+        mapLabel: 'Localização ',
+        mapValue: 'Bellinzona, Suíça',
+        mapLink: 'Abrir no Google Maps'
       },
       form: {
         nameLabel: 'Nome completo',
@@ -657,9 +1001,12 @@
       footerShowcase: {
         brandDescription: 'A EtzahWeb é um estúdio digital especializado em sites profissionais, estratégias orientadas a resultados e suporte contínuo para empresas e profissionais.',
         quickTitle: 'Links rápidos',
+        home: 'Home',
         about: 'Quem somos',
         services: 'Serviços',
         portfolio: 'Portfólio',
+        blog: 'Blog',
+        faq: 'FAQ',
         quote: 'Solicitar orçamento',
         servicesTitle: 'Serviços',
         service1: 'Criação de sites sob medida',
@@ -723,10 +1070,10 @@
         contactBody: 'Para dúvidas sobre os termos, escreva para contato@etzahweb.com.'
       },
       login: {
-        headTitle: 'Login | EtzahWeb',
-        headDescription: 'Acesso administrativo EtzahWeb.',
-        title: 'Área administrativa',
-        subtitle: 'Acesse para visualizar as mensagens recebidas.',
+        headTitle: 'Área interna | EtzahWeb',
+        headDescription: 'Área interna desativada na versão estática do site EtzahWeb.',
+        title: 'Área interna removida',
+        subtitle: 'Este site agora funciona sem backend. As mensagens do formulário são enviadas diretamente para contato@etzahweb.com.',
         emailLabel: 'Usuário',
         emailPlaceholder: 'admin',
         passwordLabel: 'Senha',
@@ -736,10 +1083,10 @@
         error: 'Email ou senha incorretos.'
       },
       admin: {
-        headTitle: 'Painel Admin | EtzahWeb',
-        headDescription: 'Painel administrativo EtzahWeb.',
-        title: 'Mensagens recebidas',
-        subtitle: 'Acompanhe leads e responda rapidamente.',
+        headTitle: 'Informações | EtzahWeb',
+        headDescription: 'Página informativa da versão estática da EtzahWeb.',
+        title: 'Caixa de mensagens removida',
+        subtitle: 'Na versão estática do site, os contatos chegam diretamente por email e não ficam salvos em um painel interno.',
         titleInbox: 'Mensagens recebidas',
         subtitleInbox: 'Acompanhe leads e responda rapidamente.',
         titleTrash: 'Mensagens na lixeira',
@@ -749,8 +1096,8 @@
         refresh: 'Atualizar',
         logout: 'Sair',
         loading: 'Carregando mensagens...',
-        emptyTitle: 'Sem mensagens ainda',
-        emptyBody: 'Quando os leads chegarem, eles aparecem aqui.',
+        emptyTitle: 'Recebimento direto por email',
+        emptyBody: 'Use o formulário principal da home para receber novas solicitações em contato@etzahweb.com.',
         trashEmptyTitle: 'Lixeira vazia',
         trashEmptyBody: 'As mensagens apagadas aparecem aqui.',
         noneFound: 'Nenhuma mensagem encontrada.',
@@ -782,15 +1129,21 @@
         description: 'Digital studio specialized in custom websites, high-converting landing pages, technical SEO, and automation.'
       },
       nav: {
+        home: 'Home',
         services: 'Services',
         portfolio: 'Portfolio',
+        blog: 'Blog',
+        faq: 'FAQ',
         process: 'Process',
         pricing: 'Pricing',
         contact: 'Contact'
       },
       hero: {
         eyebrow: 'Custom projects for ambitious brands',
-        title: 'Turn your website into a conversion machine.',
+        title: 'Increase your sales and reach more clients with a professional website.',
+        titleLine1: 'Increase your sales and reach more clients',
+        titleLine2: 'with a professional website.',
+        titleLine3: '',
         subtitle: 'Strategic design, performance, and automation to accelerate sales, build authority, and simplify your funnel.',
         ctaPrimary: 'Request a quote',
         ctaSecondary: 'About us',
@@ -823,8 +1176,35 @@
         }
       },
       about: {
-        title: 'About Us – EtzahWeb',
-        intro: 'EtzahWeb was created with a clear goal: helping professionals and companies grow online with modern, effective, results-driven websites. We believe a website is not just a showcase, but a strategic tool to generate leads, increase credibility, and stand out from competitors.',
+        titleLine1: 'What We Can Create',
+        titleLine2: 'For Your',
+        titleAccent: 'Business',
+        intro: 'A website goes far beyond a simple online page. It is the front door to your brand: it presents your services, strengthens your credibility, and helps turn visits into real inquiries.',
+        card1: {
+          title: 'Company website',
+          body: 'Present your business, services, and strengths with a clear, professional presence that is easy to navigate.'
+        },
+        card2: {
+          title: 'Landing Pages',
+          body: 'Pages designed for campaigns, offers, or launches, with a structure built to increase leads and conversions.'
+        },
+        card3: {
+          title: 'Online store',
+          body: 'Sell online with an elegant, fast store optimized to guide your customer smoothly to purchase.'
+        },
+        card4: {
+          title: 'Blog and news',
+          body: 'Create an editorial area for articles, updates, and SEO content that builds authority and visibility.'
+        },
+        card5: {
+          title: 'Digital card',
+          body: 'A compact, modern presence to share instantly with clients and contacts, ideal for social media and networking.'
+        },
+        card6: {
+          title: 'Custom website',
+          body: 'Tailor-made solutions for specific needs, with design, features, and structure built around your business.'
+        },
+        cta: 'I want to create my website',
         real: {
           title: 'Real portfolio and reviews',
           body: 'Transparency is at the core of our work. We provide verifiable portfolios and authentic client reviews, because results speak louder than promises.'
@@ -860,6 +1240,21 @@
           body: 'Every project is custom. We do not use standardized solutions: your website should reflect your identity, values, and business goals.'
         }
       },
+      founder: {
+        title: 'Who I Am',
+        imageAlt: 'Portrait of Kallebe Gallo',
+        p1Intro: 'My name is',
+        p1FirstName: 'Kallebe',
+        p1LastName: 'Gallo',
+        p1Line2Rest: ' and I am a Full Stack',
+        p1Line3: 'Developer and founder of EtzahWeb.',
+        p2Lead: 'Over the past 5 years',
+        p2Rest: ' I have been dedicated to building modern, responsive, and engaging websites that deliver both strong performance and an excellent user experience. My journey in development started with a deep curiosity for how digital products are built, which quickly turned into a professional path focused on creating complete web solutions, from backend architecture to user-facing interfaces.',
+        p3Lead: 'Secure systems, scalable applications, and responsive design',
+        p3Rest: ' are part of my daily work. I build visually refined platforms tailored to different needs, ensuring that every interaction feels smooth, intuitive, and consistent across devices.',
+        p4Lead: 'With EtzahWeb, my goal',
+        p4Rest: ' is to provide high-quality digital solutions that combine technical excellence with creative design, helping businesses grow and establish a strong online presence.'
+      },
       process: {
         title: 'Clear process, no fluff',
         subtitle: 'From discovery to final delivery, you track everything with transparency.',
@@ -881,8 +1276,9 @@
         }
       },
       portfolio: {
-        title: 'Verifiable portfolio and reviews',
-        subtitle: 'Review real projects, client feedback, and customization level before choosing the right partner.',
+        title: 'Portfolio',
+        subtitle: 'Explore some professional websites I have created.',
+        viewProject: 'View project',
         item1: {
           mediaAria: 'Open Academia portfolio image',
           mediaAlt: 'Academia portfolio',
@@ -983,27 +1379,147 @@
       },
       reviews: {
         sectionTitle: 'Client reviews',
-        sectionSubtitle: 'Testimonials that help verify reliability, communication, and post-launch support.',
+        sectionSubtitle: 'Real feedback from companies and professionals who chose EtzahWeb to improve online presence and conversions.',
         kicker: 'Our reviews',
         swipeHint: 'Swipe to see more reviews →',
         excellent: 'EXCELLENT',
-        count: 'Based on 9 reviews',
+        count: 'Based on 15 verified reviews',
         google: 'Google',
         starsAria: '5 out of 5 rating',
         prevAria: 'Previous review',
         nextAria: 'Next review',
-        item1Meta: 'Andrea Morforio · 3 months ago',
-        item1Quote: 'I trusted EtzahWeb with my website and I was very satisfied with both quality and delivery time.',
-        item2Meta: 'RedParrucchieri · 6 months ago',
-        item2Quote: 'Clear process from start to finish. Elegant layout and improved conversions in the first weeks.',
-        item3Meta: 'C. U. · 6 months ago',
-        item3Quote: 'Excellent experience: fast communication, professional structure, and real post-launch support.',
-        item4Meta: 'Blend Milano · 7 months ago',
-        item4Quote: 'We hired EtzahWeb and the outcome exceeded expectations: premium design and clean code.',
-        item5Meta: 'Verified client · 5 months ago',
-        item5Quote: 'Brand value increased with a modern, fast website. Online orders grew and the customer journey became simpler.',
-        item6Meta: 'Verified client · 4 months ago',
-        item6Quote: 'Transparent quote and high technical competence. Perfect balance of image, performance, and SEO.'
+        item1Meta: '4 weeks ago',
+        item1Quote: 'Simple booking, professional communication and flawless delivery. The site gives the brand much more value right away.',
+        item2Meta: '5 weeks ago',
+        item2Quote: 'Elegant layout, clear process and fast support. Website inquiries increased in the very first month.',
+        item3Meta: '6 weeks ago',
+        item3Quote: 'Fast website, clearer commercial message and many more qualified requests. Very professional work.',
+        item4Meta: '7 weeks ago',
+        item4Quote: 'A carefully managed experience from start to finish. Stronger visual identity and much better organized contacts.',
+        item5Meta: '8 weeks ago',
+        item5Quote: 'Clear strategy, premium structure and effective copy. The site now communicates authority within seconds.',
+        item6Meta: '2 months ago',
+        item6Quote: 'Refined design and a clean user journey. Clients find services quickly and contact us more easily.',
+        item7Meta: '2 months ago',
+        item7Quote: 'Finally a website that is easy to manage and beautiful to see. Menu, offers and contact flow work much better now.',
+        item8Meta: '2 months ago',
+        item8Quote: 'More modern image, clear information and a much more intuitive booking flow. Great balance between aesthetics and function.',
+        item9Meta: '2 months ago',
+        item9Quote: 'A much more convincing and organized landing page. People now understand the service quickly and ask for information.',
+        item10Meta: '2 months ago',
+        item10Quote: 'A lot of attention to detail and brand positioning. The site now truly feels aligned with our level.',
+        item11Meta: '2 months ago',
+        item11Quote: 'Strong visual presence, fast loading and immediate contact flow. Exactly the quality jump we were looking for.',
+        item12Meta: '3 months ago',
+        item12Quote: 'A brighter, more credible and better organized website. The mobile experience was also handled really well.',
+        item13Meta: '3 months ago',
+        item13Quote: 'More authoritative presentation, easier-to-read pages and a clearer sales funnel. Serious and punctual service.',
+        item14Meta: '3 months ago',
+        item14Quote: 'Very happy with the result: clean design, the right atmosphere and simpler navigation for clients.',
+        item15Meta: '3 months ago',
+        item15Quote: 'Clear technical competence and excellent project organization. The new site inspires more trust and converts better.'
+      },
+      benefits: {
+        titlePrefix: 'HOW A',
+        titleHighlight: 'PROFESSIONAL',
+        titleSuffixLead: 'WEBSITE HELPS YOUR',
+        titleSuffixAccent: 'BUSINESS?',
+        subtitle: '6 reasons why a website is essential for your business',
+        item1: {
+          title: 'Be found',
+          body: 'Put your business online and show your products or services to more people, every day.'
+        },
+        item2: {
+          title: 'Sell more',
+          body: 'Present your offer clearly and make it easier for clients to contact you or buy from you.'
+        },
+        item3: {
+          title: 'Instant credibility',
+          body: 'A professional website builds trust and shows the seriousness of your business right away.'
+        },
+        item4: {
+          title: 'Stronger marketing',
+          body: 'Connect ads, social media, and campaigns to a solid destination built to convert better.'
+        },
+        item5: {
+          title: 'Sell all the time',
+          body: 'Your website keeps presenting your business and capturing leads even when you are offline.'
+        },
+        item6: {
+          title: 'Stay ahead',
+          body: 'A modern and efficient presence helps you stand out and stay competitive in your market.'
+        }
+      },
+      blog: {
+        sectionTitle: 'Blog',
+        sectionSubtitle: 'Why responsive design is essential to attract more customers online.',
+        articleTitle: 'The importance of responsive design to attract more customers',
+        imageAlt: 'Responsive design article cover',
+        intro: 'In today\'s digital world, where accessibility and user experience are crucial to online success, responsive design has become an essential element for any website. The ability to deliver a consistent, high-quality experience across different devices is fundamental to attracting and retaining customers.',
+        whatTitle: 'What is responsive design?',
+        whatBody: 'Responsive design is a web design approach that ensures a website adapts and works smoothly across a wide range of devices and screen sizes, from desktops and laptops to smartphones and tablets. This is achieved through flexible layouts, scalable images, and media queries that adjust the site based on the user\'s device.',
+        uxTitle: 'User experience comes first',
+        uxBody: 'One of the biggest advantages of responsive design is the improvement of user experience. When visitors land on a site that fits perfectly on their device, navigation becomes smoother, more intuitive, and more enjoyable. There is no need for excessive zooming or horizontal scrolling, which reduces friction and keeps users engaged.',
+        mobileTitle: 'The importance of mobile-first',
+        mobileBody: 'With the growth of mobile internet usage, adopting a mobile-first approach has become essential. This means designing the site first for mobile and then expanding it to desktops and other devices. By prioritizing the mobile version, you align the experience with real user behavior and open the door to higher conversion rates.',
+        seoTitle: 'Impact on SEO and online visibility',
+        seoBody: 'Besides improving user experience, responsive design also has a positive impact on SEO. Search engines such as Google favor mobile-optimized websites, and having one URL for all versions simplifies indexing. This can lead to better rankings, more organic traffic, and more business opportunities.',
+        whyTitle: 'But why is responsive design so important?',
+        point1Title: 'Outstanding user experience:',
+        point1Body: 'a responsive website gives visitors a pleasant and intuitive experience on any device, increasing engagement, time on site, and the chance of returning.',
+        point2Title: 'More conversions and sales:',
+        point2Body: 'clearer navigation and better accessibility make it easier for visitors to contact you, request quotes, or buy.',
+        point3Title: 'Better search result positioning:',
+        point3Body: 'Google and other search engines prioritize responsive sites, improving your chances of appearing among the top results.',
+        point4Title: 'Broader audience reach:',
+        point4Body: 'a responsive website lets you reach people who browse mainly on mobile devices, now the largest share of internet users.',
+        point5Title: 'Stronger brand image:',
+        point5Body: 'it shows professionalism, care for user experience, and attention to market expectations, increasing trust and credibility.',
+        conclusionTitle: 'Conclusion',
+        conclusionBody: 'In an increasingly connected and mobile world, responsive design is no longer optional. It is a necessity for any business that wants to attract, engage, and convert its target audience. When creating or updating your website, prioritizing responsive design means investing in credibility, online visibility, and real results.'
+      },
+      faq: {
+        sectionTitle: 'FAQ - Frequently Asked Questions',
+        item1: {
+          question: 'Why is a website important for my business?',
+          answer: 'A professional website increases credibility, makes it easier for new customers to contact you, and keeps your business visible 24/7. It works as a commercial tool that strengthens your brand and turns visits into real opportunities.'
+        },
+        item2: {
+          question: 'What is website hosting?',
+          answer: 'Hosting is the service that keeps your website online on a server. In practice, it is the space where your site files are stored so people can access them on the internet at any time.'
+        },
+        item3: {
+          question: 'How much does it cost to build a website?',
+          answer: 'The price depends on your goals, number of pages, level of customization, and required features. A simple company website costs less than an online store or a landing page with advanced integrations.'
+        },
+        item4: {
+          question: 'What is a professional email?',
+          answer: 'It is a custom email address using your company domain, such as name@yourcompany.com. It builds more trust, reinforces your brand image, and makes communication look more professional.'
+        },
+        item5: {
+          question: 'What costs are involved in maintaining a website?',
+          answer: 'The most common costs are domain, hosting, and possible technical maintenance or updates. Depending on the project, there may also be extra costs for professional email, backup, SEO, or integrated tools.'
+        },
+        item6: {
+          question: 'What is a website domain?',
+          answer: 'A domain is your website address on the internet, such as etzahweb.com. It is the name people type to find your business online and an important part of your digital identity.'
+        },
+        item7: {
+          question: 'Will my website appear in Google search?',
+          answer: 'Yes, once Google indexes your website it can appear in search results. But to gain stronger visibility, you need good structure, relevant content, speed, technical SEO, and consistency over time.'
+        },
+        item8: {
+          question: 'Which domain should I choose?',
+          answer: 'The best choice is a short domain that is easy to remember, simple to type, and aligned with your business name. Whenever possible, avoid hyphens, complex words, or variations that are hard to communicate.'
+        },
+        item9: {
+          question: 'What is the difference between a company website, online store, blog, and landing page?',
+          answer: 'A company website presents your business and services; an online store sells products; a blog publishes content and articles; and a landing page is focused on a single offer or campaign designed to generate a specific conversion.'
+        },
+        item10: {
+          question: 'What is SEO?',
+          answer: 'SEO stands for search engine optimization. It includes technical structure, content, performance, and keyword strategy to help your website rank better on Google and attract qualified traffic.'
+        }
       },
       contact: {
         title: 'Ready to launch your project?',
@@ -1015,7 +1531,10 @@
         card2: {
           label: 'Channel ',
           value: 'WhatsApp'
-        }
+        },
+        mapLabel: 'Location ',
+        mapValue: 'Bellinzona, Switzerland',
+        mapLink: 'Open in Google Maps'
       },
       form: {
         nameLabel: 'Full name',
@@ -1045,9 +1564,12 @@
       footerShowcase: {
         brandDescription: 'EtzahWeb is a digital studio specialized in professional websites, results-driven strategies, and ongoing support for companies and professionals.',
         quickTitle: 'Quick links',
+        home: 'Home',
         about: 'About us',
         services: 'Services',
         portfolio: 'Portfolio',
+        blog: 'Blog',
+        faq: 'FAQ',
         quote: 'Request a quote',
         servicesTitle: 'Services',
         service1: 'Custom website creation',
@@ -1111,10 +1633,10 @@
         contactBody: 'For questions about the terms, write to contato@etzahweb.com.'
       },
       login: {
-        headTitle: 'Login | EtzahWeb',
-        headDescription: 'EtzahWeb admin access.',
-        title: 'Admin area',
-        subtitle: 'Access to view received messages.',
+        headTitle: 'Internal Area | EtzahWeb',
+        headDescription: 'Internal area disabled in the static version of the EtzahWeb website.',
+        title: 'Internal area removed',
+        subtitle: 'This website now runs without a backend. Form messages are delivered directly to contato@etzahweb.com.',
         emailLabel: 'Username',
         emailPlaceholder: 'admin',
         passwordLabel: 'Password',
@@ -1124,10 +1646,10 @@
         error: 'Incorrect email or password.'
       },
       admin: {
-        headTitle: 'Admin Panel | EtzahWeb',
-        headDescription: 'EtzahWeb administration panel.',
-        title: 'Received messages',
-        subtitle: 'Track leads and respond quickly.',
+        headTitle: 'Information | EtzahWeb',
+        headDescription: 'Informational page for the static version of EtzahWeb.',
+        title: 'Inbox removed',
+        subtitle: 'In the static version of the site, contacts are delivered directly by email and are not stored in an internal dashboard.',
         titleInbox: 'Received messages',
         subtitleInbox: 'Track leads and respond quickly.',
         titleTrash: 'Trash',
@@ -1137,8 +1659,8 @@
         refresh: 'Refresh',
         logout: 'Log out',
         loading: 'Loading messages...',
-        emptyTitle: 'No messages yet',
-        emptyBody: 'When new leads arrive, they will appear here.',
+        emptyTitle: 'Direct email delivery',
+        emptyBody: 'Use the main homepage form to receive new requests at contato@etzahweb.com.',
         trashEmptyTitle: 'Trash is empty',
         trashEmptyBody: 'Deleted messages will appear here.',
         noneFound: 'No messages found.',

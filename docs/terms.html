@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#121318">
+    <meta name="theme-color" content="#102754">
     <meta name="robots" content="index,follow">
     <title data-i18n-title="terms.headTitle">Termini di Servizio | EtzahWeb</title>
     <meta name="description" data-i18n-description="terms.headDescription" content="Termini di servizio di EtzahWeb.">
@@ -22,7 +22,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="style.css">
   </head>
   <body class="policy-page">
@@ -31,36 +31,40 @@
       <div class="container nav-wrap">
         <a class="logo" href="index.html">Etzah<span>Web</span></a>
         <nav id="primary-nav" class="nav">
-          <a href="index.html#servizi" data-i18n="nav.services">Servizi</a>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="index.html#chi-siamo" data-i18n="nav.services">Servizi</a>
           <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="index.html#prezzi" data-i18n="nav.pricing">Prezzi</a>
+          <a href="index.html#blog" data-i18n="nav.blog">Blog</a>
+          <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
           <a href="index.html#contatto" data-i18n="nav.contact">Contatto</a>
         </nav>
-        <button class="hamburger" type="button" aria-label="Menu" data-i18n-aria-label="ui.menuAria" aria-expanded="false" aria-controls="primary-nav">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-        <div class="lang-switch" aria-label="Language" data-i18n-aria-label="ui.languageAria" data-lang-switch>
-          <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
-            <span class="flag flag-it" aria-hidden="true"></span>
-            <span class="lang-label">IT</span>
-            <span class="lang-caret" aria-hidden="true"></span>
-          </button>
-          <div class="lang-menu" role="listbox">
-            <button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+        <div class="header-tools">
+          <div class="lang-switch" aria-label="Language" data-i18n-aria-label="ui.languageAria" data-lang-switch>
+            <button class="lang-current" type="button" aria-haspopup="listbox" aria-expanded="false">
               <span class="flag flag-it" aria-hidden="true"></span>
-              <span>IT</span>
+              <span class="lang-label">IT</span>
+              <span class="lang-caret" aria-hidden="true"></span>
             </button>
-            <button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
-              <span class="flag flag-pt" aria-hidden="true"></span>
-              <span>PT</span>
-            </button>
-            <button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
-              <span class="flag flag-en" aria-hidden="true"></span>
-              <span>EN</span>
-            </button>
+            <div class="lang-menu" role="listbox">
+              <button class="lang-btn lang-option" type="button" data-lang="it" role="option" aria-pressed="true">
+                <span class="flag flag-it" aria-hidden="true"></span>
+                <span>IT</span>
+              </button>
+              <button class="lang-btn lang-option" type="button" data-lang="pt" role="option" aria-pressed="false">
+                <span class="flag flag-pt" aria-hidden="true"></span>
+                <span>PT</span>
+              </button>
+              <button class="lang-btn lang-option" type="button" data-lang="en" role="option" aria-pressed="false">
+                <span class="flag flag-en" aria-hidden="true"></span>
+                <span>EN</span>
+              </button>
+            </div>
           </div>
+          <button class="hamburger" type="button" aria-label="Menu" data-i18n-aria-label="ui.menuAria" aria-expanded="false" aria-controls="primary-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </div>
     </header>
@@ -90,24 +94,45 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
+    <footer class="site-footer footer-showcase">
+      <div class="footer-overlay" aria-hidden="true"></div>
+      <div class="container footer-showcase-grid">
+        <div class="footer-col footer-brand-col">
           <a class="logo" href="index.html">Etzah<span>Web</span></a>
-          <p data-i18n="footer.tagline">Costruiamo esperienze digitali che generano ricavi e reputazione.</p>
+          <p data-i18n="footerShowcase.brandDescription">EtzahWeb è uno studio digitale specializzato in siti web professionali, strategie orientate ai risultati e supporto continuo per aziende e professionisti.</p>
         </div>
-        <div>
-          <h4 data-i18n="footer.contactTitle">Contatto</h4>
-          <p>contato@etzahweb.com</p>
-          <p>+41 79 839 9268</p>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerShowcase.quickTitle">Link veloci</h4>
+          <a href="index.html" data-i18n="footerShowcase.home">Home</a>
+          <a href="index.html#chi-siamo" data-i18n="footerShowcase.services">Servizi</a>
+          <a href="index.html#portfolio" data-i18n="footerShowcase.portfolio">Portfolio</a>
+          <a href="index.html#blog" data-i18n="footerShowcase.blog">Blog</a>
         </div>
-        <div>
-          <h4 data-i18n="footer.linksTitle">Link</h4>
-          <a href="privacy.html" data-i18n="footer.linksPrivacy">Privacy</a>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerShowcase.servicesTitle">Servizi</h4>
+          <p data-i18n="footerShowcase.service1">Creazioni siti web su misura</p>
+          <p data-i18n="footerShowcase.service2">Landing page ad alta conversione</p>
+          <p data-i18n="footerShowcase.service3">SEO tecnica e ottimizzazione</p>
+          <p data-i18n="footerShowcase.service4">Automazioni e integrazioni</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footerShowcase.contactInfoTitle">Informazioni di contatto</h4>
+          <p data-i18n="footerShowcase.contactInfoBody">Sentitevi liberi di contattarci e raggiungerci.</p>
+          <p><strong>+41 79 839 9268</strong></p>
+          <p><strong>contato@etzahweb.com</strong></p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="copyright" data-i18n="footer.copyright">© 2026 EtzahWeb. Tutti i diritti riservati.</p>
+        <div class="footer-legal-links">
+          <a href="privacy.html" data-i18n="footerShowcase.privacyPolicy">Privacy &amp; Policy</a>
           <a href="terms.html" data-i18n="footer.linksTerms">Termini</a>
         </div>
       </div>
-      <p class="copyright" data-i18n="footer.copyright">© 2026 EtzahWeb. Tutti i diritti riservati.</p>
     </footer>
 
     <script src="i18n.js" defer></script>
