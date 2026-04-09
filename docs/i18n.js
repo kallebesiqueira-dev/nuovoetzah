@@ -253,7 +253,7 @@
       },
       reviews: {
         sectionTitle: 'Recensioni clienti',
-        sectionSubtitle: 'Opinioni reali di aziende e professionisti che hanno scelto EtzahWeb per migliorare presenza online e conversioni.',
+        sectionSubtitle: 'Opinioni reali di aziende e professionisti che hanno scelto EtzahWeb per migliorare presenza online.',
         kicker: 'Nostre recensioni',
         swipeHint: 'Scorri per vedere più recensioni →',
         excellent: 'ECCELLENTE',
