@@ -2349,7 +2349,7 @@ a {
   }
 
   .home-page.azure-showcase main {
-    padding-top: 86px;
+    padding-top: 0;
   }
 
   .nav a {
@@ -5880,15 +5880,18 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   }
 
   .home-page.azure-showcase .hero {
-    min-height: 0;
-    padding: 90px 0 96px;
+    min-height: 100svh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    padding: 176px 0 96px;
   }
 
   .home-page.azure-showcase .header-bg-slide {
     inset: 0;
-    background-size: auto 92%;
-    background-position: right center;
-    transform: translate3d(0, var(--hero-bg-shift), 0);
+    background-size: cover;
+    background-position: center center;
+    transform: translate3d(0, var(--hero-bg-shift), 0) scale(1.06);
   }
 
   .home-page.azure-showcase .hero-copy h1 {
@@ -6173,9 +6176,9 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
 
   .home-page.azure-showcase .header-bg-slide {
     inset: 0;
-    background-size: 132% auto;
-    background-position: center 18%;
-    transform: translate3d(0, var(--hero-bg-shift), 0);
+    background-size: cover;
+    background-position: 58% center;
+    transform: translate3d(0, var(--hero-bg-shift), 0) scale(1.12);
     filter: saturate(1.02) contrast(0.98) brightness(0.72);
   }
 
@@ -6184,7 +6187,9 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   }
 
   .home-page.azure-showcase .hero {
-    padding: 84px 0 88px;
+    min-height: 100svh;
+    min-height: 100dvh;
+    padding: 170px 0 88px;
   }
 
   .home-page.azure-showcase .business-benefits-section {
