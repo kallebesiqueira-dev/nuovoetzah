@@ -2340,6 +2340,18 @@ a {
 }
 
 @media (max-width: 840px) {
+  .home-page.azure-showcase .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .home-page.azure-showcase main {
+    padding-top: 86px;
+  }
+
   .nav a {
     position: relative;
     display: inline-block;
