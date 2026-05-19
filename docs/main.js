@@ -345,7 +345,6 @@ if (isHomePage) {
   ].join(', ');
   const revealTargets = Array.from(document.querySelectorAll(revealSelector));
   const cinematicSections = document.querySelectorAll('.home-page .hero, .home-page .section');
-  const heroSection = document.querySelector('.home-page.azure-showcase .hero');
   const staggerGroups = document.querySelectorAll(
     '.about-services-grid, .portfolio-showcase-grid, .business-benefits-grid, .faq-grid .faq-column, .contact-cards, .founder-grid, .blog-grid'
   );
@@ -421,7 +420,7 @@ if (isHomePage) {
     const gridEl = document.querySelector('.bg-grid');
     const orbitEl = document.querySelector('.bg-orbit');
     const cursorGlowEl = document.querySelector('.cursor-glow');
-    const magneticTargets = document.querySelectorAll('.hero-actions .btn, .social-link, .pricing-card.featured');
+    const magneticTargets = document.querySelectorAll('.hero-actions .btn, .social-link');
 
     let pointerX = 0;
     let pointerY = 0;

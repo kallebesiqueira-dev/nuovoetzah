@@ -11,8 +11,6 @@
         portfolio: 'Portfolio',
         blog: 'Blog',
         faq: 'FAQ',
-        process: 'Processo',
-        pricing: 'Prezzi',
         contact: 'Contatto'
       },
       hero: {
@@ -129,26 +127,6 @@
         p4Lead: 'Con EtzahWeb, il mio obiettivo',
         p4Rest: ' è offrire soluzioni digitali di alta qualità che uniscano eccellenza tecnica e design creativo, aiutando le aziende a crescere e a costruire una presenza online forte e autorevole.'
       },
-      process: {
-        title: 'Processo chiaro, senza giri di parole',
-        subtitle: 'Dal briefing alla consegna finale, segui tutto con trasparenza.',
-        step1: {
-          title: 'Briefing strategico',
-          body: 'Analizziamo pubblico, proposta di valore e obiettivi.'
-        },
-        step2: {
-          title: 'Design e copy',
-          body: 'Layout premium con testi persuasivi e prova sociale.'
-        },
-        step3: {
-          title: 'Sviluppo',
-          body: 'Codice pulito, ottimizzato e pronto a scalare.'
-        },
-        step4: {
-          title: 'Consegna e supporto',
-          body: 'Training, ultimi ritocchi e accompagnamento iniziale.'
-        }
-      },
       portfolio: {
         title: 'Portfolio',
         subtitle: 'Scopri alcuni siti professionali che ho realizzato.',
@@ -224,31 +202,6 @@
           title: 'Vittorino Baber',
           body: 'Presenza digitale barber con immagine premium, servizi chiari e percorso semplice per prenotazioni.',
           tag: 'Barber Shop'
-        }
-      },
-      pricing: {
-        title: 'Prezzi chiari, valore reale',
-        subtitle: 'Tre pacchetti per partire subito con un sito elegante e pronto a vendere.',
-        basic: {
-          tier: 'Basic',
-          item1: 'Landing page essenziale',
-          item2: 'Design personalizzato',
-          item3: 'SEO base e performance',
-          item4: 'Consegna rapida'
-        },
-        premium: {
-          tier: 'Premium',
-          item1: 'Sezione servizi + CTA',
-          item2: 'Copy strategico',
-          item3: 'Ottimizzazione conversione',
-          item4: 'Supporto 7 giorni'
-        },
-        gold: {
-          tier: 'Gold',
-          item1: 'Multipage o landing avanzata',
-          item2: 'Animazioni premium',
-          item3: 'Setup analytics',
-          item4: 'Supporto 14 giorni'
         }
       },
       reviews: {
@@ -505,59 +458,6 @@
         changesBody: 'I termini possono essere aggiornati. Le versioni pubblicate su questa pagina sono quelle valide.',
         contactTitle: 'Contatto',
         contactBody: 'Per domande sui termini, scrivi a contato@etzahweb.com.'
-      },
-      login: {
-        headTitle: 'Area interna | EtzahWeb',
-        headDescription: 'Area interna disattivata nella versione statica del sito EtzahWeb.',
-        title: 'Area interna rimossa',
-        subtitle: 'Questo sito ora funziona senza backend. I messaggi del modulo vengono inviati direttamente a contato@etzahweb.com.',
-        emailLabel: 'Utente',
-        emailPlaceholder: 'admin',
-        passwordLabel: 'Password',
-        passwordPlaceholder: '********',
-        submit: 'Entra',
-        verifying: 'Verifica in corso...',
-        error: 'Email o password non corretti.'
-      },
-      admin: {
-        headTitle: 'Informazioni | EtzahWeb',
-        headDescription: 'Pagina informativa della versione statica EtzahWeb.',
-        title: 'Inbox rimossa',
-        subtitle: 'Nella versione statica del sito, i contatti arrivano direttamente via email e non vengono salvati in un pannello interno.',
-        titleInbox: 'Messaggi ricevuti',
-        subtitleInbox: 'Segui i lead e rispondi rapidamente.',
-        titleTrash: 'Messaggi eliminati',
-        subtitleTrash: 'Gestisci i messaggi spostati nel cestino.',
-        inboxBtn: 'In arrivo',
-        trashBtn: 'Cestino',
-        refresh: 'Aggiorna',
-        logout: 'Esci',
-        loading: 'Caricamento messaggi...',
-        emptyTitle: 'Ricezione diretta via email',
-        emptyBody: 'Usa il modulo principale della home per ricevere nuove richieste su contato@etzahweb.com.',
-        trashEmptyTitle: 'Nessun messaggio nel cestino',
-        trashEmptyBody: 'I messaggi eliminati appariranno qui.',
-        noneFound: 'Nessun messaggio trovato.',
-        trashNoneFound: 'Nessun messaggio nel cestino.',
-        loaded: 'messaggi caricati.',
-        error: 'Errore nel recupero messaggi. Verifica il login.',
-        deleteBtn: 'Sposta nel cestino',
-        purgeBtn: 'Elimina',
-        deleteConfirm: 'Spostare il messaggio nel cestino?',
-        purgeConfirm: 'Eliminare definitivamente il messaggio?',
-        deletedStatus: 'Messaggio spostato nel cestino.',
-        purgedStatus: 'Messaggio eliminato definitivamente.',
-        actionError: 'Non è stato possibile aggiornare il messaggio.',
-        leadName: 'Lead senza nome',
-        emailLabel: 'Email',
-        emailFallback: 'non fornita',
-        phoneLabel: 'WhatsApp',
-        phoneFallback: 'non fornito',
-        companyLabel: 'Azienda',
-        companyFallback: 'non fornita',
-        messageLabel: 'Messaggio',
-        messageFallback: 'Nessun messaggio',
-        actionsAria: 'Azioni amministrative'
       }
     },
     pt: {
@@ -571,8 +471,6 @@
         portfolio: 'Portfólio',
         blog: 'Blog',
         faq: 'FAQ',
-        process: 'Processo',
-        pricing: 'Preços',
         contact: 'Contato'
       },
       hero: {
@@ -692,26 +590,6 @@
         p4Lead: 'Com a EtzahWeb, meu objetivo',
         p4Rest: ' é oferecer soluções digitais de alta qualidade que unam excelência técnica e design criativo, ajudando empresas a crescer e a construir uma presença online forte e profissional.'
       },
-      process: {
-        title: 'Processo claro, sem enrolação',
-        subtitle: 'Do diagnóstico a entrega final, você acompanha tudo com transparência.',
-        step1: {
-          title: 'Briefing estratégico',
-          body: 'Entendemos seu público, proposta de valor e metas.'
-        },
-        step2: {
-          title: 'Design e copy',
-          body: 'Layout premium com texto persuasivo e prova social.'
-        },
-        step3: {
-          title: 'Desenvolvimento',
-          body: 'Código limpo, otimizado e pronto para escalar.'
-        },
-        step4: {
-          title: 'Entrega e suporte',
-          body: 'Treinamento, ajustes finais e acompanhamento inicial.'
-        }
-      },
       portfolio: {
         title: 'Portfólio',
         subtitle: 'Conheça alguns sites profissionais que já criei.',
@@ -787,31 +665,6 @@
           title: 'Vittorino Baber',
           body: 'Presença digital barber com imagem premium, serviços claros e percurso simples para agendamentos.',
           tag: 'Barbearia'
-        }
-      },
-      pricing: {
-        title: 'Preços claros, valor real',
-        subtitle: 'Três pacotes para começar agora com um site elegante e pronto para vender.',
-        basic: {
-          tier: 'Basic',
-          item1: 'Landing page essencial',
-          item2: 'Design personalizado',
-          item3: 'SEO base e performance',
-          item4: 'Entrega rápida'
-        },
-        premium: {
-          tier: 'Premium',
-          item1: 'Seção de serviços + CTA',
-          item2: 'Copy estratégico',
-          item3: 'Otimização de conversão',
-          item4: 'Suporte por 7 dias'
-        },
-        gold: {
-          tier: 'Gold',
-          item1: 'Multipage ou landing avançada',
-          item2: 'Animações premium',
-          item3: 'Setup de analytics',
-          item4: 'Suporte por 14 dias'
         }
       },
       reviews: {
@@ -1068,59 +921,6 @@
         changesBody: 'Os termos podem ser atualizados. As versões publicadas nesta página são as vigentes.',
         contactTitle: 'Contato',
         contactBody: 'Para dúvidas sobre os termos, escreva para contato@etzahweb.com.'
-      },
-      login: {
-        headTitle: 'Área interna | EtzahWeb',
-        headDescription: 'Área interna desativada na versão estática do site EtzahWeb.',
-        title: 'Área interna removida',
-        subtitle: 'Este site agora funciona sem backend. As mensagens do formulário são enviadas diretamente para contato@etzahweb.com.',
-        emailLabel: 'Usuário',
-        emailPlaceholder: 'admin',
-        passwordLabel: 'Senha',
-        passwordPlaceholder: '********',
-        submit: 'Entrar',
-        verifying: 'Verificando...',
-        error: 'Email ou senha incorretos.'
-      },
-      admin: {
-        headTitle: 'Informações | EtzahWeb',
-        headDescription: 'Página informativa da versão estática da EtzahWeb.',
-        title: 'Caixa de mensagens removida',
-        subtitle: 'Na versão estática do site, os contatos chegam diretamente por email e não ficam salvos em um painel interno.',
-        titleInbox: 'Mensagens recebidas',
-        subtitleInbox: 'Acompanhe leads e responda rapidamente.',
-        titleTrash: 'Mensagens na lixeira',
-        subtitleTrash: 'Gerencie os itens removidos da caixa de entrada.',
-        inboxBtn: 'Entrada',
-        trashBtn: 'Lixeira',
-        refresh: 'Atualizar',
-        logout: 'Sair',
-        loading: 'Carregando mensagens...',
-        emptyTitle: 'Recebimento direto por email',
-        emptyBody: 'Use o formulário principal da home para receber novas solicitações em contato@etzahweb.com.',
-        trashEmptyTitle: 'Lixeira vazia',
-        trashEmptyBody: 'As mensagens apagadas aparecem aqui.',
-        noneFound: 'Nenhuma mensagem encontrada.',
-        trashNoneFound: 'Nenhuma mensagem na lixeira.',
-        loaded: 'mensagens carregadas.',
-        error: 'Erro ao buscar mensagens. Verifique o login.',
-        deleteBtn: 'Mover para lixeira',
-        purgeBtn: 'Excluir',
-        deleteConfirm: 'Mover esta mensagem para a lixeira?',
-        purgeConfirm: 'Excluir definitivamente esta mensagem?',
-        deletedStatus: 'Mensagem movida para a lixeira.',
-        purgedStatus: 'Mensagem excluída definitivamente.',
-        actionError: 'Não foi possível atualizar a mensagem.',
-        leadName: 'Lead sem nome',
-        emailLabel: 'Email',
-        emailFallback: 'não informado',
-        phoneLabel: 'WhatsApp',
-        phoneFallback: 'não informado',
-        companyLabel: 'Empresa',
-        companyFallback: 'não informada',
-        messageLabel: 'Mensagem',
-        messageFallback: 'Sem mensagem',
-        actionsAria: 'Ações administrativas'
       }
     },
     en: {
@@ -1134,8 +934,6 @@
         portfolio: 'Portfolio',
         blog: 'Blog',
         faq: 'FAQ',
-        process: 'Process',
-        pricing: 'Pricing',
         contact: 'Contact'
       },
       hero: {
@@ -1255,26 +1053,6 @@
         p4Lead: 'With EtzahWeb, my goal',
         p4Rest: ' is to provide high-quality digital solutions that combine technical excellence with creative design, helping businesses grow and establish a strong online presence.'
       },
-      process: {
-        title: 'Clear process, no fluff',
-        subtitle: 'From discovery to final delivery, you track everything with transparency.',
-        step1: {
-          title: 'Strategic briefing',
-          body: 'We map your audience, value proposition, and goals.'
-        },
-        step2: {
-          title: 'Design and copy',
-          body: 'Premium layout with persuasive messaging and social proof.'
-        },
-        step3: {
-          title: 'Development',
-          body: 'Clean, optimized code ready to scale.'
-        },
-        step4: {
-          title: 'Delivery and support',
-          body: 'Training, final tweaks, and early support.'
-        }
-      },
       portfolio: {
         title: 'Portfolio',
         subtitle: 'Explore some professional websites I have created.',
@@ -1350,31 +1128,6 @@
           title: 'Vittorino Baber',
           body: 'Barber digital presence with premium branding, clear services, and an easy booking path.',
           tag: 'Barber Shop'
-        }
-      },
-      pricing: {
-        title: 'Clear pricing, real value',
-        subtitle: 'Three packages to launch quickly with an elegant, sales-ready website.',
-        basic: {
-          tier: 'Basic',
-          item1: 'Essential landing page',
-          item2: 'Custom design',
-          item3: 'Basic SEO and performance',
-          item4: 'Fast delivery'
-        },
-        premium: {
-          tier: 'Premium',
-          item1: 'Services section + CTA',
-          item2: 'Strategic copywriting',
-          item3: 'Conversion optimization',
-          item4: '7-day support'
-        },
-        gold: {
-          tier: 'Gold',
-          item1: 'Multipage or advanced landing',
-          item2: 'Premium animations',
-          item3: 'Analytics setup',
-          item4: '14-day support'
         }
       },
       reviews: {
@@ -1631,59 +1384,6 @@
         changesBody: 'The terms may be updated. The versions published on this page are the valid ones.',
         contactTitle: 'Contact',
         contactBody: 'For questions about the terms, write to contato@etzahweb.com.'
-      },
-      login: {
-        headTitle: 'Internal Area | EtzahWeb',
-        headDescription: 'Internal area disabled in the static version of the EtzahWeb website.',
-        title: 'Internal area removed',
-        subtitle: 'This website now runs without a backend. Form messages are delivered directly to contato@etzahweb.com.',
-        emailLabel: 'Username',
-        emailPlaceholder: 'admin',
-        passwordLabel: 'Password',
-        passwordPlaceholder: '********',
-        submit: 'Sign in',
-        verifying: 'Checking...',
-        error: 'Incorrect email or password.'
-      },
-      admin: {
-        headTitle: 'Information | EtzahWeb',
-        headDescription: 'Informational page for the static version of EtzahWeb.',
-        title: 'Inbox removed',
-        subtitle: 'In the static version of the site, contacts are delivered directly by email and are not stored in an internal dashboard.',
-        titleInbox: 'Received messages',
-        subtitleInbox: 'Track leads and respond quickly.',
-        titleTrash: 'Trash',
-        subtitleTrash: 'Manage messages moved to the trash.',
-        inboxBtn: 'Inbox',
-        trashBtn: 'Trash',
-        refresh: 'Refresh',
-        logout: 'Log out',
-        loading: 'Loading messages...',
-        emptyTitle: 'Direct email delivery',
-        emptyBody: 'Use the main homepage form to receive new requests at contato@etzahweb.com.',
-        trashEmptyTitle: 'Trash is empty',
-        trashEmptyBody: 'Deleted messages will appear here.',
-        noneFound: 'No messages found.',
-        trashNoneFound: 'No messages in trash.',
-        loaded: 'messages loaded.',
-        error: 'Error fetching messages. Please check login.',
-        deleteBtn: 'Move to trash',
-        purgeBtn: 'Delete',
-        deleteConfirm: 'Move this message to trash?',
-        purgeConfirm: 'Delete this message permanently?',
-        deletedStatus: 'Message moved to trash.',
-        purgedStatus: 'Message deleted permanently.',
-        actionError: 'Unable to update the message.',
-        leadName: 'Unnamed lead',
-        emailLabel: 'Email',
-        emailFallback: 'not provided',
-        phoneLabel: 'WhatsApp',
-        phoneFallback: 'not provided',
-        companyLabel: 'Company',
-        companyFallback: 'not provided',
-        messageLabel: 'Message',
-        messageFallback: 'No message',
-        actionsAria: 'Admin actions'
       }
     }
   };
