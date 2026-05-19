@@ -3814,7 +3814,10 @@ a {
 
 .home-page.azure-showcase {
   --bg: #f4f8ff;
-  --bg-alt: #ecf3ff;
+  --bg-alt: #edf4ff;
+  --page-surface: #edf4ff;
+  --page-surface-soft: #edf4ff;
+  --page-transition-stop: clamp(520px, 78vh, 860px);
   --text: #17408b;
   --muted: #4f78b8;
   --title-blue: #123a7a;
@@ -3824,7 +3827,9 @@ a {
   --stroke: rgba(21, 63, 143, 0.12);
   --card: #ffffff;
   --shadow: 0 18px 42px rgba(24, 55, 117, 0.12);
-  background: #f4f8ff;
+  background:
+    radial-gradient(1200px 420px at 50% 0, rgba(143, 215, 255, 0.16), transparent 58%),
+    linear-gradient(180deg, #102754 0, #153a7b calc(var(--page-transition-stop) - 180px), var(--page-surface) var(--page-transition-stop), var(--page-surface) 100%);
   color: var(--text);
 }
 
@@ -3958,24 +3963,26 @@ a {
 
 .home-page.azure-showcase .hero {
   --hero-bg-shift: 0px;
+  --hero-wave-height: clamp(112px, 14vw, 188px);
   min-height: calc(100vh - 86px);
   color: #d7e8ff;
   align-items: center;
-  padding: 92px 0 124px;
-  background: linear-gradient(135deg, #0b2557 0%, #133d86 52%, #1d5db8 100%);
+  padding: 92px 0 clamp(168px, 18vw, 232px);
+  background: transparent;
   position: relative;
 }
 
 .home-page.azure-showcase .header-bg {
+  background: linear-gradient(135deg, #0b2557 0%, #133d86 52%, #1d5db8 100%);
   opacity: 1;
   overflow: hidden;
 }
 
 .home-page.azure-showcase .header-bg-slide {
   inset: 0;
-  background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: center center;
   filter: saturate(1.04) contrast(0.99) brightness(0.76);
   transform: translate3d(0, var(--hero-bg-shift), 0);
   transform-origin: center center;
@@ -3990,11 +3997,16 @@ a {
 .home-page.azure-showcase .hero::before {
   content: '';
   position: absolute;
-  inset: 0;
+  inset: 0 0 calc(var(--hero-wave-height) * 0.42) 0;
   background-image: linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 72px 72px;
   opacity: 0.1;
   pointer-events: none;
+  z-index: 0;
+}
+
+.home-page.azure-showcase .hero::after {
+  content: none;
 }
 
 .home-page.azure-showcase .hero {
@@ -4002,10 +4014,37 @@ a {
   z-index: 2;
 }
 
+.home-page.azure-showcase .hero-wave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: var(--hero-wave-height);
+  color: var(--page-surface);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.home-page.azure-showcase .hero-wave::after {
+  content: none;
+}
+
+.home-page.azure-showcase .hero-wave svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.home-page.azure-showcase .hero + .section.alt {
+  background: transparent;
+}
+
 .home-page.azure-showcase .hero-scroll-cue {
   position: absolute;
   left: 50%;
-  bottom: 76px;
+  bottom: clamp(94px, 10vw, 130px);
   z-index: 2;
   display: flex;
   align-items: center;
@@ -4298,11 +4337,11 @@ a {
 .home-page.azure-showcase .section,
 .home-page.azure-showcase .section.alt {
   padding: 88px 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .home-page.azure-showcase .section.alt {
-  background: #edf4ff;
+  background: transparent;
 }
 
 .home-page.azure-showcase .section-title {
@@ -4429,7 +4468,7 @@ html[lang="pt-BR"] .home-page.azure-showcase .about-services-intro p {
 }
 
 .home-page.azure-showcase #chi-siamo.section.alt {
-  background: linear-gradient(180deg, #f7fbff 0%, #edf4ff 100%);
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -5197,6 +5236,7 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 10px 24px rgba(24, 55, 117, 0.06);
   overflow: hidden;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background-color 0.24s ease;
 }
 
 .home-page.azure-showcase .faq-item summary {
@@ -5213,6 +5253,7 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   line-height: 1.35;
   color: #1a276d;
   overflow-wrap: anywhere;
+  transition: color 0.24s ease, background-color 0.24s ease, padding-left 0.24s ease;
 }
 
 .home-page.azure-showcase .faq-item summary::-webkit-details-marker {
@@ -5229,6 +5270,28 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   font-weight: 400;
   line-height: 1;
   color: #1d2f8a;
+  transition: transform 0.24s ease, color 0.24s ease;
+}
+
+.home-page.azure-showcase .faq-item:hover,
+.home-page.azure-showcase .faq-item:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(46, 111, 242, 0.18);
+  background: #ffffff;
+  box-shadow: 0 18px 34px rgba(24, 55, 117, 0.12);
+}
+
+.home-page.azure-showcase .faq-item:hover summary,
+.home-page.azure-showcase .faq-item:focus-within summary {
+  color: #245de0;
+  background: rgba(143, 215, 255, 0.08);
+  padding-left: 24px;
+}
+
+.home-page.azure-showcase .faq-item:hover summary::after,
+.home-page.azure-showcase .faq-item:focus-within summary::after {
+  color: #245de0;
+  transform: translateY(-50%) scale(1.08);
 }
 
 .home-page.azure-showcase .faq-item[open] summary::after {
@@ -5340,23 +5403,31 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
 }
 
 .home-page.azure-showcase #contatto.section.contact {
-  background: linear-gradient(135deg, #0f2a62 0%, #143a84 100%) !important;
-}
-
-.home-page.azure-showcase #contatto .reveal-stack > h2,
-.home-page.azure-showcase #contatto .reveal-stack > p,
-.home-page.azure-showcase #contatto .reveal-stack > h2::after {
-  color: #d7e8ff !important;
-  opacity: 1 !important;
-}
-
-.home-page.azure-showcase .contact .reveal-stack > h2::after {
-  background: linear-gradient(90deg, #ffffff 0%, #8fd7ff 100%);
+  position: relative;
+  margin-top: 0;
+  scroll-margin-top: 86px;
+  padding: clamp(100px, calc(6.5vw + 40px), 140px) 0 96px;
+  background: linear-gradient(180deg, #1a4da6 0%, #173f8f 18%, #112f72 60%, #0e2860 100%) !important;
+  clip-path: polygon(
+    0% min(4.3vw,54px),   5% min(5.1vw,64px),  10% min(5.7vw,71px),
+   15% min(6.05vw,76px), 20% min(6.0vw,75px),  25% min(5.6vw,70px),
+   30% min(4.95vw,62px), 35% min(4.25vw,53px), 40% min(3.6vw,45px),
+   45% min(3.2vw,40px),  50% min(3.1vw,39px),  55% min(3.25vw,41px),
+   60% min(3.7vw,46px),  65% min(4.4vw,55px),  70% min(5.2vw,65px),
+   75% min(5.85vw,73px), 80% min(6.1vw,76px),  85% min(5.85vw,73px),
+   90% min(5.15vw,64px), 95% min(4.25vw,53px), 100% min(3.3vw,41px),
+   100% 100%, 0% 100%
+  );
+  overflow: hidden;
+  z-index: 1;
 }
 
 .home-page.azure-showcase #contatto .contact-grid {
+  position: relative;
+  z-index: 1;
   grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-  gap: 38px;
+  gap: clamp(30px, 4vw, 54px);
+  align-items: start;
 }
 
 .home-page.azure-showcase #contatto .contact-copy {
@@ -5365,109 +5436,129 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   z-index: 1;
 }
 
+.home-page.azure-showcase #contatto .reveal-stack > h2,
+.home-page.azure-showcase #contatto .reveal-stack > p,
+.home-page.azure-showcase #contatto .reveal-stack > h2::after {
+  opacity: 1 !important;
+}
+
 .home-page.azure-showcase #contatto .contact-copy h2 {
   color: #f6fbff !important;
   -webkit-text-fill-color: #f6fbff !important;
-  text-shadow: 0 0 24px rgba(143, 215, 255, 0.16);
+  font-size: clamp(2.5rem, 5vw, 4.35rem) !important;
+  line-height: 0.98;
+  margin-bottom: 18px;
+  max-width: 9ch;
+  text-shadow: 0 18px 34px rgba(8, 20, 52, 0.22);
   opacity: 1 !important;
 }
 
 .home-page.azure-showcase #contatto .contact-copy h2::after {
   margin-inline: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(143, 215, 255, 0.92) 100%);
 }
 
 .home-page.azure-showcase #contatto .contact-copy .lead,
 .home-page.azure-showcase #contatto .contact-copy p {
   color: #e8f2ff !important;
   -webkit-text-fill-color: #e8f2ff !important;
+  font-size: 1.1rem;
+  line-height: 1.72;
+  max-width: 35ch;
   opacity: 1 !important;
   text-shadow: none !important;
 }
 
-.home-page.azure-showcase .contact-direct-list {
-  display: grid;
-  gap: 12px;
-  margin: 28px 0 24px;
-}
-
-.home-page.azure-showcase .contact-direct-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #deebff;
-}
-
-.home-page.azure-showcase .contact-direct-item:hover,
-.home-page.azure-showcase .contact-direct-item:focus-visible {
-  border-color: rgba(143, 215, 255, 0.44);
-  background: rgba(143, 215, 255, 0.14);
-  box-shadow: 0 0 18px rgba(114, 183, 255, 0.16);
-}
-
-.home-page.azure-showcase .contact-direct-item strong {
-  font-size: 0.9rem;
-  color: #8fd7ff;
-}
-
 .home-page.azure-showcase #contatto .contact-cards {
-  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.home-page.azure-showcase #contatto .contact-item {
+  gap: 14px;
 }
 
 .home-page.azure-showcase #contatto .contact-map-card {
-  margin-top: 52px;
+  margin-top: 34px;
 }
 
 .home-page.azure-showcase #contatto .contact-map-label {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #deebff;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 155, 255, 0.22);
+  color: #5679b6;
 }
 
 .home-page.azure-showcase #contatto .contact-map-frame {
-  border-color: rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 18px 42px rgba(9, 27, 64, 0.18);
+  border-color: rgba(92, 155, 255, 0.2);
+  background: #ffffff;
+  box-shadow: 0 24px 50px rgba(6, 18, 49, 0.18);
 }
 
 .home-page.azure-showcase #contatto .contact-map-link {
-  color: #cfe3ff;
+  color: #cfe1ff;
 }
 
 .home-page.azure-showcase #contatto .mini-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #deebff;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(92, 155, 255, 0.22);
+  color: #6787bc;
   animation: none !important;
+  box-shadow: 0 16px 30px rgba(8, 20, 52, 0.12);
+}
+
+.home-page.azure-showcase #contatto .mini-card span,
+.home-page.azure-showcase #contatto .contact-map-label span {
+  color: #6b87b6;
+}
+
+.home-page.azure-showcase #contatto .mini-card strong,
+.home-page.azure-showcase #contatto .contact-map-label strong {
+  color: #2a4f8d;
 }
 
 .home-page.azure-showcase #contatto .social-link {
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  border-radius: 0;
   box-shadow: none;
-  background: linear-gradient(135deg, #72b7ff 0%, #2e6ff2 100%);
-  border-color: rgba(255, 255, 255, 0.16);
+  color: rgba(180, 210, 255, 0.85);
+}
+
+.home-page.azure-showcase #contatto .social-link svg,
+.home-page.azure-showcase #contatto .social-link .whatsapp-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.home-page.azure-showcase #contatto .social-link.instagram svg {
+  width: 42px;
+  height: 42px;
 }
 
 .home-page.azure-showcase #contatto .social-link.instagram,
 .home-page.azure-showcase #contatto .social-link.whatsapp {
-  background: linear-gradient(135deg, #72b7ff 0%, #2e6ff2 100%);
+  background: none;
 }
 
 .home-page.azure-showcase #contatto .social-link:hover,
 .home-page.azure-showcase #contatto .social-link:focus-visible {
   transform: translateY(-2px);
   color: #ffffff;
-  box-shadow: 0 18px 32px rgba(17, 78, 183, 0.26), 0 0 18px rgba(114, 183, 255, 0.3);
+  box-shadow: none;
 }
 
 .home-page.azure-showcase #contatto #contactForm.form-card {
-  padding: 32px;
-  border-radius: 30px;
+  padding: 36px 34px;
+  border-radius: 32px;
   background: #ffffff;
-  border: 1px solid rgba(46, 111, 242, 0.14);
-  box-shadow: 0 24px 48px rgba(8, 22, 55, 0.14);
+  border: 1px solid rgba(92, 155, 255, 0.18);
+  box-shadow: 0 28px 56px rgba(7, 18, 49, 0.2);
 }
 
 .home-page.azure-showcase #contatto #contactForm .field label {
@@ -5506,7 +5597,8 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
 
 .home-page.azure-showcase #contatto #contactForm .btn-primary {
   width: 100%;
-  margin-top: 4px;
+  min-height: 54px;
+  margin-top: 6px;
 }
 
 .home-page.azure-showcase #contatto #contactForm .form-status {
@@ -5575,14 +5667,24 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
 }
 
 .home-page.azure-showcase .whatsapp-float {
-  background: linear-gradient(135deg, #72b7ff 0%, #2e6ff2 100%);
-  border-color: rgba(255, 255, 255, 0.24);
-  box-shadow: 0 16px 32px rgba(17, 78, 183, 0.28);
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #3d8ef5;
+  filter: drop-shadow(0 0 8px rgba(61, 142, 245, 0.7));
+}
+
+.home-page.azure-showcase .whatsapp-float .whatsapp-icon {
+  width: 44px;
+  height: 44px;
 }
 
 .home-page.azure-showcase .whatsapp-float:hover,
 .home-page.azure-showcase .whatsapp-float:focus-visible {
-  box-shadow: 0 18px 34px rgba(17, 78, 183, 0.32), 0 0 20px rgba(114, 183, 255, 0.32);
+  background: none;
+  box-shadow: none;
+  color: #1a6bda;
+  filter: drop-shadow(0 0 10px rgba(26, 107, 218, 0.8));
 }
 
 .home-page.azure-showcase .cookie-banner {
@@ -6025,7 +6127,7 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
 @media (max-width: 600px) {
   .home-page.azure-showcase #contatto .contact-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 26px;
   }
 
   .home-page.azure-showcase .founder-lead {
@@ -6053,7 +6155,7 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   }
 
   .home-page.azure-showcase #contatto .contact-copy h2 {
-    max-width: 11ch;
+    max-width: 10ch;
     margin-inline: auto;
     line-height: 1.04;
   }
@@ -6068,7 +6170,8 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   }
 
   .home-page.azure-showcase #contatto .contact-cards {
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .home-page.azure-showcase #contatto .contact-item,
@@ -6082,11 +6185,11 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
     align-items: center;
     justify-content: center;
     gap: 0.28rem;
-    width: 70%;
-    max-width: 310px;
-    padding: 8px 12px;
-    border-radius: 14px;
-    font-size: 0.88rem;
+    width: 100%;
+    max-width: none;
+    padding: 14px 16px;
+    border-radius: 18px;
+    font-size: 0.92rem;
     line-height: 1.2;
   }
 
@@ -6107,18 +6210,19 @@ html[lang="pt-BR"] .home-page.azure-showcase .founder-copy p {
   }
 
   .home-page.azure-showcase #contatto .contact-links {
-    gap: 10px;
+    gap: 12px;
   }
 
   .home-page.azure-showcase #contatto #contactForm.form-card {
     order: 2;
     width: 100%;
+    padding: 28px 22px;
   }
 
   .home-page.azure-showcase #contatto #contactForm .btn-primary {
-    width: 80%;
-    min-height: 42px;
-    padding: 11px 16px;
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
     font-size: 0.96rem;
     display: flex;
     justify-content: center;
