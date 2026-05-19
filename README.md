@@ -1,21 +1,52 @@
-# nuovoetzah
+# EtzahWeb
 
-Repositorio publico do EtzahWeb.
+Site institucional da **EtzahWeb** — agência de desenvolvimento web premium com foco em conversão, design e performance.
+
+🌐 **[www.etzahweb.com](https://www.etzahweb.com)**
+
+---
+
+![Hero EtzahWeb](docs/img/hero-preview.png)
+
+---
+
+## Tecnologias
+
+- HTML5 / CSS3 / JavaScript (vanilla)
+- Internacionalização nativa: `it` · `pt` · `en`
+- Deploy via **GitHub Pages** a partir da pasta `/docs`
+- Formulário de contato via **FormSubmit** (sem backend)
 
 ## Estrutura
-- docs/ - site estatico (GitHub Pages)
 
-## Como rodar localmente
-Abra os arquivos dentro de docs/ em um servidor estatico ou publique diretamente no GitHub Pages.
+```
+docs/
+├── index.html       # página principal
+├── style.css        # todos os estilos
+├── main.js          # interatividade e animações
+├── i18n.js          # traduções (it/pt/en)
+├── privacy.html     # política de privacidade
+├── terms.html       # termos de uso
+└── img/             # imagens e assets
+```
 
-## Formulario de contato
-O formulario da home envia mensagens usando FormSubmit com o identificador invisivel configurado para a caixa de entrada da EtzahWeb.
-Se o FormSubmit exigir uma confirmacao inicial ou revalidacao, ela precisa ser feita no proprio servico.
+## Rodar localmente
 
-## Deploy
-- GitHub Pages a partir de /docs
+Abra qualquer servidor estático dentro da pasta `docs/`, por exemplo:
 
-## Licenca
-Este projeto e proprietario (All Rights Reserved).
-Uso, copia, modificacao e redistribuicao sem autorizacao previa por escrito nao sao permitidos.
+```bash
+npx serve docs
+```
+
+Ou publique direto no GitHub Pages apontando para `/docs`.
+
+## Formulário de contato
+
+O formulário envia mensagens via FormSubmit para a caixa de entrada da EtzahWeb.
+Se o FormSubmit exigir revalidação, ela deve ser feita diretamente no serviço.
+
+## Licença
+
+Este projeto é proprietário — **All Rights Reserved**.
+Uso, cópia, modificação e redistribuição sem autorização prévia por escrito não são permitidos.
 Consulte [LICENSE](LICENSE).
