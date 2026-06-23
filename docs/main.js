@@ -511,103 +511,68 @@ if (isHomePage) {
   }
 }
 
-const portfolioCarousel = document.querySelector('[data-portfolio-carousel]');
-
-if (portfolioCarousel) {
-  const portfolioItems = Array.from(portfolioCarousel.querySelectorAll('[data-portfolio-item]'));
-  const intervalMs = Number(portfolioCarousel.getAttribute('data-interval')) || 10000;
-
-  let activeIndex = 0;
-  let autoRotateId = null;
-
-  const setActiveCard = (nextIndex) => {
-    if (!portfolioItems.length) {
-      return;
-    }
-
-    portfolioItems.forEach((item, index) => {
-      item.classList.toggle('is-active', index === nextIndex);
-    });
-
-    activeIndex = nextIndex;
-  };
-
-  const nextCard = () => {
-    if (!portfolioItems.length) {
-      return;
-    }
-
-    const nextIndex = (activeIndex + 1) % portfolioItems.length;
-    setActiveCard(nextIndex);
-  };
-
-  const startAutoRotate = () => {
-    if (prefersReducedMotion || portfolioItems.length < 2) {
-      return;
-    }
-
-    if (autoRotateId) {
-      window.clearInterval(autoRotateId);
-    }
-
-    autoRotateId = window.setInterval(nextCard, intervalMs);
-  };
-
-  const stopAutoRotate = () => {
-    if (!autoRotateId) {
-      return;
-    }
-
-    window.clearInterval(autoRotateId);
-    autoRotateId = null;
-  };
-
-  setActiveCard(0);
-  startAutoRotate();
-
-  portfolioCarousel.addEventListener('mouseenter', stopAutoRotate);
-  portfolioCarousel.addEventListener('mouseleave', startAutoRotate);
-  portfolioCarousel.addEventListener('focusin', stopAutoRotate);
-  portfolioCarousel.addEventListener('focusout', (event) => {
-    if (!portfolioCarousel.contains(event.relatedTarget)) {
-      startAutoRotate();
-    }
-  });
-
-  portfolioItems.forEach((item, index) => {
-    item.addEventListener('mouseenter', () => {
-      setActiveCard(index);
-    });
-  });
-}
-
 const lightbox = document.querySelector('[data-portfolio-lightbox]');
 const lightboxImage = lightbox ? lightbox.querySelector('[data-lightbox-image]') : null;
+const lightboxVideo = lightbox ? lightbox.querySelector('[data-lightbox-video-player]') : null;
 const lightboxCloseControls = lightbox ? lightbox.querySelectorAll('[data-lightbox-close]') : [];
 
 if (lightbox && lightboxImage) {
-  const openLightbox = (source, altText) => {
+  const openImageLightbox = (source, altText) => {
     lightboxImage.src = source;
     lightboxImage.alt = altText || 'Portfolio image';
+    lightboxImage.hidden = false;
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
+  };
+
+  const openVideoLightbox = (source) => {
+    if (!lightboxVideo) {
+      return;
+    }
+
+    lightboxVideo.src = source;
+    lightboxVideo.hidden = false;
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+
+    const playPromise = lightboxVideo.play();
+    if (playPromise && typeof playPromise.catch === 'function') {
+      playPromise.catch(() => {});
+    }
   };
 
   const closeLightbox = () => {
     lightbox.hidden = true;
     lightboxImage.src = '';
     lightboxImage.alt = '';
+    lightboxImage.hidden = false;
+
+    if (lightboxVideo) {
+      lightboxVideo.pause();
+      lightboxVideo.removeAttribute('src');
+      lightboxVideo.load();
+      lightboxVideo.hidden = true;
+    }
+
     document.body.style.overflow = '';
   };
 
   document.addEventListener('click', (event) => {
+    const videoTrigger = event.target.closest('[data-lightbox-video]');
+    if (videoTrigger) {
+      event.preventDefault();
+      lightboxImage.hidden = true;
+      openVideoLightbox(videoTrigger.getAttribute('data-lightbox-video'));
+      return;
+    }
+
     const trigger = event.target.closest('[data-lightbox-src]');
     if (!trigger) {
       return;
     }
 
     event.preventDefault();
-    openLightbox(trigger.getAttribute('data-lightbox-src'), trigger.getAttribute('data-lightbox-alt'));
+    openImageLightbox(trigger.getAttribute('data-lightbox-src'), trigger.getAttribute('data-lightbox-alt'));
   });
 
   lightboxCloseControls.forEach((control) => {
@@ -627,7 +592,7 @@ if (headerBackground) {
   const slideA = headerBackground.querySelector('[data-header-slide-a]');
   const slideB = headerBackground.querySelector('[data-header-slide-b]');
   const headerImages = [
-    'img2/hero.png'
+    'img2/hero.webp'
   ];
 
   if (slideA && headerImages.length) {

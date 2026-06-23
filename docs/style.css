@@ -1155,11 +1155,21 @@ a {
   animation: lightboxBluePulse 2.2s ease-in-out infinite;
 }
 
-.portfolio-lightbox-dialog img {
+.portfolio-lightbox-dialog img,
+.portfolio-lightbox-dialog .portfolio-lightbox-video {
   width: 100%;
   max-height: 86vh;
   object-fit: contain;
   display: block;
+}
+
+.portfolio-lightbox-dialog img[hidden],
+.portfolio-lightbox-dialog .portfolio-lightbox-video[hidden] {
+  display: none;
+}
+
+.portfolio-lightbox-video {
+  background: #000;
 }
 
 .portfolio-lightbox-close {

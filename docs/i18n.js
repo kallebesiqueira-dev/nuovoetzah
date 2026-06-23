@@ -120,8 +120,8 @@
         p1LastName: 'Gallo',
         p1Line2Rest: ' e sono Full Stack',
         p1Line3: 'Developer e fondatore di EtzahWeb.',
-        p2Lead: 'Negli ultimi 5 anni',
-        p2Rest: " mi sono dedicato alla realizzazione di siti web moderni, responsive e coinvolgenti, capaci di offrire sia alte prestazioni sia un'esperienza utente eccellente. Il mio percorso nello sviluppo è iniziato con una forte curiosità verso il modo in cui vengono costruiti i prodotti digitali, trasformandosi presto in un percorso professionale focalizzato sulla creazione di soluzioni web complete, dall'architettura backend alle interfacce visibili agli utenti.",
+        p2Lead: 'Da alcuni anni faccio questo lavoro',
+        p2Rest: " e mi dedico alla realizzazione di siti web moderni, responsive e coinvolgenti, capaci di offrire sia alte prestazioni sia un'esperienza utente eccellente. Il mio percorso nello sviluppo è iniziato con una forte curiosità verso il modo in cui vengono costruiti i prodotti digitali, trasformandosi presto in un percorso professionale focalizzato sulla creazione di soluzioni web complete, dall'architettura backend alle interfacce visibili agli utenti.",
         p3Lead: 'Sistemi sicuri, applicazioni scalabili e design responsive',
         p3Rest: ' fanno parte del mio lavoro quotidiano. Sviluppo piattaforme visivamente curate e adattate a esigenze diverse, garantendo che ogni interazione sia fluida, intuitiva e coerente su ogni dispositivo.',
         p4Lead: 'Con EtzahWeb, il mio obiettivo',
@@ -131,77 +131,42 @@
         title: 'Portfolio',
         subtitle: 'Scopri alcuni siti professionali che ho realizzato.',
         viewProject: 'Vedi progetto',
+        viewDemo: 'DEMO',
         item1: {
-          mediaAria: 'Apri immagine Portfolio Academia',
-          mediaAlt: 'Portfolio Academia',
-          projectAlt: 'Progetto Academia',
-          title: 'North Peak Gold',
-          body: 'Landing premium per brand fitness con visual forte, credibilità immediata e CTA ad alta conversione.',
-          tag: 'Fitness Premium'
+          siteAria: 'Apri il sito North Peak Gold',
+          projectAlt: 'Progetto North Peak Gold'
         },
         item2: {
-          mediaAria: 'Apri immagine Portfolio Curso',
-          mediaAlt: 'Portfolio Curso',
-          projectAlt: 'Progetto Curso',
-          title: 'Serfrontend',
-          body: 'Pagina corso con proposta chiara, prova sociale e percorso utente ottimizzato per aumentare le iscrizioni.',
-          tag: 'Corso Online'
+          siteAria: 'Apri il sito Gallo CRM',
+          projectAlt: 'Progetto Gallo CRM'
         },
         item3: {
-          mediaAria: 'Apri immagine Portfolio Dentista',
-          mediaAlt: 'Portfolio Dentista',
-          projectAlt: 'Progetto Dentista',
-          title: 'Odentrics',
-          body: 'Sito odontoiatrico elegante con focus su fiducia clinica, servizi principali e prenotazione semplificata.',
-          tag: 'Dental Care'
+          siteAria: 'Apri il sito Odentrics',
+          projectAlt: 'Progetto Odentrics'
         },
         item4: {
-          mediaAria: 'Apri immagine Portfolio Garage',
-          mediaAlt: 'Portfolio Garage',
-          projectAlt: 'Progetto Garage',
-          title: 'Garage Ticino',
-          body: 'Presenza digitale per officina premium con servizi ben strutturati e contatto rapido per appuntamenti.',
-          tag: 'Automotive'
+          siteAria: 'Apri il sito Chiesa Kabod',
+          projectAlt: 'Progetto Chiesa Kabod'
         },
         item5: {
-          mediaAria: 'Apri immagine Portfolio Hamburguer',
-          mediaAlt: 'Portfolio Hamburguer',
-          projectAlt: 'Progetto Hamburguer',
-          title: 'Bella Burguer Atelier',
-          body: 'Vetrina food ad alto impatto con storytelling del brand e flusso veloce per ordini e prenotazioni.',
-          tag: 'Burguer Gourmet'
+          siteAria: 'Apri il sito La Mia Piccola Storia',
+          projectAlt: 'Progetto La Mia Piccola Storia'
         },
         item6: {
-          mediaAria: 'Apri immagine Portfolio Imobiliaria',
-          mediaAlt: 'Portfolio Imobiliaria',
-          projectAlt: 'Progetto Imobiliaria',
-          title: 'Imperium',
-          body: 'Sito immobiliare con presentazione autorevole, immobili in evidenza e CTA commerciali ben distribuite.',
-          tag: 'Real Estate'
+          siteAria: 'Apri il sito Progetto Nike',
+          projectAlt: 'Progetto Nike'
         },
         item7: {
-          mediaAria: 'Apri immagine Portfolio Jardim',
-          mediaAlt: 'Portfolio Jardim',
-          projectAlt: 'Progetto Jardim',
-          title: 'Verde Vivo',
-          body: 'Web design per servizi green con identità naturale, copy diretto e focus sulla richiesta di preventivo.',
-          tag: 'Green Services'
+          demoAria: 'Guarda la demo Hamburguer',
+          projectAlt: 'Demo Hamburguer Atelier'
         },
         item8: {
-          mediaAria: 'Apri immagine Portfolio Pizza',
-          mediaAlt: 'Portfolio Pizza',
-          projectAlt: 'Progetto Pizza',
-          title: "Forno d'Oro",
-          body: 'Pagina ristorante orientata alle vendite con menu in evidenza, offerte strategiche e contatto immediato.',
-          tag: 'Pizzeria'
+          demoAria: 'Guarda la demo Milkshake',
+          projectAlt: 'Demo Milkshake'
         },
         item9: {
-          mediaAria: 'Apri immagine Portfolio Salone',
-          mediaAlt: 'Portfolio Salone',
-          projectAlt: 'Progetto Salone',
-          title: 'Vittorino Baber',
-          body: 'Presenza digitale barber con immagine premium, servizi chiari e percorso semplice per prenotazioni.',
-          tag: 'Barber Shop'
+          demoAria: 'Guarda la demo Tata Button',
+          projectAlt: 'Demo Tata Button'
         }
       },
       reviews: {
@@ -583,8 +548,8 @@
         p1LastName: 'Gallo',
         p1Line2Rest: ' e sou Desenvolvedor',
         p1Line3: 'Full Stack e fundador da EtzahWeb.',
-        p2Lead: 'Nos últimos 5 anos',
-        p2Rest: ' tenho me dedicado a criar sites modernos, responsivos e envolventes, capazes de entregar alta performance e uma excelente experiência de uso. Minha jornada no desenvolvimento começou com uma forte curiosidade sobre como os produtos digitais são construídos e rapidamente se transformou em um caminho profissional focado na criação de soluções web completas, da arquitetura backend até as interfaces que o usuário vê e utiliza.',
+        p2Lead: 'Há alguns anos faço este trabalho',
+        p2Rest: ' e me dedico a criar sites modernos, responsivos e envolventes, capazes de entregar alta performance e uma excelente experiência de uso. Minha jornada no desenvolvimento começou com uma forte curiosidade sobre como os produtos digitais são construídos e rapidamente se transformou em um caminho profissional focado na criação de soluções web completas, da arquitetura backend até as interfaces que o usuário vê e utiliza.',
         p3Lead: 'Sistemas seguros, aplicações escaláveis e design responsivo',
         p3Rest: ' fazem parte do meu trabalho diário. Desenvolvo plataformas visualmente marcantes e adaptadas a diferentes necessidades, garantindo que cada interação seja fluida, intuitiva e consistente em qualquer dispositivo.',
         p4Lead: 'Com a EtzahWeb, meu objetivo',
@@ -594,77 +559,42 @@
         title: 'Portfólio',
         subtitle: 'Conheça alguns sites profissionais que já criei.',
         viewProject: 'Ver projeto',
+        viewDemo: 'DEMO',
         item1: {
-          mediaAria: 'Abrir imagem do portfólio Academia',
-          mediaAlt: 'Portfólio Academia',
-          projectAlt: 'Projeto Academia',
-          title: 'North Peak Gold',
-          body: 'Landing premium para marca fitness com visual forte, credibilidade imediata e CTA de alta conversão.',
-          tag: 'Fitness Premium'
+          siteAria: 'Abrir o site North Peak Gold',
+          projectAlt: 'Projeto North Peak Gold'
         },
         item2: {
-          mediaAria: 'Abrir imagem do portfólio Curso',
-          mediaAlt: 'Portfólio Curso',
-          projectAlt: 'Projeto Curso',
-          title: 'Serfrontend',
-          body: 'Página de curso com proposta clara, prova social e jornada otimizada para aumentar inscrições.',
-          tag: 'Curso Online'
+          siteAria: 'Abrir o site Gallo CRM',
+          projectAlt: 'Projeto Gallo CRM'
         },
         item3: {
-          mediaAria: 'Abrir imagem do portfólio Dentista',
-          mediaAlt: 'Portfólio Dentista',
-          projectAlt: 'Projeto Dentista',
-          title: 'Odentrics',
-          body: 'Site odontológico elegante com foco em confiança clínica, serviços principais e agendamento simplificado.',
-          tag: 'Dental Care'
+          siteAria: 'Abrir o site Odentrics',
+          projectAlt: 'Projeto Odentrics'
         },
         item4: {
-          mediaAria: 'Abrir imagem do portfólio Garage',
-          mediaAlt: 'Portfólio Garage',
-          projectAlt: 'Projeto Garage',
-          title: 'Garage Ticino',
-          body: 'Presença digital para oficina premium com serviços bem estruturados e contato rápido para agendamentos.',
-          tag: 'Automotivo'
+          siteAria: 'Abrir o site Chiesa Kabod',
+          projectAlt: 'Projeto Chiesa Kabod'
         },
         item5: {
-          mediaAria: 'Abrir imagem do portfólio Hamburguer',
-          mediaAlt: 'Portfólio Hamburguer',
-          projectAlt: 'Projeto Hamburguer',
-          title: 'Bella Burguer Atelier',
-          body: 'Vitrine food de alto impacto com storytelling da marca e fluxo rápido para pedidos e reservas.',
-          tag: 'Hamburguer Gourmet'
+          siteAria: 'Abrir o site La Mia Piccola Storia',
+          projectAlt: 'Projeto La Mia Piccola Storia'
         },
         item6: {
-          mediaAria: 'Abrir imagem do portfólio Imobiliaria',
-          mediaAlt: 'Portfólio Imobiliaria',
-          projectAlt: 'Projeto Imobiliaria',
-          title: 'Imperium',
-          body: 'Site imobiliário com apresentação de autoridade, imóveis em destaque e CTAs comerciais bem distribuídas.',
-          tag: 'Imobiliário'
+          siteAria: 'Abrir o site Progetto Nike',
+          projectAlt: 'Projeto Nike'
         },
         item7: {
-          mediaAria: 'Abrir imagem do portfólio Jardim',
-          mediaAlt: 'Portfólio Jardim',
-          projectAlt: 'Projeto Jardim',
-          title: 'Verde Vivo',
-          body: 'Web design para serviços verdes com identidade natural, copy direto e foco no pedido de orçamento.',
-          tag: 'Serviços Verdes'
+          demoAria: 'Ver a demo Hamburguer',
+          projectAlt: 'Demo Hamburguer Atelier'
         },
         item8: {
-          mediaAria: 'Abrir imagem do portfólio Pizza',
-          mediaAlt: 'Portfólio Pizza',
-          projectAlt: 'Projeto Pizza',
-          title: "Forno d'Oro",
-          body: 'Página de restaurante orientada a vendas com menu em destaque, ofertas estratégicas e contato imediato.',
-          tag: 'Pizzaria'
+          demoAria: 'Ver a demo Milkshake',
+          projectAlt: 'Demo Milkshake'
         },
         item9: {
-          mediaAria: 'Abrir imagem do portfólio Salone',
-          mediaAlt: 'Portfólio Salone',
-          projectAlt: 'Projeto Salone',
-          title: 'Vittorino Baber',
-          body: 'Presença digital barber com imagem premium, serviços claros e percurso simples para agendamentos.',
-          tag: 'Barbearia'
+          demoAria: 'Ver a demo Tata Button',
+          projectAlt: 'Demo Tata Button'
         }
       },
       reviews: {
@@ -1046,8 +976,8 @@
         p1LastName: 'Gallo',
         p1Line2Rest: ' and I am a Full Stack',
         p1Line3: 'Developer and founder of EtzahWeb.',
-        p2Lead: 'Over the past 5 years',
-        p2Rest: ' I have been dedicated to building modern, responsive, and engaging websites that deliver both strong performance and an excellent user experience. My journey in development started with a deep curiosity for how digital products are built, which quickly turned into a professional path focused on creating complete web solutions, from backend architecture to user-facing interfaces.',
+        p2Lead: "For a few years now I've been doing this work",
+        p2Rest: ' and I dedicate myself to building modern, responsive, and engaging websites that deliver both strong performance and an excellent user experience. My journey in development started with a deep curiosity for how digital products are built, which quickly turned into a professional path focused on creating complete web solutions, from backend architecture to user-facing interfaces.',
         p3Lead: 'Secure systems, scalable applications, and responsive design',
         p3Rest: ' are part of my daily work. I build visually refined platforms tailored to different needs, ensuring that every interaction feels smooth, intuitive, and consistent across devices.',
         p4Lead: 'With EtzahWeb, my goal',
@@ -1057,77 +987,42 @@
         title: 'Portfolio',
         subtitle: 'Explore some professional websites I have created.',
         viewProject: 'View project',
+        viewDemo: 'DEMO',
         item1: {
-          mediaAria: 'Open Academia portfolio image',
-          mediaAlt: 'Academia portfolio',
-          projectAlt: 'Academia project',
-          title: 'North Peak Gold',
-          body: 'Premium landing page for a fitness brand with strong visuals, instant credibility, and high-converting CTAs.',
-          tag: 'Premium Fitness'
+          siteAria: 'Open the North Peak Gold website',
+          projectAlt: 'North Peak Gold project'
         },
         item2: {
-          mediaAria: 'Open Curso portfolio image',
-          mediaAlt: 'Curso portfolio',
-          projectAlt: 'Curso project',
-          title: 'Serfrontend',
-          body: 'Course page with a clear offer, social proof, and an optimized journey to increase enrollments.',
-          tag: 'Online Course'
+          siteAria: 'Open the Gallo CRM website',
+          projectAlt: 'Gallo CRM project'
         },
         item3: {
-          mediaAria: 'Open Dentista portfolio image',
-          mediaAlt: 'Dentista portfolio',
-          projectAlt: 'Dentista project',
-          title: 'Odentrics',
-          body: 'Elegant dental website focused on clinical trust, key services, and simplified booking.',
-          tag: 'Dental Care'
+          siteAria: 'Open the Odentrics website',
+          projectAlt: 'Odentrics project'
         },
         item4: {
-          mediaAria: 'Open Garage portfolio image',
-          mediaAlt: 'Garage portfolio',
-          projectAlt: 'Garage project',
-          title: 'Garage Ticino',
-          body: 'Digital presence for a premium garage with structured services and quick appointment contact.',
-          tag: 'Automotive'
+          siteAria: 'Open the Chiesa Kabod website',
+          projectAlt: 'Chiesa Kabod project'
         },
         item5: {
-          mediaAria: 'Open Hamburguer portfolio image',
-          mediaAlt: 'Hamburguer portfolio',
-          projectAlt: 'Hamburguer project',
-          title: 'Bella Burguer Atelier',
-          body: 'High-impact food showcase with strong brand storytelling and fast flows for orders and bookings.',
-          tag: 'Gourmet Burger'
+          siteAria: 'Open the La Mia Piccola Storia website',
+          projectAlt: 'La Mia Piccola Storia project'
         },
         item6: {
-          mediaAria: 'Open Imobiliaria portfolio image',
-          mediaAlt: 'Imobiliaria portfolio',
-          projectAlt: 'Imobiliaria project',
-          title: 'Imperium',
-          body: 'Real estate website with strong positioning, featured properties, and well-placed commercial CTAs.',
-          tag: 'Real Estate'
+          siteAria: 'Open the Progetto Nike website',
+          projectAlt: 'Nike project'
         },
         item7: {
-          mediaAria: 'Open Jardim portfolio image',
-          mediaAlt: 'Jardim portfolio',
-          projectAlt: 'Jardim project',
-          title: 'Verde Vivo',
-          body: 'Web design for green services with natural identity, direct copy, and quote-focused conversion.',
-          tag: 'Green Services'
+          demoAria: 'Watch the Hamburguer demo',
+          projectAlt: 'Hamburguer Atelier demo'
         },
         item8: {
-          mediaAria: 'Open Pizza portfolio image',
-          mediaAlt: 'Pizza portfolio',
-          projectAlt: 'Pizza project',
-          title: "Forno d'Oro",
-          body: 'Restaurant page built for sales with highlighted menu, strategic offers, and immediate contact.',
-          tag: 'Pizzeria'
+          demoAria: 'Watch the Milkshake demo',
+          projectAlt: 'Milkshake demo'
         },
         item9: {
-          mediaAria: 'Open Salone portfolio image',
-          mediaAlt: 'Salone portfolio',
-          projectAlt: 'Salone project',
-          title: 'Vittorino Baber',
-          body: 'Barber digital presence with premium branding, clear services, and an easy booking path.',
-          tag: 'Barber Shop'
+          demoAria: 'Watch the Tata Button demo',
+          projectAlt: 'Tata Button demo'
         }
       },
       reviews: {
