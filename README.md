@@ -39,7 +39,7 @@ Most sites reach for `i18next` or `next-intl` the moment a second language appea
 
 ```js
 window.I18N = {
-  init,            // detect language, wire up switchers, apply translations
+  init,            // resolve stored language, wire up switchers, apply translations
   setLanguage,     // switch at runtime and persist the choice
   t,               // t('hero.title', fallback) — nested key lookup
   onChange,        // subscribe to language changes, returns an unsubscribe fn
@@ -51,7 +51,7 @@ Design decisions worth noting:
 
 **Nested keys, flat call site.** Translations are authored as nested objects (`hero.title`, `nav.services`) for readability, but `t()` resolves a dotted path at lookup time. Authors get structure; callers get one function.
 
-**Language resolution order.** `localStorage` → browser language → Italian as the fallback. A returning visitor keeps their choice; a first-time visitor gets a sensible guess; nobody ever sees an empty string.
+**Language resolution order.** `localStorage['lang']` → the `fallback` option passed to `init()` → Italian. Note what is *not* in that chain: `navigator.language`. A first-time visitor always lands on Italian, which is deliberate — the audience is local, and guessing from browser locale gets expats and travellers wrong more often than it helps. A returning visitor keeps whatever they picked.
 
 **Subscribers instead of a re-render.** With no framework there is no reactive tree, so `onChange` lets any component register a callback and update itself when the language changes. `onChange` returns its own unsubscribe function, which keeps teardown honest.
 
